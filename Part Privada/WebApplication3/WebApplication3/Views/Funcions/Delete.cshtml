@@ -1,0 +1,64 @@
+﻿@model Dades.Models.Funcio
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Funcio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Espectacle.nifDirector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Espectacle.nifDirector)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teatre.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teatre.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaInici)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaInici)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaFi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaFi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

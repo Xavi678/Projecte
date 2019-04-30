@@ -1,0 +1,58 @@
+﻿@model Dades.Models.Funcio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Funcio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Espectacle.titol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Espectacle.titol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teatre.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teatre.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaInici)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaInici)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaFi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaFi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
