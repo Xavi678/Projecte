@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Dades.Context;
+using Dades.Gestor;
 using Dades.Models;
 using WebApplication3.Models;
 using static WebApplication3.Models.PersonaVista;
@@ -16,14 +17,15 @@ namespace WebApplication3.Controllers
     public class PersonasController : Controller
     {
         private PersonaContext db = new PersonaContext();
-
-       
+        private GestorBD bd = new GestorBD();
 
         // GET: Personas
+       
         public ActionResult Index()
         {
-            var persones = db.Persones.Include(p => p.Adreça);
-            return View(persones.ToList());
+             
+            var persones = bd.getPersones();
+            return View(persones);
         }
 
         // GET: Personas/Details/5
@@ -58,16 +60,17 @@ namespace WebApplication3.Controllers
             Adreça e = new Adreça(persona.Comarca, persona.Localitat, persona.Codipostal);
             // t = new Persona();
             //int i = (int)persona.tipus;
+
+            
             switch (persona.tipus)
             {
                 case TipusPersona.Client:
                     {
                         if (ModelState.IsValid)
                         {
-                            db.Adreces.Add(e);
-                            db.SaveChanges();
-                            db.Persones.Add(new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password));
-                            db.SaveChanges();
+                            Client client = new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password);
+                            bd.afegirClient(client,e);
+                            
                             return RedirectToAction("Index");
                         }
                         
@@ -77,10 +80,10 @@ namespace WebApplication3.Controllers
                     {
                         if (ModelState.IsValid)
                         {
-                            db.Adreces.Add(e);
-                            db.SaveChanges();
-                            db.Persones.Add(new Administrador(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password));
-                            db.SaveChanges();
+                            Administrador admin = new Administrador(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password);
+
+                            bd.afegirAdministrador(admin,e);
+                            
                             return RedirectToAction("Index");
                         }
                         break;
@@ -89,10 +92,9 @@ namespace WebApplication3.Controllers
                     {
                         if (ModelState.IsValid)
                         {
-                            db.Adreces.Add(e);
-                            db.SaveChanges();
-                            db.Persones.Add(new Director(e, persona.NIF, persona.nom, persona.edat));
-                            db.SaveChanges();
+                            Director director = new Director(e, persona.NIF, persona.nom, persona.edat);
+                            bd.afegirDirector(director,e);
+                            
                             return RedirectToAction("Index");
                         }
                         break;
@@ -101,10 +103,8 @@ namespace WebApplication3.Controllers
                     {
                         if (ModelState.IsValid)
                         {
-                            db.Adreces.Add(e);
-                            db.SaveChanges();
-                            db.Persones.Add(new Autor(e, persona.NIF, persona.nom, persona.edat));
-                            db.SaveChanges();
+                            Autor autor = new Autor(e, persona.NIF, persona.nom, persona.edat);
+                            bd.afegirAutor(autor,e);
                             return RedirectToAction("Index");
                         }
                         break;
@@ -182,13 +182,13 @@ namespace WebApplication3.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
+        /*protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
     }
 }

@@ -20,13 +20,14 @@ namespace Dades.Models
         public int EspectacleID { get; set; }
         public string titol { get; set; }
         public string sinopsi { get; set; }
+        [DisplayFormat(DataFormatString = "{0:hh\\:mm}", ApplyFormatInEditMode = true)]
         public TimeSpan durada { get; set; }
         public string cartell { get; set; }
-      /* [ForeignKey("Director")]
+       [ForeignKey("Director")]
         public string nifDirector { get; set; }
 
         [ForeignKey("Autor")]
-        public string nifAutor { get; set; }*/
+        public string nifAutor { get; set; }
         public virtual Director Director { get; set; }
         public virtual Autor Autor { get; set; }
 

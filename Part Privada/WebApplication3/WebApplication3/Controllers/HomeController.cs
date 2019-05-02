@@ -37,7 +37,10 @@ namespace GestioTeatres.Controllers
             }
             else
             {
+                ModelState.AddModelError("", "Login failed");
                 return View("Index");
+
+                
             }
 
 

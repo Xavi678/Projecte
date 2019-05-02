@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Dades.Context;
+using Dades.Gestor;
 using Dades.Models;
 
 namespace WebApplication3.Controllers
@@ -14,12 +15,13 @@ namespace WebApplication3.Controllers
     public class FuncionsController : Controller
     {
         private PersonaContext db = new PersonaContext();
-
+        private GestorBD bd = new GestorBD();
         // GET: Funcions
         public ActionResult Index()
         {
-            var funcions = db.Funcions.Include(f => f.Espectacle).Include(f => f.Teatre);
-            return View(funcions.ToList());
+            //var funcions = db.Funcions.Include(f => f.Espectacle).Include(f => f.Teatre);
+           var funcions= bd.getFuncionsInc();
+            return View(funcions);
         }
 
         // GET: Funcions/Details/5
@@ -40,8 +42,8 @@ namespace WebApplication3.Controllers
         // GET: Funcions/Create
         public ActionResult Create()
         {
-            ViewBag.espectacleID = new SelectList(db.Espectacles, "ID", "titol");
-            ViewBag.teatreID = new SelectList(db.Teatres, "ID", "Nom");
+            ViewBag.espectacleID = new SelectList(bd.getEspectacles(), "espectacleID", "titol");
+            ViewBag.teatreID = new SelectList(bd.getTeatres(), "ID", "Nom");
             return View();
         }
 
@@ -54,13 +56,12 @@ namespace WebApplication3.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Funcions.Add(funcio);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                bd.afegirFuncio(funcio);
+                                return RedirectToAction("Index");
             }
 
-            ViewBag.espectacleID = new SelectList(db.Espectacles, "ID", "titol", funcio.espectacleID);
-            ViewBag.teatreID = new SelectList(db.Teatres, "ID", "Nom", funcio.teatreID);
+            ViewBag.espectacleID = new SelectList(bd.getEspectacles(), "espectacleID", "titol", funcio.espectacleID);
+            ViewBag.teatreID = new SelectList(bd.getTeatres(), "ID", "Nom", funcio.teatreID);
             return View(funcio);
         }
 
@@ -76,8 +77,8 @@ namespace WebApplication3.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.espectacleID = new SelectList(db.Espectacles, "ID", "titol", funcio.espectacleID);
-            ViewBag.teatreID = new SelectList(db.Teatres, "ID", "Nom", funcio.teatreID);
+            ViewBag.espectacleID = new SelectList(bd.getEspectacles(), "espectacleID", "titol", funcio.espectacleID);
+            ViewBag.teatreID = new SelectList(bd.getTeatres(), "ID", "Nom", funcio.teatreID);
             return View(funcio);
         }
 
@@ -94,8 +95,8 @@ namespace WebApplication3.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.espectacleID = new SelectList(db.Espectacles, "ID", "titol", funcio.espectacleID);
-            ViewBag.teatreID = new SelectList(db.Teatres, "ID", "Nom", funcio.teatreID);
+            ViewBag.espectacleID = new SelectList(bd.getEspectacles(), "espectacleID", "titol", funcio.espectacleID);
+            ViewBag.teatreID = new SelectList(bd.getTeatres(), "ID", "Nom", funcio.teatreID);
             return View(funcio);
         }
 

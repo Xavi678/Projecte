@@ -33,6 +33,8 @@ namespace Dades.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime data { set; get; }
         public TimeSpan horaInici { set; get; }
         public TimeSpan horaFi { set; get; }

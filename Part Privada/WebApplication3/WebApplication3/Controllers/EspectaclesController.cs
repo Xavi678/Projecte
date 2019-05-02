@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Dades.Context;
+using Dades.Gestor;
 using Dades.Models;
 
 namespace WebApplication3.Controllers
@@ -15,11 +16,14 @@ namespace WebApplication3.Controllers
     {
         private PersonaContext db = new PersonaContext();
 
+        private GestorBD bd = new GestorBD();
+
         // GET: Espectacles
         public ActionResult Index()
         {
             var espectacles = db.Espectacles.Include(a => a.Autor).Include(d => d.Director);
-            return View(espectacles.ToList());
+            var espectacles= bd.getEspectaclesInc();
+            return View(espectacles);
         }
 
         // GET: Espectacles/Details/5
@@ -40,6 +44,8 @@ namespace WebApplication3.Controllers
         // GET: Espectacles/Create
         public ActionResult Create()
         {
+            ViewBag.nifDirector = new SelectList(bd.getListDirector(), "NIF", "nom");
+            ViewBag.nifAutor= new SelectList(bd.getListAutor(), "NIF", "nom");
             return View();
         }
 
@@ -48,15 +54,16 @@ namespace WebApplication3.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EspectacleID,titol,sinopsi,durada,cartell")] Espectacle espectacle)
+        public ActionResult Create([Bind(Include = "EspectacleID,titol,sinopsi,durada,cartell,nifAutor,nifDirector")] Espectacle espectacle)
         {
             if (ModelState.IsValid)
             {
-                db.Espectacles.Add(espectacle);
-                db.SaveChanges();
+                bd.afegirEspectacle(espectacle);
+                
                 return RedirectToAction("Index");
             }
-
+            ViewBag.nifDirector = new SelectList(bd.getListDirector(), "NIF", "nom");
+            ViewBag.nifAutor = new SelectList(bd.getListAutor(), "NIF", "nom");
             return View(espectacle);
         }
 
@@ -117,13 +124,13 @@ namespace WebApplication3.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
+       /* protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
     }
 }
