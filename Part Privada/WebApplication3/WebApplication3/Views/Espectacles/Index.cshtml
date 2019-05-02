@@ -23,6 +23,12 @@
         <th>
             @Html.DisplayNameFor(model => model.cartell)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor.NIF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director.NIF)
+        </th>
         <th></th>
     </tr>
 
@@ -41,9 +47,15 @@
             @Html.DisplayFor(modelItem => item.cartell)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EspectacleID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EspectacleID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EspectacleID })
+            @Html.DisplayFor(modelItem => item.Autor.NIF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Director.NIF)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EspectacleID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EspectacleID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EspectacleID })
         </td>
     </tr>
 }

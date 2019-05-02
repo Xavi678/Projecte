@@ -1,4 +1,5 @@
 ﻿using Dades.Context;
+using Dades.Gestor;
 using Dades.Models;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace GestioTeatres.Controllers
 {
     public class HomeController : Controller
     {
+        GestorBD bd = new GestorBD();
         
         public ActionResult Index()
         {
@@ -24,6 +26,23 @@ namespace GestioTeatres.Controllers
             return View();
         }
 
+        public ActionResult Login([Bind(Include = "email,password")] Administrador administrador)
+        {
+
+            if(bd.validar(administrador.email, administrador.password))
+            {
+                Session["login"] = administrador.email;
+                return View("Main");
+               
+            }
+            else
+            {
+                return View("Index");
+            }
+
+
+            
+        }
         
 
         public ActionResult About()

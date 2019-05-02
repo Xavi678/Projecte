@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Dades.Context;
 using Dades.Models;
-using WebApplication3.Classes;
+using WebApplication3.Models;
 
 namespace WebApplication3.Controllers
 {
@@ -19,12 +19,7 @@ namespace WebApplication3.Controllers
         // GET: Teatres
         public ActionResult Index()
         {
-            List<TeatreVista> vteatres = new List<TeatreVista>();
             var teatres = db.Teatres.Include(t => t.Adreça);
-            foreach(var item in teatres.ToList())
-            {
-                new TeatreVista();
-            }
             return View(teatres.ToList());
         }
 
@@ -51,20 +46,26 @@ namespace WebApplication3.Controllers
         }
 
         // POST: Teatres/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create([Bind(Include = "ID,Nom,Files,Columnes,Comarca,Localitat,Codipostal")] TeatreVista teatre)
         {
-            
+            Adreça e = new Adreça(teatre.Comarca, teatre.Localitat, teatre.Codipostal);
+            Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);
             if (ModelState.IsValid)
             {
-               
+                db.Adreces.Add(e);
+                db.SaveChanges();
+                db.Teatres.Add(t);
+                
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
-            /*ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", teatre.AdreçaID);*/
-            return View();
+            //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", teatre.AdreçaID);
+            return View(teatre);
         }
 
         // GET: Teatres/Edit/5
@@ -75,18 +76,20 @@ namespace WebApplication3.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Teatre teatre = db.Teatres.Find(id);
+
             if (teatre == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", teatre.AdreçaID);
-            return View(teatre);
+            TeatreVista vista = new TeatreVista(teatre.ID,teatre.Nom, teatre.Files, teatre.Columnes, teatre.Adreça.Comarca, teatre.Adreça.Localitat, teatre.Adreça.Codipostal);
+            //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", teatre.AdreçaID);
+            return View(vista);
         }
 
         // POST: Teatres/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+       /* [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Nom,Files,Columnes,AdreçaID")] Teatre teatre)
         {
@@ -97,6 +100,27 @@ namespace WebApplication3.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", teatre.AdreçaID);
+            return View(teatre);
+        }*/
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "ID,Nom,Files,Columnes,Comarca,Localitat,Codipostal")] TeatreVista teatre)
+        {
+            Adreça e = new Adreça(teatre.Comarca, teatre.Localitat, teatre.Codipostal);
+            Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);
+            if (ModelState.IsValid)
+            {
+                db.Entry(e).State = EntityState.Modified;
+                db.Entry(t).State = EntityState.Modified;
+                db.SaveChanges();
+                
+
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", teatre.AdreçaID);
             return View(teatre);
         }
 

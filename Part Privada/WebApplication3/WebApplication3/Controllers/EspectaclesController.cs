@@ -18,8 +18,8 @@ namespace WebApplication3.Controllers
         // GET: Espectacles
         public ActionResult Index()
         {
-            
-            return View(db.Espectacles.ToList());
+            var espectacles = db.Espectacles.Include(a => a.Autor).Include(d => d.Director);
+            return View(espectacles.ToList());
         }
 
         // GET: Espectacles/Details/5

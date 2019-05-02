@@ -15,6 +15,7 @@ namespace Dades.Models
         public string NIF { get; set; }
         public string nom { get; set; }
         public int edat { get; set; }
+        
 
 
 
