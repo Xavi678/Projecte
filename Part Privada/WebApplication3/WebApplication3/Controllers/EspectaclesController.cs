@@ -14,14 +14,14 @@ namespace WebApplication3.Controllers
 {
     public class EspectaclesController : Controller
     {
-        private PersonaContext db = new PersonaContext();
+        //private PersonaContext db = new PersonaContext();
 
         private GestorBD bd = new GestorBD();
 
         // GET: Espectacles
         public ActionResult Index()
         {
-            var espectacles = db.Espectacles.Include(a => a.Autor).Include(d => d.Director);
+            //var espectacles = ;
             var espectacles= bd.getEspectaclesInc();
             return View(espectacles);
         }
@@ -33,7 +33,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Espectacle espectacle = db.Espectacles.Find(id);
+            Espectacle espectacle =  bd.obtenirEspectacleperId(id);
             if (espectacle == null)
             {
                 return HttpNotFound();
@@ -74,7 +74,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Espectacle espectacle = db.Espectacles.Find(id);
+            Espectacle espectacle = bd.obtenirEspectacleperId(id);
             if (espectacle == null)
             {
                 return HttpNotFound();
@@ -87,12 +87,12 @@ namespace WebApplication3.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EspectacleID,titol,sinopsi,durada,cartell")] Espectacle espectacle)
+        public ActionResult Edit([Bind(Include = "EspectacleID,titol,sinopsi,durada,cartell,nifAutor,nifDirector")] Espectacle espectacle)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(espectacle).State = EntityState.Modified;
-                db.SaveChanges();
+                bd.modificarEspectacle(espectacle);
+                
                 return RedirectToAction("Index");
             }
             return View(espectacle);
@@ -105,7 +105,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Espectacle espectacle = db.Espectacles.Find(id);
+            Espectacle espectacle = bd.obtenirEspectacleperId(id);
             if (espectacle == null)
             {
                 return HttpNotFound();
@@ -118,9 +118,10 @@ namespace WebApplication3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Espectacle espectacle = db.Espectacles.Find(id);
-            db.Espectacles.Remove(espectacle);
-            db.SaveChanges();
+            Espectacle espectacle = bd.obtenirEspectacleperId(id);
+            bd.borrarEspectacle(espectacle);
+
+            
             return RedirectToAction("Index");
         }
 

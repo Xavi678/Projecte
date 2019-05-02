@@ -27,6 +27,31 @@ namespace WebApplication3.Models
             this.password = password;
         }
 
+        public PersonaVista(string nIF, string nom, int edat, string email, string password, string comarca, string localitat, string codipostal)
+        {
+            NIF = nIF;
+            this.nom = nom;
+            this.edat = edat;
+            this.email = email;
+            this.password = password;
+            Comarca = comarca;
+            Localitat = localitat;
+            Codipostal = codipostal;
+        }
+
+        public PersonaVista(string nIF, string nom, int edat, string email, string password, string comarca, string localitat, string codipostal, TipusPersona tipus)
+        {
+            NIF = nIF;
+            this.nom = nom;
+            this.edat = edat;
+            this.email = email;
+            this.password = password;
+            Comarca = comarca;
+            Localitat = localitat;
+            Codipostal = codipostal;
+            this.tipus = tipus;
+        }
+
         public string NIF { get; set; }
         public string nom { get; set; }
         public int edat { get; set; }

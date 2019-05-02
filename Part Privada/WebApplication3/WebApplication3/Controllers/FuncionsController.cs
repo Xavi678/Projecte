@@ -14,7 +14,7 @@ namespace WebApplication3.Controllers
 {
     public class FuncionsController : Controller
     {
-        private PersonaContext db = new PersonaContext();
+        //private PersonaContext db = new PersonaContext();
         private GestorBD bd = new GestorBD();
         // GET: Funcions
         public ActionResult Index()
@@ -31,7 +31,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Funcio funcio = db.Funcions.Find(id);
+            Funcio funcio = bd.obtenirFuncioperId(id);
             if (funcio == null)
             {
                 return HttpNotFound();
@@ -72,7 +72,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Funcio funcio = db.Funcions.Find(id);
+            Funcio funcio = bd.obtenirFuncioperId(id);
             if (funcio == null)
             {
                 return HttpNotFound();
@@ -91,8 +91,8 @@ namespace WebApplication3.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(funcio).State = EntityState.Modified;
-                db.SaveChanges();
+                bd.modificarFuncio(funcio);
+               
                 return RedirectToAction("Index");
             }
             ViewBag.espectacleID = new SelectList(bd.getEspectacles(), "espectacleID", "titol", funcio.espectacleID);
@@ -107,7 +107,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Funcio funcio = db.Funcions.Find(id);
+            Funcio funcio = bd.obtenirFuncioperId(id);
             if (funcio == null)
             {
                 return HttpNotFound();
@@ -120,9 +120,9 @@ namespace WebApplication3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Funcio funcio = db.Funcions.Find(id);
-            db.Funcions.Remove(funcio);
-            db.SaveChanges();
+            Funcio funcio = bd.obtenirFuncioperId(id);
+            bd.borrarFuncio(funcio);
+            
             return RedirectToAction("Index");
         }
 

@@ -33,9 +33,39 @@ namespace Dades.Gestor
 
         }
 
+        public IEnumerable getTeatresInc()
+        {
+            return db.Teatres.Include(t => t.Adreça).ToList();
+        }
+
+        public IEnumerable getEspectaclesInc()
+        {
+            return db.Espectacles.Include(a => a.Autor).Include(d => d.Director).ToList();
+        }
+
+        public Teatre obtenirTeatreperId(int? id)
+        {
+            return db.Teatres.Find(id);
+        }
+
         public object getPersones()
         {
             return db.Persones.Include(p => p.Adreça).ToList(); 
+        }
+
+        public Persona obtenirPersonaperId(string id)
+        {
+            return db.Persones.Find(id);
+        }
+
+        public Funcio obtenirFuncioperId(int? id)
+        {
+            return db.Funcions.Find(id);
+        }
+
+        public Espectacle obtenirEspectacleperId(int? id)
+        {
+            return db.Espectacles.Find(id);
         }
 
         public IEnumerable getFuncionsInc()
@@ -46,6 +76,15 @@ namespace Dades.Gestor
         public IEnumerable getListDirector()
         {
             return db.Persones.Select(s => s).Where(s => s is Director);
+        }
+
+        public void afegirTeatre(Teatre t, Adreça e)
+        {
+            db.Adreces.Add(e);
+            db.SaveChanges();
+            db.Teatres.Add(t);
+
+            db.SaveChanges();
         }
 
         public IEnumerable getListAutor()
@@ -117,6 +156,47 @@ namespace Dades.Gestor
             db.Adreces.Add(e);
             db.SaveChanges();
             db.Persones.Add(autor);
+            db.SaveChanges();
+        }
+
+        public void modificarEspectacle(Espectacle espectacle)
+        {
+            db.Entry(espectacle).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void modificarFuncio(Funcio funcio)
+        {
+            db.Entry(funcio).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void borrarEspectacle(Espectacle espectacle)
+        {
+            db.Espectacles.Remove(espectacle);
+            db.SaveChanges();
+        }
+
+        public void borrarFuncio(Funcio funcio)
+        {
+            db.Funcions.Remove(funcio);
+            db.SaveChanges();
+        }
+
+        public void borrarPersona(Persona persona)
+        {
+            db.Persones.Remove(persona);
+            db.SaveChanges();
+        }
+
+        public Usuari obtenirUsuariperId(string id)
+        {
+            return db.Usuaris.Find(id);
+        }
+
+        public void borrarTeatre(Teatre teatre)
+        {
+            db.Teatres.Remove(teatre);
             db.SaveChanges();
         }
     }

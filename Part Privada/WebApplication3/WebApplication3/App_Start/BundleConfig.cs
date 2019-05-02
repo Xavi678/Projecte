@@ -29,6 +29,10 @@ namespace WebApplication3
             bundles.Add(new ScriptBundle("~/bundles/meu").Include(
                 "~/Scripts/meu.js"
                 ));
+
+            bundles.Add(new ScriptBundle("~/bundles/edit").Include(
+                "~/Scripts/edit.js"
+                ));
         }
     }
 }

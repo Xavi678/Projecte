@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Dades.Context;
+using Dades.Gestor;
 using Dades.Models;
 using WebApplication3.Models;
 
@@ -15,12 +16,13 @@ namespace WebApplication3.Controllers
     public class TeatresController : Controller
     {
         private PersonaContext db = new PersonaContext();
-
+        private GestorBD bd = new GestorBD();
         // GET: Teatres
         public ActionResult Index()
         {
-            var teatres = db.Teatres.Include(t => t.Adreça);
-            return View(teatres.ToList());
+            var teatres = bd.getTeatresInc();
+
+            return View(teatres);
         }
 
         // GET: Teatres/Details/5
@@ -30,7 +32,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teatre teatre = db.Teatres.Find(id);
+            Teatre teatre = bd.obtenirTeatreperId(id);
             if (teatre == null)
             {
                 return HttpNotFound();
@@ -56,11 +58,8 @@ namespace WebApplication3.Controllers
             Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);
             if (ModelState.IsValid)
             {
-                db.Adreces.Add(e);
-                db.SaveChanges();
-                db.Teatres.Add(t);
-                
-                db.SaveChanges();
+                bd.afegirTeatre(t,e);
+               
                 return RedirectToAction("Index");
             }
 
@@ -75,7 +74,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teatre teatre = db.Teatres.Find(id);
+            Teatre teatre = bd.obtenirTeatreperId(id);
 
             if (teatre == null)
             {
@@ -131,7 +130,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teatre teatre = db.Teatres.Find(id);
+            Teatre teatre = bd.obtenirTeatreperId(id);
             if (teatre == null)
             {
                 return HttpNotFound();
@@ -144,19 +143,19 @@ namespace WebApplication3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Teatre teatre = db.Teatres.Find(id);
-            db.Teatres.Remove(teatre);
-            db.SaveChanges();
+            Teatre teatre = bd.obtenirTeatreperId(id);
+            bd.borrarTeatre(teatre);
+            
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
+        /*protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
     }
 }

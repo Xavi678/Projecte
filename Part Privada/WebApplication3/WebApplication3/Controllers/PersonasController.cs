@@ -35,7 +35,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Persona persona = db.Persones.Find(id);
+            Persona persona = bd.obtenirPersonaperId(id);
             if (persona == null)
             {
                 return HttpNotFound();
@@ -124,38 +124,71 @@ namespace WebApplication3.Controllers
         }
 
         // GET: Personas/Edit/5
-       /* public ActionResult Edit(string id)
+       public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Persona persona = db.Persones.Find(id);
+            Persona persona = bd.obtenirPersonaperId(id);
+            
+            if(persona is Usuari)
+            {
+                
+               Usuari u= bd.obtenirUsuariperId(id);
+
+                if (u is Administrador)
+                {
+
+                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Administrador));
+                }
+                else
+                {
+                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Client));
+                }
+                }
             if (persona == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
-            return View(persona);
-        }
+            //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
+            if (persona is Autor)
+            {
+                return View(new PersonaVista(persona.NIF, persona.nom, persona.edat, null, null, persona.Adreça.Comarca, persona.Adreça.Localitat, persona.Adreça.Localitat,TipusPersona.Autor));
+            }
+            else
+            {
+                return View(new PersonaVista(persona.NIF, persona.nom, persona.edat, null, null, persona.Adreça.Comarca, persona.Adreça.Localitat, persona.Adreça.Localitat, TipusPersona.Director));
+            }
+            }
 
         // POST: Personas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NIF,nom,edat,AdreçaID")] Persona persona)
+        public ActionResult Edit([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,tipus")] PersonaVista person)
         {
+            //Persona persona = new Persona(new Adreça(p.Comarca,p.Localitat,p.Codipostal),p.NIF,p.nom,p.edat);
+           Persona tmpp= db.Persones.Select(p => p).Where(p => p.NIF.Equals(person.NIF)).FirstOrDefault();
+            Adreça adreça = db.Adreces.Select(a => a).Where(a => a.ID.Equals(tmpp.AdreçaID)).FirstOrDefault();
+            adreça.Comarca = person.Comarca;
+            adreça.Codipostal = person.Codipostal;
+            adreça.Localitat = person.Localitat;
+            tmpp.edat = person.edat;
+            tmpp.nom = person.nom;
+
+            
             if (ModelState.IsValid)
             {
-                db.Entry(persona).State = EntityState.Modified;
+                db.Entry(tmpp).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
-            return View(persona);
+            //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
+            return View();
         }
-        */
+        
         // GET: Personas/Delete/5
         public ActionResult Delete(string id)
         {
@@ -163,7 +196,7 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Persona persona = db.Persones.Find(id);
+            Persona persona = bd.obtenirPersonaperId(id);
             if (persona == null)
             {
                 return HttpNotFound();
@@ -176,9 +209,9 @@ namespace WebApplication3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Persona persona = db.Persones.Find(id);
-            db.Persones.Remove(persona);
-            db.SaveChanges();
+            Persona persona = bd.obtenirPersonaperId(id);
+            bd.borrarPersona(persona);
+           
             return RedirectToAction("Index");
         }
 
