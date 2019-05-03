@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -65,6 +66,10 @@ namespace WebApplication3.Models
 
         public string Codipostal { set; get; }
         public TipusPersona tipus { set; get; }
+        public int telefon { set; get; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime dataNaixement { set; get; }
         public enum TipusPersona
         {
             Client,Autor, Administrador,Director

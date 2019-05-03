@@ -57,7 +57,7 @@ namespace WebApplication3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,tipus")] PersonaVista persona)
+        public ActionResult Create([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,dataNaixement,telefon,tipus")] PersonaVista persona)
         {
             Adreça e = new Adreça(persona.Comarca, persona.Localitat, persona.Codipostal);
             // t = new Persona();
@@ -70,7 +70,7 @@ namespace WebApplication3.Controllers
                     {
                         if (ModelState.IsValid)
                         {
-                            Client client = new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password);
+                            Client client = new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password,persona.telefon,persona.dataNaixement);
                             bd.afegirClient(client,e);
                             
                             return RedirectToAction("Index");
@@ -82,7 +82,7 @@ namespace WebApplication3.Controllers
                     {
                         if (ModelState.IsValid)
                         {
-                            Administrador admin = new Administrador(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password);
+                            Administrador admin = new Administrador(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password,persona.telefon,persona.dataNaixement);
 
                             bd.afegirAdministrador(admin,e);
                             
