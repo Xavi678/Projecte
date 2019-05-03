@@ -17,7 +17,7 @@ namespace WebApplication3.Controllers
     [Filtratge]
     public class TeatresController : Controller
     {
-        private PersonaContext db = new PersonaContext();
+        //private PersonaContext db = new PersonaContext();
         private GestorBD bd = new GestorBD();
         // GET: Teatres
         public ActionResult Index()
@@ -110,21 +110,21 @@ namespace WebApplication3.Controllers
         {
             //Adreça e = new Adreça(teatre.Comarca, teatre.Localitat, teatre.Codipostal);
             //Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);
-
-            Teatre t = db.Teatres.Select(e => e).Where(e => e.ID.Equals(teatre.ID)).FirstOrDefault();
-            Adreça adreça = db.Adreces.Select(a => a).Where(a => a.ID.Equals(t.AdreçaID)).FirstOrDefault();
-
+            Teatre t=   bd.obtenirTeatreperId(teatre.ID);
+            Adreça adreça= bd.obtenirAdreçaperId(t.AdreçaID);
             t.Files = teatre.Files;
             t.Columnes = teatre.Columnes;
             t.Nom = teatre.Nom;
             adreça.Comarca = teatre.Comarca;
             adreça.Codipostal = teatre.Codipostal;
             adreça.Localitat = teatre.Localitat;
+
+
+
             if (ModelState.IsValid)
             {
-                db.Entry(adreça).State = EntityState.Modified;
-                db.Entry(t).State = EntityState.Modified;
-                db.SaveChanges();
+                bd.editar(t, adreça);
+                
                 
 
                 //db.SaveChanges();

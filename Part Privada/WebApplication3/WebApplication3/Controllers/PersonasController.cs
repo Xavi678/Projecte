@@ -18,7 +18,7 @@ namespace WebApplication3.Controllers
     [Filtratge]
     public class PersonasController : Controller
     {
-        private PersonaContext db = new PersonaContext();
+        //private PersonaContext db = new PersonaContext();
         private GestorBD bd = new GestorBD();
 
         // GET: Personas
@@ -172,8 +172,8 @@ namespace WebApplication3.Controllers
         public ActionResult Edit([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,tipus")] PersonaVista person)
         {
             //Persona persona = new Persona(new Adreça(p.Comarca,p.Localitat,p.Codipostal),p.NIF,p.nom,p.edat);
-            Persona tmpp = db.Persones.Select(p => p).Where(p => p.NIF.Equals(person.NIF)).FirstOrDefault();
-            Adreça adreça = db.Adreces.Select(a => a).Where(a => a.ID.Equals(tmpp.AdreçaID)).FirstOrDefault();
+            Persona tmpp = bd.obtenirPersonaperNIF(person.NIF);
+            Adreça adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
             adreça.Comarca = person.Comarca;
             adreça.Codipostal = person.Codipostal;
             adreça.Localitat = person.Localitat;
@@ -186,9 +186,8 @@ namespace WebApplication3.Controllers
             
             if (ModelState.IsValid)
             {
-                db.Entry(adreça).State = EntityState.Modified;
-                db.Entry(tmpp).State = EntityState.Modified;
-                db.SaveChanges();
+                bd.editar(tmpp, adreça);
+                
                 return RedirectToAction("Index");
             }
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);

@@ -48,6 +48,11 @@ namespace Dades.Gestor
             return db.Teatres.Find(id);
         }
 
+        public Teatre obtenirTeatreperId(int id)
+        {
+            return db.Teatres.Select(e => e).Where(e => e.ID.Equals(id)).FirstOrDefault();
+        }
+
         public object getPersones()
         {
             return db.Persones.Include(p => p.Adreça).ToList(); 
@@ -159,6 +164,11 @@ namespace Dades.Gestor
             db.SaveChanges();
         }
 
+        public Adreça obtenirAdreçaperId(int adreçaID)
+        {
+            return db.Adreces.Select(a => a).Where(a => a.ID.Equals(adreçaID)).FirstOrDefault();
+        }
+
         public void modificarEspectacle(Espectacle espectacle)
         {
             db.Entry(espectacle).State = EntityState.Modified;
@@ -183,6 +193,28 @@ namespace Dades.Gestor
             db.SaveChanges();
         }
 
+        public void editar(Teatre t, Adreça adreça)
+        {
+           // Teatre t = db.Teatres.Select(e => e).Where(e => e.ID.Equals(teatre.ID)).FirstOrDefault();
+            //Adreça adreça = db.Adreces.Select(a => a).Where(a => a.ID.Equals(t.AdreçaID)).FirstOrDefault();
+
+            
+            db.Entry(adreça).State = EntityState.Modified;
+            db.Entry(t).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void editar( Persona persona,Adreça adreça)
+        {
+            // Teatre t = db.Teatres.Select(e => e).Where(e => e.ID.Equals(teatre.ID)).FirstOrDefault();
+            //Adreça adreça = db.Adreces.Select(a => a).Where(a => a.ID.Equals(t.AdreçaID)).FirstOrDefault();
+
+
+            db.Entry(adreça).State = EntityState.Modified;
+            db.Entry(persona).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
         public void borrarPersona(Persona persona)
         {
             db.Persones.Remove(persona);
@@ -198,6 +230,11 @@ namespace Dades.Gestor
         {
             db.Teatres.Remove(teatre);
             db.SaveChanges();
+        }
+
+        public Persona obtenirPersonaperNIF(string nIF)
+        {
+            return db.Persones.Select(p => p).Where(p => p.NIF.Equals(nIF)).FirstOrDefault();
         }
     }
 }
