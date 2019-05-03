@@ -9,11 +9,13 @@ using System.Web.Mvc;
 using Dades.Context;
 using Dades.Gestor;
 using Dades.Models;
+using WebApplication3.Autenticacio;
 using WebApplication3.Models;
 using static WebApplication3.Models.PersonaVista;
 
 namespace WebApplication3.Controllers
 {
+    [Filtratge]
     public class PersonasController : Controller
     {
         private PersonaContext db = new PersonaContext();
@@ -170,7 +172,7 @@ namespace WebApplication3.Controllers
         public ActionResult Edit([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,tipus")] PersonaVista person)
         {
             //Persona persona = new Persona(new Adreça(p.Comarca,p.Localitat,p.Codipostal),p.NIF,p.nom,p.edat);
-           Persona tmpp= db.Persones.Select(p => p).Where(p => p.NIF.Equals(person.NIF)).FirstOrDefault();
+            Persona tmpp = db.Persones.Select(p => p).Where(p => p.NIF.Equals(person.NIF)).FirstOrDefault();
             Adreça adreça = db.Adreces.Select(a => a).Where(a => a.ID.Equals(tmpp.AdreçaID)).FirstOrDefault();
             adreça.Comarca = person.Comarca;
             adreça.Codipostal = person.Codipostal;
@@ -179,8 +181,12 @@ namespace WebApplication3.Controllers
             tmpp.nom = person.nom;
 
             
+            
+
+            
             if (ModelState.IsValid)
             {
+                db.Entry(adreça).State = EntityState.Modified;
                 db.Entry(tmpp).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -9,10 +9,12 @@ using System.Web.Mvc;
 using Dades.Context;
 using Dades.Gestor;
 using Dades.Models;
+using WebApplication3.Autenticacio;
 using WebApplication3.Models;
 
 namespace WebApplication3.Controllers
 {
+    [Filtratge]
     public class TeatresController : Controller
     {
         private PersonaContext db = new PersonaContext();
@@ -106,16 +108,26 @@ namespace WebApplication3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Nom,Files,Columnes,Comarca,Localitat,Codipostal")] TeatreVista teatre)
         {
-            Adreça e = new Adreça(teatre.Comarca, teatre.Localitat, teatre.Codipostal);
-            Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);
+            //Adreça e = new Adreça(teatre.Comarca, teatre.Localitat, teatre.Codipostal);
+            //Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);
+
+            Teatre t = db.Teatres.Select(e => e).Where(e => e.ID.Equals(teatre.ID)).FirstOrDefault();
+            Adreça adreça = db.Adreces.Select(a => a).Where(a => a.ID.Equals(t.AdreçaID)).FirstOrDefault();
+
+            t.Files = teatre.Files;
+            t.Columnes = teatre.Columnes;
+            t.Nom = teatre.Nom;
+            adreça.Comarca = teatre.Comarca;
+            adreça.Codipostal = teatre.Codipostal;
+            adreça.Localitat = teatre.Localitat;
             if (ModelState.IsValid)
             {
-                db.Entry(e).State = EntityState.Modified;
+                db.Entry(adreça).State = EntityState.Modified;
                 db.Entry(t).State = EntityState.Modified;
                 db.SaveChanges();
                 
 
-                db.SaveChanges();
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 

@@ -20,7 +20,7 @@ namespace Dades.Models
         public int EspectacleID { get; set; }
         public string titol { get; set; }
         public string sinopsi { get; set; }
-        [DisplayFormat(DataFormatString = "{0:hh\\:mm}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Time)]
         public TimeSpan durada { get; set; }
         public string cartell { get; set; }
        [ForeignKey("Director")]

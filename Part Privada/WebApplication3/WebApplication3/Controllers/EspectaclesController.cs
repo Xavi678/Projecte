@@ -9,9 +9,11 @@ using System.Web.Mvc;
 using Dades.Context;
 using Dades.Gestor;
 using Dades.Models;
+using WebApplication3.Autenticacio;
 
 namespace WebApplication3.Controllers
 {
+    [Filtratge]
     public class EspectaclesController : Controller
     {
         //private PersonaContext db = new PersonaContext();

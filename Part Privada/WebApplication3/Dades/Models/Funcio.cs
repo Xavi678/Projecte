@@ -36,7 +36,9 @@ namespace Dades.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime data { set; get; }
+        [DataType(DataType.Time)]
         public TimeSpan horaInici { set; get; }
+        [DataType(DataType.Time)]
         public TimeSpan horaFi { set; get; }
         public virtual Espectacle Espectacle {set; get;}
         public virtual Teatre Teatre { set; get; }

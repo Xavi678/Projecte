@@ -8,7 +8,7 @@ namespace Dades.Models
 {
    public class Administrador : Usuari
     {
-        public Guid token;
+        
         public Administrador()
         {
 

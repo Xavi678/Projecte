@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using WebApplication3.Autenticacio;
 
 namespace GestioTeatres.Controllers
 {
@@ -23,6 +23,12 @@ namespace GestioTeatres.Controllers
             //db.Funcions.Add(new Funcio(new Teatre(new Adreça("Urgell", "Balaguer", "25310"), "liceu", 6, 8), new DateTime(1999,12,12), new TimeSpan(4, 56, 34), new TimeSpan(4, 56, 34)));
 
             
+            return View();
+        }
+
+        [Filtratge]
+        public ActionResult Main()
+        {
             return View();
         }
 

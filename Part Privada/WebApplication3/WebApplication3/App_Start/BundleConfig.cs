@@ -33,6 +33,14 @@ namespace WebApplication3
             bundles.Add(new ScriptBundle("~/bundles/edit").Include(
                 "~/Scripts/edit.js"
                 ));
+
+            bundles.Add(new ScriptBundle("~/bundles/crear").Include(
+                "~/Scripts/crearE.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/Teatre").Include(
+                "~/Scripts/crearT.js"
+                ));
         }
     }
 }

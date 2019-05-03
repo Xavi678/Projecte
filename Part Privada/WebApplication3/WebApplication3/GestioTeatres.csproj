@@ -171,6 +171,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Autenticacio\Filtratge.cs" />
     <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Models\PersonaVista.cs" />
     <Compile Include="Models\Sessio.cs" />
@@ -199,6 +200,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\crearE.js" />
+    <Content Include="Scripts\crearT.js" />
     <Content Include="Scripts\edit.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
