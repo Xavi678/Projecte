@@ -12,7 +12,7 @@ namespace Dades.Context
     {
         public PersonaContext() : base("PersonaContext")
         {
-            Database.SetInitializer<PersonaContext>(new DropCreateDatabaseAlways<PersonaContext>());
+            Database.SetInitializer<PersonaContext>(new DropCreateDatabaseIfModelChanges<PersonaContext>());
         }
 
 
