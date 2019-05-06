@@ -1,4 +1,4 @@
-package cat.almata.daw.api;
+package cat.almata.daw.models;
 
 import java.util.Date;
 

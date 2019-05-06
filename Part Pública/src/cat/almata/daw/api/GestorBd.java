@@ -11,7 +11,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
+
+import cat.almata.daw.models.Client;
+import cat.almata.daw.models.Espectacle;
 
 
 
@@ -120,6 +124,24 @@ public class GestorBd {
 		}
 		
 		return user;
+	}
+
+	public List<Espectacle> obtenirEspectacles() throws SQLException {
+		// TODO Auto-generated method stub
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		
+		String sql="Select * from espectacles ";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		
+		ResultSet rs=prs.executeQuery();
+		
+		List<Espectacle> espectacles=new ArrayList<Espectacle>();
+		
+		while(rs.next()){
+			espectacles.add(new Espectacle(rs.getInt("EspectacleID"),rs.getString("titol"),rs.getString("sinopsi"),rs.getTime("durada"),rs.getString("cartell"),rs.getString("nifDirector"),rs.getString("nifAutor")));
+		}
+		
+		return espectacles;
 	}
 	
 	}
