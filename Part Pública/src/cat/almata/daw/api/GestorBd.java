@@ -16,6 +16,7 @@ import java.util.UUID;
 
 import cat.almata.daw.models.Client;
 import cat.almata.daw.models.Espectacle;
+import cat.almata.daw.models.Funcio;
 
 
 
@@ -138,10 +139,28 @@ public class GestorBd {
 		List<Espectacle> espectacles=new ArrayList<Espectacle>();
 		
 		while(rs.next()){
-			espectacles.add(new Espectacle(rs.getInt("EspectacleID"),rs.getString("titol"),rs.getString("sinopsi"),rs.getTime("durada"),rs.getString("cartell"),rs.getString("nifDirector"),rs.getString("nifAutor")));
+			espectacles.add(new Espectacle(rs.getInt("EspectacleID"),rs.getString("titol"),rs.getString("sinopsi"),rs.getString("durada"),rs.getString("cartell"),rs.getString("nifDirector"),rs.getString("nifAutor")));
 		}
 		
 		return espectacles;
+	}
+
+	public List<Funcio> obtenirFuncions(int id) throws SQLException {
+		// TODO Auto-generated method stub
+Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		
+		String sql="Select * from funcions where espectacleId=?  ";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setInt(1,id);
+		ResultSet rs=prs.executeQuery();
+		
+		List<Funcio> funcions=new ArrayList<Funcio>();
+		
+		while(rs.next()){
+			funcions.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),rs.getDate("data"),rs.getString("horaInici"),rs.getString("horaFi")));
+		}
+		
+		return funcions;
 	}
 	
 	}

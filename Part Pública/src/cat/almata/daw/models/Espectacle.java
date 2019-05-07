@@ -7,12 +7,12 @@ public class Espectacle {
 	private int EspectacleID;
 	private String titol;
 	private String sinopsi;
-	private Time durada;
+	private String durada;
 	private String cartell;
 	private String nifDirector;
 	private String nifAutor;
 	
-	public Espectacle(int espectacleID, String titol, String sinopsi, Time durada, String cartell, String nifDirector,
+	public Espectacle(int espectacleID, String titol, String sinopsi, String durada, String cartell, String nifDirector,
 			String nifAutor) {
 		super();
 		EspectacleID = espectacleID;
@@ -50,11 +50,11 @@ public class Espectacle {
 		this.sinopsi = sinopsi;
 	}
 
-	public Time getDurada() {
+	public String getDurada() {
 		return durada;
 	}
 
-	public void setDurada(Time durada) {
+	public void setDurada(String durada) {
 		this.durada = durada;
 	}
 

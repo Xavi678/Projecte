@@ -12,6 +12,7 @@ import javax.ws.rs.core.Response;
 
 import cat.almata.daw.models.Client;
 import cat.almata.daw.models.Espectacle;
+import cat.almata.daw.models.Funcio;
 
 
 
@@ -56,6 +57,28 @@ public class Servei {
 			// Token t=new Token(token, new Date());
 
 			GenericEntity<List<Espectacle>> genericEntity = new GenericEntity<List<Espectacle>>(espectacles) {
+			};
+
+			
+			return Response.ok(genericEntity, MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
+	
+	@Path("/getFuncions")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response obtenirFuncions(@QueryParam("id") String id ) {
+		try {
+
+			// System.out.println();
+			
+			List<Funcio> funcions = db.obtenirFuncions(Integer.parseInt(id));
+
+			// Token t=new Token(token, new Date());
+
+			GenericEntity<List<Funcio>> genericEntity = new GenericEntity<List<Funcio>>(funcions) {
 			};
 
 			
