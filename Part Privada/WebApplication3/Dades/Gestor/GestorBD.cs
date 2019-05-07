@@ -78,6 +78,18 @@ namespace Dades.Gestor
             return db.Funcions.Include(f => f.Espectacle).Include(f => f.Teatre).ToList();
         }
 
+        public bool ExisteixEmail(string email)
+        {
+             if(db.Persones.Where(e => e.Equals(email)).Count() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public IEnumerable getListDirector()
         {
             return db.Persones.Select(s => s).Where(s => s is Director);

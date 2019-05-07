@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\BDIniciar.cs" />
     <Compile Include="Context\PersonaContext.cs" />
     <Compile Include="Gestor\GestorBD.cs" />
     <Compile Include="Models\Administrador.cs" />

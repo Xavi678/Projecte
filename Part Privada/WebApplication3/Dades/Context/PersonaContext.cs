@@ -12,10 +12,10 @@ namespace Dades.Context
     {
         public PersonaContext() : base("PersonaContext")
         {
-            Database.SetInitializer<PersonaContext>(new DropCreateDatabaseIfModelChanges<PersonaContext>());
+            Database.SetInitializer<PersonaContext>(new BDIniciar());
         }
 
-
+        
 
         public DbSet<Persona> Persones { get; set; }
         public DbSet<Adreça> Adreces { get; set; }
@@ -25,9 +25,10 @@ namespace Dades.Context
         public DbSet<Espectacle> Espectacles { get; set; }
         public DbSet<Compra> Compres { get; set; }
         public DbSet<Usuari> Usuaris { get; set; }
+       // public DbSet<Client> Clients { get; set; }
 
-       /* public System.Data.Entity.DbSet<Dades.Models.Autor> Autors { get; set; }
-        public System.Data.Entity.DbSet<Dades.Models.Director> Directors { get; set; }*/
+        /* public System.Data.Entity.DbSet<Dades.Models.Autor> Autors { get; set; }
+         public System.Data.Entity.DbSet<Dades.Models.Director> Directors { get; set; }*/
     }
           
 }

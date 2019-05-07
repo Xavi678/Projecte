@@ -39,7 +39,6 @@ namespace WebApplication3.Models
             Localitat = localitat;
             Codipostal = codipostal;
         }
-
         public PersonaVista(string nIF, string nom, int edat, string email, string password, string comarca, string localitat, string codipostal, TipusPersona tipus)
         {
             NIF = nIF;
@@ -51,6 +50,20 @@ namespace WebApplication3.Models
             Localitat = localitat;
             Codipostal = codipostal;
             this.tipus = tipus;
+            
+        }
+        public PersonaVista(string nIF, string nom, int edat, string email, string password, string comarca, string localitat, string codipostal, TipusPersona tipus,string cognoms)
+        {
+            NIF = nIF;
+            this.nom = nom;
+            this.edat = edat;
+            this.email = email;
+            this.password = password;
+            Comarca = comarca;
+            Localitat = localitat;
+            Codipostal = codipostal;
+            this.tipus = tipus;
+            this.Cognoms = cognoms;
         }
 
         public string NIF { get; set; }
@@ -70,6 +83,7 @@ namespace WebApplication3.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime dataNaixement { set; get; }
+        public string Cognoms { set; get; }
         public enum TipusPersona
         {
             Client,Autor, Administrador,Director

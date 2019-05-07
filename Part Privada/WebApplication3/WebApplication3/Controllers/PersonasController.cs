@@ -57,9 +57,14 @@ namespace WebApplication3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,dataNaixement,telefon,tipus")] PersonaVista persona)
+        public ActionResult Create([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,dataNaixement,telefon,tipus,cognoms")] PersonaVista persona)
         {
             Adreça e = new Adreça(persona.Comarca, persona.Localitat, persona.Codipostal);
+            if (bd.ExisteixEmail(persona.email))
+            {
+                ModelState.AddModelError("email", "L'email ha de ser únic");
+                return View();
+            }
             // t = new Persona();
             //int i = (int)persona.tipus;
 
@@ -70,7 +75,7 @@ namespace WebApplication3.Controllers
                     {
                         if (ModelState.IsValid)
                         {
-                            Client client = new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password,persona.telefon,persona.dataNaixement);
+                            Client client = new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password,persona.telefon,persona.dataNaixement,persona.Cognoms);
                             bd.afegirClient(client,e);
                             
                             return RedirectToAction("Index");

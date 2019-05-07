@@ -19,6 +19,7 @@ namespace Dades.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EspectacleID { get; set; }
         public string titol { get; set; }
+        [DataType(DataType.MultilineText)]
         public string sinopsi { get; set; }
         [DataType(DataType.Time)]
         public TimeSpan durada { get; set; }
