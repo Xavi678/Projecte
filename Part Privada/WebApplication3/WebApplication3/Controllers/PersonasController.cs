@@ -151,7 +151,8 @@ namespace WebApplication3.Controllers
                 }
                 else
                 {
-                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Client));
+                    Client c = bd.obtenirClientperId(id);
+                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Client,c.Cognoms));
                 }
                 }
             if (persona == null)
@@ -174,26 +175,74 @@ namespace WebApplication3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,tipus")] PersonaVista person)
+        public ActionResult Edit([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,tipus,telefon,dataNaixement")] PersonaVista person)
         {
-            //Persona persona = new Persona(new Adreça(p.Comarca,p.Localitat,p.Codipostal),p.NIF,p.nom,p.edat);
-            Persona tmpp = bd.obtenirPersonaperNIF(person.NIF);
-            Adreça adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
-            adreça.Comarca = person.Comarca;
-            adreça.Codipostal = person.Codipostal;
-            adreça.Localitat = person.Localitat;
-            tmpp.edat = person.edat;
-            tmpp.nom = person.nom;
-
-            
-            
-
-            
-            if (ModelState.IsValid)
+           
+            if (person.tipus == TipusPersona.Autor || person.tipus == TipusPersona.Director)
             {
-                bd.editar(tmpp, adreça);
+                //Persona persona = new Persona(new Adreça(p.Comarca,p.Localitat,p.Codipostal),p.NIF,p.nom,p.edat);
+                Persona tmpp = bd.obtenirPersonaperNIF(person.NIF);
+                Adreça adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
+                adreça.Comarca = person.Comarca;
+                adreça.Codipostal = person.Codipostal;
+                adreça.Localitat = person.Localitat;
+                tmpp.edat = person.edat;
+                tmpp.nom = person.nom;
                 
-                return RedirectToAction("Index");
+
+
+
+
+                if (ModelState.IsValid)
+                {
+                    bd.editar(tmpp, adreça);
+
+                    return RedirectToAction("Index");
+                }
+            }else if(person.tipus == TipusPersona.Administrador)
+            {
+                Administrador tmpp = bd.obtenirAdminperId(person.NIF);
+                Adreça adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
+                adreça.Comarca = person.Comarca;
+                adreça.Codipostal = person.Codipostal;
+                adreça.Localitat = person.Localitat;
+                tmpp.edat = person.edat;
+                tmpp.nom = person.nom;
+                tmpp.email = person.email;
+                tmpp.password = person.password;
+                tmpp.telefon = person.telefon;
+                tmpp.dataNaixement = person.dataNaixement;
+
+                if (ModelState.IsValid)
+                {
+                    bd.editar(tmpp, adreça);
+
+                    return RedirectToAction("Index");
+                }
+
+            }
+            else
+            {
+                Client tmpp = bd.obtenirClientperId(person.NIF);
+                Adreça adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
+                adreça.Comarca = person.Comarca;
+                adreça.Codipostal = person.Codipostal;
+                adreça.Localitat = person.Localitat;
+                tmpp.edat = person.edat;
+                tmpp.nom = person.nom;
+                tmpp.email = person.email;
+                tmpp.password = person.password;
+                tmpp.telefon = person.telefon;
+                tmpp.dataNaixement = person.dataNaixement;
+                tmpp.Cognoms = person.Cognoms;
+
+                if (ModelState.IsValid)
+                {
+                    bd.editar(tmpp, adreça);
+
+                    return RedirectToAction("Index");
+                }
+
             }
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
             return View();

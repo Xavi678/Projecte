@@ -2,7 +2,9 @@ package cat.almata.daw.api;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -79,6 +81,29 @@ public class Servei {
 			// Token t=new Token(token, new Date());
 
 			GenericEntity<List<Funcio>> genericEntity = new GenericEntity<List<Funcio>>(funcions) {
+			};
+
+			
+			return Response.ok(genericEntity, MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
+	
+	@Path("/addUser")
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response inserirUsuari(Client client ) {
+		try {
+
+			// System.out.println();
+			
+			Boolean inserit= db.insert(client);
+
+			// Token t=new Token(token, new Date());
+
+			GenericEntity<Boolean> genericEntity = new GenericEntity<Boolean>(inserit) {
 			};
 
 			

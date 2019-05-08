@@ -25,7 +25,8 @@ namespace Dades.Context
         public DbSet<Espectacle> Espectacles { get; set; }
         public DbSet<Compra> Compres { get; set; }
         public DbSet<Usuari> Usuaris { get; set; }
-       // public DbSet<Client> Clients { get; set; }
+        public DbSet<Administrador> administradors { get; set; }
+        // public DbSet<Client> Clients { get; set; }
 
         /* public System.Data.Entity.DbSet<Dades.Models.Autor> Autors { get; set; }
          public System.Data.Entity.DbSet<Dades.Models.Director> Directors { get; set; }*/

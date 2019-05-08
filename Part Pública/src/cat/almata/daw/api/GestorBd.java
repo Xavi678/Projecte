@@ -162,5 +162,36 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		
 		return funcions;
 	}
+
+	public Boolean insert(Client client) throws SQLException {
+		// TODO Auto-generated method stub
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		
+		String sql="Insert into persones values(?,?,?,?,?,?,?,?,?,?) ";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setString(1,client.getNIF());
+		prs.setString(2,client.getNom());
+		prs.setInt(3,client.getEdat());
+		prs.setInt(4,1);
+		prs.setString(5, client.getEmail());
+		prs.setString(6, client.getPassword());
+		prs.setInt(7, client.getTelefon());
+		prs.setDate(8, (java.sql.Date) client.getDataNaixement());
+		prs.setString(9, client.getCognoms());
+		prs.setString(10, "Client");
+		int rs=prs.executeUpdate();
+		
+		if(rs==0) {
+			
+			return false;
+		}else {
+			return true;
+		}
+		
+		
+		
+		
+		
+	}
 	
 	}

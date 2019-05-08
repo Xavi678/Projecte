@@ -19,7 +19,31 @@ public class Client {
 	private String password;
 	private Date dataNaixement;
 	private int telefon;
+	private String cognoms;
 	
+	
+	
+	
+	
+	
+	public Client(String nIF, String nom, int edat, String email, String password, Date dataNaixement, int telefon,
+			String cognoms) {
+		super();
+		NIF = nIF;
+		this.nom = nom;
+		this.edat = edat;
+		this.email = email;
+		this.password = password;
+		this.dataNaixement = dataNaixement;
+		this.telefon = telefon;
+		this.cognoms = cognoms;
+	}
+	public String getCognoms() {
+		return cognoms;
+	}
+	public void setCognoms(String cognoms) {
+		this.cognoms = cognoms;
+	}
 	public Client(String nIF, String nom, int edat, String email, String password, Date dataNaixement, int telefon) {
 		super();
 		NIF = nIF;

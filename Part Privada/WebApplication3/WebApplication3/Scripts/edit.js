@@ -10,7 +10,19 @@
 
 $(document).ready(function () {
 
-    alert($('select').val());
+    if ($("#tipus").val() == "Autor" || $("#tipus").val() == "Director") {
+        $("#divemail").hide();
+        $("#divpassword").hide();
+        $("#divcognoms").hide();
+        $("#divdata").hide();
+        $("#divtelefon").hide();
+    } else if ($("#tipus").val() == "Administrador") {
+        
+        $("#divcognoms").hide();
+    }
+
+
+    /*alert($('select').val());
 
     if ($('select').val() == 1 || $('select').val() == 3) {
         $("#divemail").hide();
@@ -18,5 +30,5 @@ $(document).ready(function () {
     } else {
         $("#divemail").show()
         $("#divpassword").show();
-    }
+    }*/
 })

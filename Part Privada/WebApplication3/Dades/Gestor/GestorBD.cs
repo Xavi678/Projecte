@@ -238,6 +238,10 @@ namespace Dades.Gestor
             return db.Usuaris.Find(id);
         }
 
+        public Client obtenirClientperId(string id)
+        {
+            return db.Clients.Find(id);
+        }
         public void borrarTeatre(Teatre teatre)
         {
             db.Teatres.Remove(teatre);
@@ -247,6 +251,11 @@ namespace Dades.Gestor
         public Persona obtenirPersonaperNIF(string nIF)
         {
             return db.Persones.Select(p => p).Where(p => p.NIF.Equals(nIF)).FirstOrDefault();
+        }
+
+        public Administrador obtenirAdminperId(string nIF)
+        {
+            return db.administradors.Find(nIF);
         }
     }
 }
