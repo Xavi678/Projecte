@@ -66,6 +66,19 @@ namespace WebApplication3.Models
             this.Cognoms = cognoms;
         }
 
+        public PersonaVista(string nIF, string nom, int edat, string email, string password, string comarca, string localitat, string codipostal, TipusPersona tipus, int telefon, DateTime dataNaixement) : this(nIF, nom, edat, email, password, comarca, localitat, codipostal, tipus)
+        {
+            this.telefon = telefon;
+            this.dataNaixement = dataNaixement;
+        }
+
+        public PersonaVista(string nIF, string nom, int edat, string email, string password, string comarca, string localitat, string codipostal, TipusPersona tipus, int telefon, DateTime dataNaixement, string cognoms) : this(nIF, nom, edat, email, password, comarca, localitat, codipostal, tipus)
+        {
+            this.telefon = telefon;
+            this.dataNaixement = dataNaixement;
+            Cognoms = cognoms;
+        }
+
         public string NIF { get; set; }
         public string nom { get; set; }
         public int edat { get; set; }

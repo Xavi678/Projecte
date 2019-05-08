@@ -147,12 +147,12 @@ namespace WebApplication3.Controllers
                 if (u is Administrador)
                 {
 
-                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Administrador));
+                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Administrador,u.telefon,u.dataNaixement));
                 }
                 else
                 {
                     Client c = bd.obtenirClientperId(id);
-                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Client,c.Cognoms));
+                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Client,c.telefon,c.dataNaixement,c.Cognoms));
                 }
                 }
             if (persona == null)
@@ -175,7 +175,7 @@ namespace WebApplication3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,tipus,telefon,dataNaixement")] PersonaVista person)
+        public ActionResult Edit([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,tipus,telefon,dataNaixement,Cognoms")] PersonaVista person)
         {
            
             if (person.tipus == TipusPersona.Autor || person.tipus == TipusPersona.Director)
