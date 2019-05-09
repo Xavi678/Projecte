@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-import cat.almata.daw.models.Client;
+import cat.almata.daw.models.UsuariClient;
 import cat.almata.daw.models.Espectacle;
 import cat.almata.daw.models.Funcio;
 
@@ -103,7 +103,7 @@ public class GestorBd {
 		this.userPasswd = userPasswd;
 	}
 
-	public Client autenticar(String email, String passwd) throws SQLException {
+	public UsuariClient autenticar(String email, String passwd) throws SQLException {
 		
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
 		//ArrayList<Producte> productes=new ArrayList<Producte>();
@@ -115,10 +115,10 @@ public class GestorBd {
 		
 		ResultSet rs=prs.executeQuery();
 		
-		Client user=null;
+		UsuariClient user=null;
 		while(rs.next()) {
 			//productes.add(new Producte(rs.getInt("id"),rs.getString("nom"),rs.getInt("disponibilitat"),rs.getString("descripcio"),rs.getInt("preu"),rs.getString("propietari"),rs.getString("data")));
-			user= new Client(rs.getString("NIF"),rs.getString("nom"),rs.getInt("edat"),rs.getString("email"),rs.getString("password"),rs.getDate("dataNaixement"),rs.getInt("telefon"));
+			user= new UsuariClient(rs.getString("NIF"),rs.getString("nom"),rs.getInt("edat"),rs.getString("email"),rs.getString("password"),rs.getInt("telefon"),rs.getString("cognoms"));
 			
 			
 	
@@ -163,7 +163,7 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		return funcions;
 	}
 
-	public Boolean insert(Client client) throws SQLException {
+	public Boolean insert(UsuariClient client) throws SQLException {
 		// TODO Auto-generated method stub
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
 		
@@ -176,7 +176,7 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		prs.setString(5, client.getEmail());
 		prs.setString(6, client.getPassword());
 		prs.setInt(7, client.getTelefon());
-		prs.setDate(8, (java.sql.Date) client.getDataNaixement());
+		prs.setString(8,  "2012 12 12");
 		prs.setString(9, client.getCognoms());
 		prs.setString(10, "Client");
 		int rs=prs.executeUpdate();

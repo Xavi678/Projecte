@@ -12,7 +12,7 @@ import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import cat.almata.daw.models.Client;
+import cat.almata.daw.models.UsuariClient;
 import cat.almata.daw.models.Espectacle;
 import cat.almata.daw.models.Funcio;
 
@@ -31,11 +31,11 @@ public class Servei {
 
 			// System.out.println();
 
-			Client client = db.autenticar(email, passwd);
+			UsuariClient client = db.autenticar(email, passwd);
 
 			// Token t=new Token(token, new Date());
 
-			GenericEntity<Client> genericEntity = new GenericEntity<Client>(client) {
+			GenericEntity<UsuariClient> genericEntity = new GenericEntity<UsuariClient>(client) {
 			};
 
 			
@@ -94,7 +94,7 @@ public class Servei {
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response inserirUsuari(Client client ) {
+	public Response inserirUsuari(UsuariClient client ) {
 		try {
 
 			// System.out.println();
