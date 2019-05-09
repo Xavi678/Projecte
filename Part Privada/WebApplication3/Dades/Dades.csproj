@@ -79,6 +79,7 @@
     <Compile Include="Models\Director.cs" />
     <Compile Include="Models\Espectacle.cs" />
     <Compile Include="Models\Funcio.cs" />
+    <Compile Include="Models\mpiscatalunya.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Teatre.cs" />
     <Compile Include="Models\Usuari.cs" />

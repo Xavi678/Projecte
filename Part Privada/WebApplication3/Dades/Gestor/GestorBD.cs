@@ -58,6 +58,11 @@ namespace Dades.Gestor
             return db.Persones.Include(p => p.Adreça).ToList(); 
         }
 
+        public IEnumerable obtenirMunicipis()
+        {
+            return db.mpiscatalunya.Select(m => m.Nom);
+        }
+
         public Persona obtenirPersonaperId(string id)
         {
             return db.Persones.Find(id);
@@ -78,18 +83,16 @@ namespace Dades.Gestor
             return db.Funcions.Include(f => f.Espectacle).Include(f => f.Teatre).ToList();
         }
 
-        public bool ExisteixEmail(string email)
+        public bool ExisteixEmail(string Email)
         {
-             if(db.Persones.Where(e => e.Equals(email)).Count() > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return db.Usuaris.Where(e => e.email.Equals(Email)).Count() > 0 ? true : false;
         }
 
+        public bool ExisteixEmail(string Nif,string Email)
+        {
+            
+            return db.Usuaris.Where(e => e.email.Equals(Email)).AsEnumerable().SkipWhile(e => e.NIF.Equals(Nif)).Count() > 0 ? true : false;
+        }
         public IEnumerable getListDirector()
         {
             return db.Persones.Select(s => s).Where(s => s is Director);

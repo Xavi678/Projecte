@@ -40,7 +40,7 @@ public class Servei {
 
 			
 			return Response.ok(genericEntity, MediaType.APPLICATION_JSON).build();
-		} catch (Exception e) {
+		}catch (Exception e) {
 			return Response.status(Response.Status.BAD_REQUEST).build();
 		}
 	}

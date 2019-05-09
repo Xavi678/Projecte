@@ -17,6 +17,7 @@ import java.util.UUID;
 import cat.almata.daw.models.UsuariClient;
 import cat.almata.daw.models.Espectacle;
 import cat.almata.daw.models.Funcio;
+import cat.almata.daw.models.Teatre;
 
 
 
@@ -149,7 +150,7 @@ public class GestorBd {
 		// TODO Auto-generated method stub
 Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
 		
-		String sql="Select * from funcions where espectacleId=?  ";
+		String sql="Select * from funcions as f,teatres as t where espectacleId=?  and f.teatreID=t.ID;";
 		PreparedStatement prs=conn.prepareStatement(sql);
 		prs.setInt(1,id);
 		ResultSet rs=prs.executeQuery();
@@ -157,7 +158,7 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		List<Funcio> funcions=new ArrayList<Funcio>();
 		
 		while(rs.next()){
-			funcions.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),rs.getDate("data"),rs.getString("horaInici"),rs.getString("horaFi")));
+			funcions.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),rs.getDate("data"),rs.getString("horaInici"),rs.getString("horaFi"), new Teatre(rs.getInt(7),rs.getString("Nom"),rs.getInt("Files"),rs.getInt("Columnes"),rs.getInt("AdreçaID"))));
 		}
 		
 		return funcions;
@@ -167,7 +168,17 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		// TODO Auto-generated method stub
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
 		
-		String sql="Insert into persones values(?,?,?,?,?,?,?,?,?,?) ";
+		String sql="INSERT INTO `gestioteatres`.`persones`\r\n" + 
+				"(`NIF`,\r\n" + 
+				"`nom`,\r\n" + 
+				"`edat`,\r\n" + 
+				"`AdreçaID`,\r\n" + 
+				"`email`,\r\n" + 
+				"`password`,\r\n" + 
+				"`telefon`,\r\n" + 
+				"`dataNaixement`,\r\n" + 
+				"`Cognoms`,\r\n" + 
+				"`Discriminator`) values(?,?,?,?,?,?,?,'2012-12-12',?,?)";
 		PreparedStatement prs=conn.prepareStatement(sql);
 		prs.setString(1,client.getNIF());
 		prs.setString(2,client.getNom());
@@ -176,9 +187,9 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		prs.setString(5, client.getEmail());
 		prs.setString(6, client.getPassword());
 		prs.setInt(7, client.getTelefon());
-		prs.setString(8,  "2012 12 12");
-		prs.setString(9, client.getCognoms());
-		prs.setString(10, "Client");
+		//prs.setDate(8,  "2012-12-12");
+		prs.setString(8, client.getCognoms());
+		prs.setString(9, "Client");
 		int rs=prs.executeUpdate();
 		
 		if(rs==0) {

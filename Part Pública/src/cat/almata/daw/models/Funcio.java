@@ -10,10 +10,13 @@ public class Funcio {
 	private Date data;
 	private String HoraInici;
 	private String HoraFi;
+	private Teatre teatre;
 	
+	public Funcio() {
+		
+	}
 	
-	
-	public Funcio(int iD, int espectacleID, int teatreID, Date data, String horaInici, String horaFi) {
+	public Funcio(int iD, int espectacleID, int teatreID, Date data, String horaInici, String horaFi, Teatre teatre) {
 		super();
 		ID = iD;
 		EspectacleID = espectacleID;
@@ -21,7 +24,23 @@ public class Funcio {
 		this.data = data;
 		HoraInici = horaInici;
 		HoraFi = horaFi;
+		this.teatre=teatre;
 	}
+	
+	
+	
+	public Teatre getTeatre() {
+		return teatre;
+	}
+
+
+
+	public void setTeatre(Teatre teatre) {
+		this.teatre = teatre;
+	}
+
+
+
 	public int getID() {
 		return ID;
 	}
