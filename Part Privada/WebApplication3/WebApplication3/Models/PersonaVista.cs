@@ -101,5 +101,7 @@ namespace WebApplication3.Models
         {
             Client,Autor, Administrador,Director
         }
+
+        
     }
 }

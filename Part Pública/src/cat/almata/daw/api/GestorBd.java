@@ -204,5 +204,24 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		
 		
 	}
+
+	public Funcio obtenirFuncio(int id) throws SQLException {
+		// TODO Auto-generated method stub
+Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		
+		String sql="select * from funcions as f, teatres as t where f.ID=? and f.teatreID=t.ID;";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setInt(1,id);
+		ResultSet rs=prs.executeQuery();
+		
+		Funcio funcions=null;
+		
+		while(rs.next()){
+			funcions=new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),rs.getDate("data"),rs.getString("horaInici"),rs.getString("horaFi"), new Teatre(rs.getInt(7),rs.getString("Nom"),rs.getInt("Files"),rs.getInt("Columnes"),rs.getInt("AdreçaID")));
+		}
+		
+		return funcions;
+		
+	}
 	
 	}

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using Dades.Context;
@@ -11,6 +13,7 @@ using Dades.Gestor;
 using Dades.Models;
 using WebApplication3.Autenticacio;
 using WebApplication3.Models;
+using WebApplication3.Validador;
 using static WebApplication3.Models.PersonaVista;
 
 namespace WebApplication3.Controllers
@@ -59,10 +62,12 @@ namespace WebApplication3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+    
         public ActionResult Create([Bind(Include = "NIF,nom,edat,email,password,Localitat,dataNaixement,telefon,tipus,cognoms")] PersonaVista persona)
         {
             try
             {
+                //Validation validation = new Validation();
                 mpiscatalunya municipi = bd.obtenirMunicipi(persona.Localitat);
                 Adreça e = new Adreça(municipi.Nomcomarca, persona.Localitat, municipi.Codi);
 
@@ -80,8 +85,10 @@ namespace WebApplication3.Controllers
                                 ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
                                 return View();
                             }
+
                             if (ModelState.IsValid)
                             {
+
                                 Client client = new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password, persona.telefon, persona.dataNaixement, persona.Cognoms);
                                 bd.afegirClient(client, e);
 
@@ -98,19 +105,23 @@ namespace WebApplication3.Controllers
                                 ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
                                 return View();
                             }
-                            if (ModelState.IsValid)
-                            {
+
+
+                            //camps.Select(e => e);
+                            if  (!String.IsNullOrEmpty( persona.NIF) && !String.IsNullOrEmpty(persona.nom) && persona.edat!=0 && !String.IsNullOrEmpty( persona.email) && String.IsNullOrEmpty(persona.password) && persona.telefon!=0 && persona.dataNaixement!= default(DateTime)) {
                                 Administrador admin = new Administrador(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password, persona.telefon, persona.dataNaixement);
 
                                 bd.afegirAdministrador(admin, e);
 
                                 return RedirectToAction("Index");
                             }
+                            
                             break;
                         }
                     case TipusPersona.Director:
                         {
-                            if (ModelState.IsValid)
+
+                            if (!String.IsNullOrEmpty(persona.NIF) && !String.IsNullOrEmpty(persona.nom) && persona.edat != 0)
                             {
                                 Director director = new Director(e, persona.NIF, persona.nom, persona.edat);
                                 bd.afegirDirector(director, e);
@@ -121,12 +132,13 @@ namespace WebApplication3.Controllers
                         }
                     case TipusPersona.Autor:
                         {
-                            if (ModelState.IsValid)
+                            if (!String.IsNullOrEmpty(persona.NIF) && !String.IsNullOrEmpty(persona.nom) && persona.edat != 0)
                             {
                                 Autor autor = new Autor(e, persona.NIF, persona.nom, persona.edat);
                                 bd.afegirAutor(autor, e);
                                 return RedirectToAction("Index");
                             }
+                            
                             break;
                         }
                     default: break;
@@ -141,6 +153,7 @@ namespace WebApplication3.Controllers
 
                 //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
                 ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
+                ModelState.AddModelError("", "Omple tots els camps");
                 return View();
             }catch(Exception e)
             {

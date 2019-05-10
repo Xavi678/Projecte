@@ -22,7 +22,7 @@ public class UsuariClient implements Serializable {
 	private int edat;
 	private String email;
 	private String password;
-	//private Date dataNaixement;
+	private Date dataNaixement;
 	private int telefon;
 	private String cognoms;
 	
@@ -80,7 +80,7 @@ public class UsuariClient implements Serializable {
 	public void setCognoms(String cognoms) {
 		this.cognoms = cognoms;
 	}
-	/*@XmlElement(name="dataNaixement")
+	@XmlElement(name="dataNaixement")
 	public String getDataNaixement() {
 		return sdf.format(this.dataNaixement);
 	}
@@ -90,7 +90,7 @@ public class UsuariClient implements Serializable {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-	}*/
+	}
 	@XmlElement(name="telefon")
 	public int getTelefon() {
 		return telefon;

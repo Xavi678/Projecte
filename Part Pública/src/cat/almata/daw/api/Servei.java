@@ -90,6 +90,29 @@ public class Servei {
 		}
 	}
 	
+	
+	@Path("/getFuncio")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response obtenirFuncio(@QueryParam("id") String id ) {
+		try {
+
+			// System.out.println();
+			
+			Funcio funcions = db.obtenirFuncio(Integer.parseInt(id));
+
+			// Token t=new Token(token, new Date());
+
+			GenericEntity<Funcio> genericEntity = new GenericEntity<Funcio>(funcions) {
+			};
+
+			
+			return Response.ok(genericEntity, MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
+	
 	@Path("/addUser")
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
@@ -112,6 +135,8 @@ public class Servei {
 			return Response.status(Response.Status.BAD_REQUEST).build();
 		}
 	}
+	
+	
 	/*@Path("/A")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)

@@ -51,5 +51,10 @@ namespace Dades.Models
             Codipostal = municipi.Codi;
             Localitat = municipi.Nom;
         }
+
+        public static implicit operator Adreça(bool v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

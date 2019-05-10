@@ -56,7 +56,8 @@ namespace WebApplication3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Nom,Files,Columnes,Comarca,Localitat,Codipostal")] TeatreVista teatre)
         {
-            Adreça e = new Adreça(teatre.Comarca, teatre.Localitat, teatre.Codipostal);
+            mpiscatalunya municipi = bd.obtenirMunicipi(teatre.Localitat);
+            Adreça e = new Adreça(municipi.Nomcomarca, teatre.Localitat, municipi.Codi);
             Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);
             if (ModelState.IsValid)
             {
@@ -110,14 +111,14 @@ namespace WebApplication3.Controllers
         {
             //Adreça e = new Adreça(teatre.Comarca, teatre.Localitat, teatre.Codipostal);
             //Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);
+            mpiscatalunya municipi = bd.obtenirMunicipi(teatre.Localitat);
             Teatre t=   bd.obtenirTeatreperId(teatre.ID);
-            Adreça adreça= bd.obtenirAdreçaperId(t.AdreçaID);
+            Adreça adreça = bd.obtenirAdreçaperId(t.AdreçaID);
+            adreça.editarAdreça(municipi);
             t.Files = teatre.Files;
             t.Columnes = teatre.Columnes;
             t.Nom = teatre.Nom;
-            adreça.Comarca = teatre.Comarca;
-            adreça.Codipostal = teatre.Codipostal;
-            adreça.Localitat = teatre.Localitat;
+            
 
 
 
