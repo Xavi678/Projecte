@@ -83,6 +83,11 @@ namespace Dades.Gestor
             return db.Funcions.Include(f => f.Espectacle).Include(f => f.Teatre).ToList();
         }
 
+        public mpiscatalunya obtenirMunicipi(string localitat)
+        {
+            return db.mpiscatalunya.Select(l => l).Where(l =>l.Nom.Equals(localitat)).FirstOrDefault();
+        }
+
         public bool ExisteixEmail(string Email)
         {
             return db.Usuaris.Where(e => e.email.Equals(Email)).Count() > 0 ? true : false;

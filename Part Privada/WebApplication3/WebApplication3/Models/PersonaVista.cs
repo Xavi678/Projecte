@@ -82,7 +82,7 @@ namespace WebApplication3.Models
         public string NIF { get; set; }
         public string nom { get; set; }
         public int edat { get; set; }
-
+      
         public string email { get; set; }
         public string password { get; set; }
 

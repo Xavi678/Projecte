@@ -82,7 +82,7 @@ namespace WebApplication3.Controllers
             {
                 return HttpNotFound();
             }
-            TeatreVista vista = new TeatreVista(teatre.ID,teatre.Nom, teatre.Files, teatre.Columnes, teatre.Adreça.Comarca, teatre.Adreça.Localitat, teatre.Adreça.Codipostal);
+            TeatreVista vista = new TeatreVista(teatre.ID,teatre.Nom, teatre.Files, teatre.Columnes, teatre.Adreça.Comarca, teatre.Adreça.Localitat,teatre.Adreça.Codipostal);
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", teatre.AdreçaID);
             return View(vista);
         }

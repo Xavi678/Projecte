@@ -59,83 +59,95 @@ namespace WebApplication3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,dataNaixement,telefon,tipus,cognoms")] PersonaVista persona)
+        public ActionResult Create([Bind(Include = "NIF,nom,edat,email,password,Localitat,dataNaixement,telefon,tipus,cognoms")] PersonaVista persona)
         {
-            Adreça e = new Adreça(persona.Comarca, persona.Localitat, persona.Codipostal);
-           
-            // t = new Persona();
-            //int i = (int)persona.tipus;
-
-            
-            switch (persona.tipus)
+            try
             {
-                case TipusPersona.Client:
-                    {
-                        if (bd.ExisteixEmail(persona.email))
-                        {
-                            ModelState.AddModelError("email", "L'email ha de ser únic");
-                            return View();
-                        }
-                        if (ModelState.IsValid)
-                        {
-                            Client client = new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password,persona.telefon,persona.dataNaixement,persona.Cognoms);
-                            bd.afegirClient(client,e);
-                            
-                            return RedirectToAction("Index");
-                        }
-                        
-                        break;
-                    }
-                case TipusPersona.Administrador:
-                    {
-                        if (bd.ExisteixEmail(persona.email))
-                        {
-                            ModelState.AddModelError("email", "L'email ha de ser únic");
-                            return View();
-                        }
-                        if (ModelState.IsValid)
-                        {
-                            Administrador admin = new Administrador(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password,persona.telefon,persona.dataNaixement);
+                mpiscatalunya municipi = bd.obtenirMunicipi(persona.Localitat);
+                Adreça e = new Adreça(municipi.Nomcomarca, persona.Localitat, municipi.Codi);
 
-                            bd.afegirAdministrador(admin,e);
-                            
-                            return RedirectToAction("Index");
-                        }
-                        break;
-                    }
-                case TipusPersona.Director:
-                    {
-                        if (ModelState.IsValid)
+                // t = new Persona();
+                //int i = (int)persona.tipus;
+
+
+                switch (persona.tipus)
+                {
+                    case TipusPersona.Client:
                         {
-                            Director director = new Director(e, persona.NIF, persona.nom, persona.edat);
-                            bd.afegirDirector(director,e);
-                            
-                            return RedirectToAction("Index");
+                            if (bd.ExisteixEmail(persona.email))
+                            {
+                                ModelState.AddModelError("email", "L'email ha de ser únic");
+                                ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
+                                return View();
+                            }
+                            if (ModelState.IsValid)
+                            {
+                                Client client = new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password, persona.telefon, persona.dataNaixement, persona.Cognoms);
+                                bd.afegirClient(client, e);
+
+                                return RedirectToAction("Index");
+                            }
+
+                            break;
                         }
-                        break;
-                    }
-                case TipusPersona.Autor:
-                    {
-                        if (ModelState.IsValid)
+                    case TipusPersona.Administrador:
                         {
-                            Autor autor = new Autor(e, persona.NIF, persona.nom, persona.edat);
-                            bd.afegirAutor(autor,e);
-                            return RedirectToAction("Index");
+                            if (bd.ExisteixEmail(persona.email))
+                            {
+                                ModelState.AddModelError("email", "L'email ha de ser únic");
+                                ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
+                                return View();
+                            }
+                            if (ModelState.IsValid)
+                            {
+                                Administrador admin = new Administrador(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password, persona.telefon, persona.dataNaixement);
+
+                                bd.afegirAdministrador(admin, e);
+
+                                return RedirectToAction("Index");
+                            }
+                            break;
                         }
-                        break;
-                    }
-                default: break;
+                    case TipusPersona.Director:
+                        {
+                            if (ModelState.IsValid)
+                            {
+                                Director director = new Director(e, persona.NIF, persona.nom, persona.edat);
+                                bd.afegirDirector(director, e);
+
+                                return RedirectToAction("Index");
+                            }
+                            break;
+                        }
+                    case TipusPersona.Autor:
+                        {
+                            if (ModelState.IsValid)
+                            {
+                                Autor autor = new Autor(e, persona.NIF, persona.nom, persona.edat);
+                                bd.afegirAutor(autor, e);
+                                return RedirectToAction("Index");
+                            }
+                            break;
+                        }
+                    default: break;
+                }
+                /*if (ModelState.IsValid)
+                {
+
+                    db.Persones.Add(persona);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }*/
+
+                //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
+                ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
+                return View();
+            }catch(Exception e)
+            {
+                ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
+                ModelState.AddModelError("", "Hi ha hagut un error");
+                return View();
             }
-            /*if (ModelState.IsValid)
-            {
-                
-                db.Persones.Add(persona);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }*/
-
-            //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
-            return View();
         }
 
         // GET: Personas/Edit/5
@@ -146,8 +158,14 @@ namespace WebApplication3.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Persona persona = bd.obtenirPersonaperId(id);
-            
-            if(persona is Usuari)
+
+            if (persona == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
+            if (persona is Usuari)
             {
                 
                Usuari u= bd.obtenirUsuariperId(id);
@@ -163,10 +181,7 @@ namespace WebApplication3.Controllers
                     return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Client,c.telefon,c.dataNaixement,c.Cognoms));
                 }
                 }
-            if (persona == null)
-            {
-                return HttpNotFound();
-            }
+           
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
             if (persona is Autor)
             {
@@ -185,83 +200,77 @@ namespace WebApplication3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "NIF,nom,edat,email,password,Comarca,Localitat,Codipostal,tipus,telefon,dataNaixement,Cognoms")] PersonaVista person)
         {
-           
-            if (person.tipus == TipusPersona.Autor || person.tipus == TipusPersona.Director)
+            if (ModelState.IsValid)
             {
-                //Persona persona = new Persona(new Adreça(p.Comarca,p.Localitat,p.Codipostal),p.NIF,p.nom,p.edat);
-                Persona tmpp = bd.obtenirPersonaperNIF(person.NIF);
-                Adreça adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
-                adreça.Comarca = person.Comarca;
-                adreça.Codipostal = person.Codipostal;
-                adreça.Localitat = person.Localitat;
-                tmpp.edat = person.edat;
-                tmpp.nom = person.nom;
-                
-
-
-
-
-                if (ModelState.IsValid)
+                Adreça adreça = null;
+                mpiscatalunya municipi = bd.obtenirMunicipi(person.Localitat);
+                if (person.tipus == TipusPersona.Autor || person.tipus == TipusPersona.Director)
                 {
+                    //Persona persona = new Persona(new Adreça(p.Comarca,p.Localitat,p.Codipostal),p.NIF,p.nom,p.edat);
+                    Persona tmpp = bd.obtenirPersonaperNIF(person.NIF);
+
+                    tmpp.edat = person.edat;
+                    tmpp.nom = person.nom;
+                    adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
+                    adreça.editarAdreça(municipi);
+
                     bd.editar(tmpp, adreça);
 
                     return RedirectToAction("Index");
-                }
-            }else if(person.tipus == TipusPersona.Administrador)
-            {
-                if(bd.ExisteixEmail(person.NIF, person.email)){
-                    ModelState.AddModelError("email", "L'email ha de ser únic");
-                    return View();
-                }
-                Administrador tmpp = bd.obtenirAdminperId(person.NIF);
-                Adreça adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
-                adreça.Comarca = person.Comarca;
-                adreça.Codipostal = person.Codipostal;
-                adreça.Localitat = person.Localitat;
-                tmpp.edat = person.edat;
-                tmpp.nom = person.nom;
-                tmpp.email = person.email;
-                tmpp.password = person.password;
-                tmpp.telefon = person.telefon;
-                tmpp.dataNaixement = person.dataNaixement;
 
-                if (ModelState.IsValid)
+                }
+                else if (person.tipus == TipusPersona.Administrador)
                 {
-                    bd.editar(tmpp, adreça);
+                    if (bd.ExisteixEmail(person.NIF, person.email))
+                    {
+                        ModelState.AddModelError("email", "L'email ha de ser únic");
+                        return View();
+                    }
+                    Administrador tmpp = bd.obtenirAdminperId(person.NIF);
+                    adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
+                    adreça.editarAdreça(municipi);
+                    tmpp.edat = person.edat;
+                    tmpp.nom = person.nom;
+                    tmpp.email = person.email;
+                    tmpp.password = person.password;
+                    tmpp.telefon = person.telefon;
+                    tmpp.dataNaixement = person.dataNaixement;
 
-                    return RedirectToAction("Index");
+                    
+                        bd.editar(tmpp, adreça);
+
+                        return RedirectToAction("Index");
+                    
+
                 }
-
-            }
-            else
-            {
-                if (bd.ExisteixEmail(person.NIF, person.email))
+                else
                 {
-                    ModelState.AddModelError("email", "L'email ha de ser únic");
-                    return View();
+                    if (bd.ExisteixEmail(person.NIF, person.email))
+                    {
+                        ModelState.AddModelError("email", "L'email ha de ser únic");
+                        return View();
+                    }
+                    Client tmpp = bd.obtenirClientperId(person.NIF);
+                    adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
+                    adreça.editarAdreça(municipi);
+                    tmpp.edat = person.edat;
+                    tmpp.nom = person.nom;
+                    tmpp.email = person.email;
+                    tmpp.password = person.password;
+                    tmpp.telefon = person.telefon;
+                    tmpp.dataNaixement = person.dataNaixement;
+                    tmpp.Cognoms = person.Cognoms;
+
+                    
+                        bd.editar(tmpp, adreça);
+
+                        return RedirectToAction("Index");
+                    
+
                 }
-                Client tmpp = bd.obtenirClientperId(person.NIF);
-                Adreça adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
-                adreça.Comarca = person.Comarca;
-                adreça.Codipostal = person.Codipostal;
-                adreça.Localitat = person.Localitat;
-                tmpp.edat = person.edat;
-                tmpp.nom = person.nom;
-                tmpp.email = person.email;
-                tmpp.password = person.password;
-                tmpp.telefon = person.telefon;
-                tmpp.dataNaixement = person.dataNaixement;
-                tmpp.Cognoms = person.Cognoms;
-
-                if (ModelState.IsValid)
-                {
-                    bd.editar(tmpp, adreça);
-
-                    return RedirectToAction("Index");
-                }
-
             }
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
+            ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
             return View();
         }
         

@@ -1,12 +1,16 @@
-﻿$('select').on('change', function () {
+﻿$('#tipus').on('change', function () {
     if (this.value == 1 || this.value == 3) {
         $("#divemail").hide();
         $("#divpassword").hide();
         $("#divcognom").hide();
+        $("#divtelefon").hide();
+        $("#divdata").hide();
 
     } else {
         $("#divemail").show()
         $("#divpassword").show();
+        $("#divtelefon").hide();
+        $("#divdata").hide();
     }
 
     if (this.value == 2) {

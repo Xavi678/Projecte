@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dades.Gestor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,7 +12,7 @@ namespace Dades.Models
     [Table("Adreces")]
     public class Adreça
     {
-        public Adreça(string comarca, string localitat, string codipostal)
+        public Adreça(string comarca, string localitat, int codipostal)
         {
             Comarca = comarca;
             Localitat = localitat;
@@ -32,7 +33,7 @@ namespace Dades.Models
 
         public string Localitat { set; get; }
 
-        public string Codipostal { set; get; }
+        public int Codipostal { set; get; }
 
         
 
@@ -42,7 +43,13 @@ namespace Dades.Models
         [NotMapped]
         public string AdreçaCompleta => Comarca + " " + Localitat+ " " +Codipostal;
 
-
-
+        public void editarAdreça( mpiscatalunya municipi)
+        {
+             //GestorBD bd = new GestorBD();
+         
+            Comarca = municipi.Nomcomarca;
+            Codipostal = municipi.Codi;
+            Localitat = municipi.Nom;
+        }
     }
 }

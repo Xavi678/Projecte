@@ -11,7 +11,7 @@ namespace WebApplication3.Models
         {
 
         }
-        public TeatreVista(string nom, int files, int columnes, string comarca, string localitat, string codipostal)
+        public TeatreVista(string nom, int files, int columnes, string comarca, string localitat, int codipostal)
         {
             Nom = nom;
             Files = files;
@@ -21,7 +21,7 @@ namespace WebApplication3.Models
             Codipostal = codipostal;
         }
 
-        public TeatreVista(int ID,string nom, int files, int columnes, string comarca, string localitat, string codipostal)
+        public TeatreVista(int ID,string nom, int files, int columnes, string comarca, string localitat, int codipostal)
         {
             this.ID = ID;
             Nom = nom;
@@ -39,6 +39,6 @@ namespace WebApplication3.Models
 
         public string Localitat { set; get; }
 
-        public string Codipostal { set; get; }
+        public int Codipostal { set; get; }
     }
 }
