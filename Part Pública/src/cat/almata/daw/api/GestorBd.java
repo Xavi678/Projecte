@@ -119,7 +119,7 @@ public class GestorBd {
 		UsuariClient user=null;
 		while(rs.next()) {
 			//productes.add(new Producte(rs.getInt("id"),rs.getString("nom"),rs.getInt("disponibilitat"),rs.getString("descripcio"),rs.getInt("preu"),rs.getString("propietari"),rs.getString("data")));
-			user= new UsuariClient(rs.getString("NIF"),rs.getString("nom"),rs.getInt("edat"),rs.getString("email"),rs.getString("password"),rs.getInt("telefon"),rs.getString("cognoms"));
+			user= new UsuariClient(rs.getString("NIF"),rs.getString("nom"),rs.getInt("edat"),rs.getString("email"),rs.getString("password"),rs.getInt("telefon"),rs.getString("cognoms"),new Date(rs.getTimestamp("dataNaixement").getTime()));
 			
 			
 	
@@ -187,9 +187,9 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		prs.setString(5, client.getEmail());
 		prs.setString(6, client.getPassword());
 		prs.setInt(7, client.getTelefon());
-		//prs.setDate(8,  "2012-12-12");
-		prs.setString(8, client.getCognoms());
-		prs.setString(9, "Client");
+		prs.setTimestamp(8,  new java.sql.Timestamp(client.getData().getTime()));
+		prs.setString(9, client.getCognoms());
+		prs.setString(10, "Client");
 		int rs=prs.executeUpdate();
 		
 		if(rs==0) {

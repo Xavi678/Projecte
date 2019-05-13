@@ -1,11 +1,14 @@
 package cat.almata.daw.models;
 
 import java.io.Serializable;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+
 @XmlRootElement(name="Client")
 public class UsuariClient implements Serializable {
 
@@ -32,7 +35,7 @@ public class UsuariClient implements Serializable {
 	
 	
 	
-	public UsuariClient(String nIF, String nom, int edat, String email, String password, int telefon, String cognoms) {
+	public UsuariClient(String nIF, String nom, int edat, String email, String password, int telefon, String cognoms,Date dataNaixement) {
 		super();
 		NIF = nIF;
 		this.nom = nom;
@@ -41,6 +44,7 @@ public class UsuariClient implements Serializable {
 		this.password = password;
 		this.telefon = telefon;
 		this.cognoms = cognoms;
+		this.dataNaixement=dataNaixement;
 	}
 
 	public UsuariClient() {
@@ -91,6 +95,11 @@ public class UsuariClient implements Serializable {
 			e.printStackTrace();
 		}
 	}
+	
+	public Date getData() {
+		return dataNaixement;
+	}
+	
 	@XmlElement(name="telefon")
 	public int getTelefon() {
 		return telefon;
