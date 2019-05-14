@@ -31,11 +31,11 @@ public class Servei {
 
 			// System.out.println();
 
-			UsuariClient client = db.autenticar(email, passwd);
+			String client = db.autenticar(email, passwd);
 
 			// Token t=new Token(token, new Date());
 
-			GenericEntity<UsuariClient> genericEntity = new GenericEntity<UsuariClient>(client) {
+			GenericEntity<String> genericEntity = new GenericEntity<String>(client) {
 			};
 
 			

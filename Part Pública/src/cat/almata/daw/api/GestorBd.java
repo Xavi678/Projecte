@@ -104,7 +104,7 @@ public class GestorBd {
 		this.userPasswd = userPasswd;
 	}
 
-	public UsuariClient autenticar(String email, String passwd) throws SQLException {
+	public String autenticar(String email, String passwd) throws SQLException {
 		
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
 		//ArrayList<Producte> productes=new ArrayList<Producte>();
@@ -116,11 +116,12 @@ public class GestorBd {
 		
 		ResultSet rs=prs.executeQuery();
 		
-		UsuariClient user=null;
+		String user=null;
 		while(rs.next()) {
 			//productes.add(new Producte(rs.getInt("id"),rs.getString("nom"),rs.getInt("disponibilitat"),rs.getString("descripcio"),rs.getInt("preu"),rs.getString("propietari"),rs.getString("data")));
-			user= new UsuariClient(rs.getString("NIF"),rs.getString("nom"),rs.getInt("edat"),rs.getString("email"),rs.getString("password"),rs.getInt("telefon"),rs.getString("cognoms"),new Date(rs.getTimestamp("dataNaixement").getTime()));
-			
+			//user= new UsuariClient(rs.getString("NIF"),rs.getString("nom"),rs.getInt("edat"),rs.getString("email"),rs.getString("password"),rs.getInt("telefon"),rs.getString("cognoms"),new Date(rs.getTimestamp("dataNaixement").getTime()));
+		
+			user=String.valueOf( rs.getInt("NIF"));
 			
 	
 		}
