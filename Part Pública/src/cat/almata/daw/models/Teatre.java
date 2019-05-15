@@ -5,19 +5,19 @@ public class Teatre {
 	private String nom;
 	private int files;
 	private int columnes;
-	private int AdreçaID;
+	private int AdrecaID;
 	
 	
 	
 	
 	
-	public Teatre(int iD, String nom, int files, int columnes, int adreçaID) {
+	public Teatre(int iD, String nom, int files, int columnes, int adrecaID) {
 		super();
 		ID = iD;
 		this.nom = nom;
 		this.files = files;
 		this.columnes = columnes;
-		AdreçaID = adreçaID;
+		AdrecaID = adrecaID;
 	}
 	public int getID() {
 		return ID;
@@ -43,11 +43,11 @@ public class Teatre {
 	public void setColumnes(int columnes) {
 		this.columnes = columnes;
 	}
-	public int getAdreçaID() {
-		return AdreçaID;
+	public int getAdrecaID() {
+		return AdrecaID;
 	}
-	public void setAdreçaID(int adreçaID) {
-		AdreçaID = adreçaID;
+	public void setAdrecaID(int adrecaID) {
+		AdrecaID = adrecaID;
 	}
 	
 	

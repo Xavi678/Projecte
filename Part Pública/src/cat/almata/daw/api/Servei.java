@@ -1,5 +1,6 @@
 package cat.almata.daw.api;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -131,6 +132,35 @@ public class Servei {
 
 			
 			return Response.ok(genericEntity, MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
+	
+	
+	@Path("/addUser")
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response comprar(@QueryParam("funcioID") String funcioID,@QueryParam("clientID") String clientID,ArrayList<Integer> llistafilescolumnes ) {
+		try {
+
+			// System.out.println();
+			
+			//Boolean inserit= db.insert(client);
+
+			// Token t=new Token(token, new Date());
+
+			/*GenericEntity<Boolean> genericEntity = new GenericEntity<Boolean>(inserit) {
+			};*/
+			
+			for( int fc: llistafilescolumnes) {
+				
+				int fila= 
+				
+			}
+			
+			return Response.ok( MediaType.APPLICATION_JSON).build();
 		} catch (Exception e) {
 			return Response.status(Response.Status.BAD_REQUEST).build();
 		}
