@@ -104,7 +104,7 @@ public class GestorBd {
 		this.userPasswd = userPasswd;
 	}
 
-	public String autenticar(String email, String passwd) throws SQLException {
+	public UsuariClient autenticar(String email, String passwd) throws SQLException {
 		
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
 		//ArrayList<Producte> productes=new ArrayList<Producte>();
@@ -116,12 +116,12 @@ public class GestorBd {
 		
 		ResultSet rs=prs.executeQuery();
 		
-		String user=null;
+		UsuariClient user=null;
 		while(rs.next()) {
 			//productes.add(new Producte(rs.getInt("id"),rs.getString("nom"),rs.getInt("disponibilitat"),rs.getString("descripcio"),rs.getInt("preu"),rs.getString("propietari"),rs.getString("data")));
-			//user= new UsuariClient(rs.getString("NIF"),rs.getString("nom"),rs.getInt("edat"),rs.getString("email"),rs.getString("password"),rs.getInt("telefon"),rs.getString("cognoms"),new Date(rs.getTimestamp("dataNaixement").getTime()));
+			user= new UsuariClient(rs.getString("NIF"),rs.getString("nom"),rs.getInt("edat"),rs.getString("email"),rs.getString("password"),rs.getInt("telefon"),rs.getString("cognoms"),new Date(rs.getTimestamp("dataNaixement").getTime()));
 		
-			user=String.valueOf( rs.getInt("NIF"));
+			//user=rs.getString("NIF");
 			
 	
 		}
@@ -159,7 +159,7 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		List<Funcio> funcions=new ArrayList<Funcio>();
 		
 		while(rs.next()){
-			funcions.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),rs.getDate("data"),rs.getString("horaInici"),rs.getString("horaFi"), new Teatre(rs.getInt(7),rs.getString("Nom"),rs.getInt("Files"),rs.getInt("Columnes"),rs.getInt("AdreçaID"))));
+			funcions.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),new Date(rs.getTimestamp("data").getTime()),rs.getString("horaInici"),rs.getString("horaFi"), new Teatre(rs.getInt(7),rs.getString("Nom"),rs.getInt("Files"),rs.getInt("Columnes"),rs.getInt("AdreçaID"))));
 		}
 		
 		return funcions;
@@ -179,7 +179,7 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 				"`telefon`,\r\n" + 
 				"`dataNaixement`,\r\n" + 
 				"`Cognoms`,\r\n" + 
-				"`Discriminator`) values(?,?,?,?,?,?,?,'2012-12-12',?,?)";
+				"`Discriminator`) values(?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement prs=conn.prepareStatement(sql);
 		prs.setString(1,client.getNIF());
 		prs.setString(2,client.getNom());
@@ -218,11 +218,50 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		Funcio funcions=null;
 		
 		while(rs.next()){
-			funcions=new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),rs.getDate("data"),rs.getString("horaInici"),rs.getString("horaFi"), new Teatre(rs.getInt(7),rs.getString("Nom"),rs.getInt("Files"),rs.getInt("Columnes"),rs.getInt("AdreçaID")));
+			funcions=new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),new Date(rs.getTimestamp("data").getTime()),rs.getString("horaInici"),rs.getString("horaFi"), new Teatre(rs.getInt(7),rs.getString("Nom"),rs.getInt("Files"),rs.getInt("Columnes"),rs.getInt("AdreçaID")));
 		}
 		
 		return funcions;
 		
+	}
+
+	public void insertCompra(String funcioID, int fila, int columna, String clientID) {
+		// TODO Auto-generated method stub
+		try {
+Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		
+		String sql="insert into compres(funcioID,clientID,fila,columna) values(?,?,?,?)";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		int idtmp=Integer.valueOf(funcioID);
+		prs.setInt(1,idtmp);
+		prs.setString(2, clientID);
+		prs.setInt(3, fila);
+		prs.setInt(4, columna);
+		prs.executeUpdate();
+		
+		}catch(Exception e) {
+			e.getMessage();
+		}
+		
+		
+	}
+
+	public void obtenirOcupades(Funcio funcions) throws SQLException {
+		// TODO Auto-generated method stub
+		
+Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		
+		String sql="select fila,columna from funcions as f,compres as c where f.ID=c.funcioID and f.ID=?;";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setInt(1, funcions.getID());
+		ResultSet rs= prs.executeQuery();
+		ArrayList<Integer> fc=new ArrayList<Integer>();
+		while(rs.next()) {
+			int a = Integer.parseInt(rs.getInt("fila") + "" + rs.getInt("columna"));
+			fc.add(a);
+		}
+		
+		funcions.setButaquesOcupades(fc);
 	}
 	
 	}

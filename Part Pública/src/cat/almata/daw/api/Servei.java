@@ -32,11 +32,11 @@ public class Servei {
 
 			// System.out.println();
 
-			String client = db.autenticar(email, passwd);
+			UsuariClient client = db.autenticar(email, passwd);
 
 			// Token t=new Token(token, new Date());
 
-			GenericEntity<String> genericEntity = new GenericEntity<String>(client) {
+			GenericEntity<UsuariClient> genericEntity = new GenericEntity<UsuariClient>(client) {
 			};
 
 			
@@ -103,6 +103,8 @@ public class Servei {
 			Funcio funcions = db.obtenirFuncio(Integer.parseInt(id));
 
 			// Token t=new Token(token, new Date());
+			
+			db.obtenirOcupades(funcions);
 
 			GenericEntity<Funcio> genericEntity = new GenericEntity<Funcio>(funcions) {
 			};
@@ -138,7 +140,7 @@ public class Servei {
 	}
 	
 	
-	@Path("/addUser")
+	@Path("/comprar")
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -156,7 +158,11 @@ public class Servei {
 			
 			for( int fc: llistafilescolumnes) {
 				
-				int fila= 
+				int fila= Integer.parseInt(String.valueOf(fc).substring(0, 1));
+				int columna= Integer.parseInt(String.valueOf(fc).substring(1, 2));
+				
+				db.insertCompra(funcioID,fila,columna,clientID);
+
 				
 			}
 			

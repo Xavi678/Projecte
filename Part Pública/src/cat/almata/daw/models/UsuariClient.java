@@ -36,7 +36,7 @@ public class UsuariClient implements Serializable {
 	
 	
 	public UsuariClient(String nIF, String nom, int edat, String email, String password, int telefon, String cognoms,Date dataNaixement) {
-		super();
+		this();
 		NIF = nIF;
 		this.nom = nom;
 		this.edat = edat;
@@ -95,6 +95,7 @@ public class UsuariClient implements Serializable {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	public Date getData() {
 		return dataNaixement;

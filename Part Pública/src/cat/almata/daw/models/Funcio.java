@@ -1,5 +1,7 @@
 package cat.almata.daw.models;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Funcio {
@@ -11,13 +13,23 @@ public class Funcio {
 	private String HoraInici;
 	private String HoraFi;
 	private Teatre teatre;
+	private ArrayList<Integer> butaquesOcupades;
+	private SimpleDateFormat sdf=null;
 	
+	public ArrayList<Integer> getButaquesOcupades() {
+		return butaquesOcupades;
+	}
+
+	public void setButaquesOcupades(ArrayList<Integer> butaquesOcupades) {
+		this.butaquesOcupades = butaquesOcupades;
+	}
+
 	public Funcio() {
-		
+		sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 	}
 	
 	public Funcio(int iD, int espectacleID, int teatreID, Date data, String horaInici, String horaFi, Teatre teatre) {
-		super();
+		this();
 		ID = iD;
 		EspectacleID = espectacleID;
 		this.teatreID = teatreID;
@@ -59,11 +71,15 @@ public class Funcio {
 	public void setTeatreID(int teatreID) {
 		this.teatreID = teatreID;
 	}
-	public Date getData() {
-		return data;
+	public String getData() {
+		return sdf.format(this.data);
 	}
-	public void setData(Date data) {
-		this.data = data;
+	public void setDataNaixement(String data) {
+		try{
+			this.data = sdf.parse(data);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 	public String getHoraInici() {
 		return HoraInici;
