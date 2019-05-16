@@ -14,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import cat.almata.daw.models.UsuariClient;
+import cat.almata.daw.models.Compra;
 import cat.almata.daw.models.Espectacle;
 import cat.almata.daw.models.Funcio;
 
@@ -124,6 +125,9 @@ public class Servei {
 		try {
 
 			// System.out.println();
+			if(!db.existeixEmail(client.getEmail())) {
+				return Response.status(Response.Status.BAD_REQUEST).build();
+			}
 			
 			Boolean inserit= db.insert(client);
 
@@ -172,11 +176,11 @@ public class Servei {
 		}
 	}
 	
-	@Path("/comprar")
+	@Path("/obtenirCompres")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response comprar(@QueryParam("clientID") String clientID ) {
+	public Response obtenirCompres(@QueryParam("clientID") String clientID ) {
 		try {
 
 			// System.out.println();
@@ -188,9 +192,38 @@ public class Servei {
 			/*GenericEntity<Boolean> genericEntity = new GenericEntity<Boolean>(inserit) {
 			};*/
 			
-			db.obtenirCompres(clientID);
+			ArrayList<Compra> compres=db.obtenirCompres(clientID);
+			GenericEntity<ArrayList<Compra>> genericEntity = new GenericEntity<ArrayList<Compra>>(compres) {
+			};
+			return Response.ok( genericEntity,MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
+	
+	
+	@Path("/obtenirLocalitats")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response obtenirLocalitats( ) {
+		try {
+
+			// System.out.println();
 			
-			return Response.ok( MediaType.APPLICATION_JSON).build();
+			//Boolean inserit= db.insert(client);
+
+			// Token t=new Token(token, new Date());
+
+			/*GenericEntity<Boolean> genericEntity = new GenericEntity<Boolean>(inserit) {
+			};*/
+			
+			ArrayList<String> localitats= db.obtenirLocalitats();
+			
+			GenericEntity<ArrayList<String>> genericEntity = new GenericEntity<ArrayList<String>>(localitats) {
+			};
+			
+			return Response.ok( genericEntity,MediaType.APPLICATION_JSON).build();
 		} catch (Exception e) {
 			return Response.status(Response.Status.BAD_REQUEST).build();
 		}

@@ -12,6 +12,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name="Client")
 public class UsuariClient implements Serializable {
 
+	
+
 	public UsuariClient(String nIF, String nom, int edat, String email, String password) {
 		super();
 		NIF = nIF;
@@ -28,6 +30,7 @@ public class UsuariClient implements Serializable {
 	private Date dataNaixement;
 	private int telefon;
 	private String cognoms;
+	private String localitat;
 	
 	
 	private SimpleDateFormat sdf = null;
@@ -49,6 +52,20 @@ public class UsuariClient implements Serializable {
 
 	public UsuariClient() {
 		sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+	}
+	
+	public UsuariClient(String nIF, String nom, int edat, String email, String password,
+			int telefon, String cognoms,Date dataNaixement, String localitat) {
+		this();
+		NIF = nIF;
+		this.nom = nom;
+		this.edat = edat;
+		this.email = email;
+		this.password = password;
+		this.dataNaixement = dataNaixement;
+		this.telefon = telefon;
+		this.cognoms = cognoms;
+		this.localitat = localitat;
 	}
 	
 	/*public UsuariClient(String nIF, String nom, int edat, String email, String password, Date dataNaixement, int telefon) {
@@ -76,6 +93,8 @@ public class UsuariClient implements Serializable {
 		this.cognoms = cognom;
 	}*/
 
+	
+
 	@XmlElement(name="cognoms")
 	public String getCognoms() {
 		return cognoms;
@@ -96,6 +115,15 @@ public class UsuariClient implements Serializable {
 		}
 	}
 	
+
+	@XmlElement(name="localitat")
+	public String getlocalitat() {
+		return localitat;
+	}
+
+	public void setlocalitat(String localitat) {
+		this.localitat = localitat;
+	}
 	
 	public Date getData() {
 		return dataNaixement;
@@ -145,6 +173,8 @@ public class UsuariClient implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	
 	
 	
 	

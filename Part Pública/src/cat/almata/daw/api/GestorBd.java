@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 import cat.almata.daw.models.UsuariClient;
+import cat.almata.daw.models.Compra;
 import cat.almata.daw.models.Espectacle;
 import cat.almata.daw.models.Funcio;
 import cat.almata.daw.models.Teatre;
@@ -108,7 +109,7 @@ public class GestorBd {
 		
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
 		//ArrayList<Producte> productes=new ArrayList<Producte>();
-		String sql="Select * from persones where email=? && password=? && Discriminator='Client' ";
+		String sql="Select * from persones as p,adreces as a where p.AdreçaID=a.ID and p.email=? && p.password=? && p.Discriminator='Client' ";
 		
 		PreparedStatement prs=conn.prepareStatement(sql);
 		prs.setString(1, email);
@@ -119,7 +120,7 @@ public class GestorBd {
 		UsuariClient user=null;
 		while(rs.next()) {
 			//productes.add(new Producte(rs.getInt("id"),rs.getString("nom"),rs.getInt("disponibilitat"),rs.getString("descripcio"),rs.getInt("preu"),rs.getString("propietari"),rs.getString("data")));
-			user= new UsuariClient(rs.getString("NIF"),rs.getString("nom"),rs.getInt("edat"),rs.getString("email"),rs.getString("password"),rs.getInt("telefon"),rs.getString("cognoms"),new Date(rs.getTimestamp("dataNaixement").getTime()));
+			user= new UsuariClient(rs.getString("NIF"),rs.getString("nom"),rs.getInt("edat"),rs.getString("email"),rs.getString("password"),rs.getInt("telefon"),rs.getString("cognoms"),new Date(rs.getTimestamp("dataNaixement").getTime()),rs.getString("Localitat"));
 		
 			//user=rs.getString("NIF");
 			
@@ -167,7 +168,24 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 
 	public Boolean insert(UsuariClient client) throws SQLException {
 		// TODO Auto-generated method stub
+		
+		
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		
+		String sqll="select * from mpiscatalunyas where Nom=?";
+		PreparedStatement primer=conn.prepareStatement(sqll);
+		primer.setString(1, client.getlocalitat());
+		ResultSet resultat=primer.executeQuery();
+		
+		while(resultat.next()) {
+			String sqlA="insert into adreces(Comarca,Localitat,Codipostal) values(?,?,?)";
+			PreparedStatement SEGON=conn.prepareStatement(sqlA);
+			SEGON.setString(1, resultat.getString("Nomcomarca"));
+			SEGON.setString(2, resultat.getString("Nom"));
+			SEGON.setInt(3, resultat.getInt("Codi"));
+			SEGON.executeUpdate();
+		}
+		
 		
 		String sql="INSERT INTO `gestioteatres`.`persones`\r\n" + 
 				"(`NIF`,\r\n" + 
@@ -179,18 +197,18 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 				"`telefon`,\r\n" + 
 				"`dataNaixement`,\r\n" + 
 				"`Cognoms`,\r\n" + 
-				"`Discriminator`) values(?,?,?,?,?,?,?,?,?,?)";
+				"`Discriminator`) values(?,?,?,(select MAX(ID) from adreces),?,?,?,?,?,?)";
 		PreparedStatement prs=conn.prepareStatement(sql);
 		prs.setString(1,client.getNIF());
 		prs.setString(2,client.getNom());
 		prs.setInt(3,client.getEdat());
-		prs.setInt(4,1);
-		prs.setString(5, client.getEmail());
-		prs.setString(6, client.getPassword());
-		prs.setInt(7, client.getTelefon());
-		prs.setTimestamp(8,  new java.sql.Timestamp(client.getData().getTime()));
-		prs.setString(9, client.getCognoms());
-		prs.setString(10, "Client");
+		//prs.setInt(4,1);
+		prs.setString(4, client.getEmail());
+		prs.setString(5, client.getPassword());
+		prs.setInt(6, client.getTelefon());
+		prs.setTimestamp(7,  new java.sql.Timestamp(client.getData().getTime()));
+		prs.setString(8, client.getCognoms());
+		prs.setString(9, "Client");
 		int rs=prs.executeUpdate();
 		
 		if(rs==0) {
@@ -264,21 +282,59 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		funcions.setButaquesOcupades(fc);
 	}
 
-	public void obtenirCompres(String clientID) throws SQLException {
+	public ArrayList<Compra> obtenirCompres(String clientID) throws SQLException {
 		// TODO Auto-generated method stub
-		String consulta="select * from compres as c, funcions as f, teatres as t,espectacles as e where f.ID=c.funcioID and f.teatreID=t.ID and f.espectacleID=e.EspectacleID;";
+		
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
-		String sql="select * from compres as c, funcions as f where f.ID=c.funcioID and clientID=?";
+		//String sql="select * from compres as c, funcions as f where f.ID=c.funcioID and clientID=?";
+		String sql="select * from compres as c, funcions as f, teatres as t,espectacles as e where f.ID=c.funcioID and f.teatreID=t.ID and f.espectacleID=e.EspectacleID and c.clientID=?;";
 		PreparedStatement prs=conn.prepareStatement(sql);
 		prs.setString(1, clientID);
 		
 		ResultSet rs=prs.executeQuery();
-		ArrayList<Funcio> llista= new ArrayList<Funcio>();
+		ArrayList<Compra> llista= new ArrayList<Compra>();
 		while(rs.next()) {
 			
-			llista.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),new Date(rs.getTimestamp("data").getTime()),rs.getString("horaInici")));
+			llista.add(new Compra(rs.getInt(1), rs.getInt("funcioID"), rs.getString("clientID"), rs.getInt("fila"),rs.getInt("columna"), rs.getString("Nom"), rs.getString("titol"),new Date(rs.getTimestamp("data").getTime())));
+			
+			//llista.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),new Date(rs.getTimestamp("data").getTime()),rs.getString("horaInici")));
 			
 		}
+		return llista;
+	}
+
+	public ArrayList<String> obtenirLocalitats() throws SQLException {
+		// TODO Auto-generated method stub
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		String sql="select nom from mpiscatalunyas";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		ResultSet rs= prs.executeQuery();
+		ArrayList<String> localitats= new ArrayList<String>();
+		while(rs.next()) {
+			localitats.add(rs.getString("Nom"));
+		}
+		
+		return localitats;
+		
+		
+	}
+
+	public boolean existeixEmail(String email) throws SQLException {
+		// TODO Auto-generated method stub
+		
+		// TODO Auto-generated method stub
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		String sql="select email from persones where email=?";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setString(1, email);
+		ResultSet rs= prs.executeQuery();
+		/*ArrayList<String> localitats= new ArrayList<String>();
+		while(rs.next()) {
+			localitats.add(rs.getString("Nom"));
+		}*/
+		
+		return rs.wasNull();
+		
 		
 	}
 	
