@@ -15,6 +15,7 @@ public class Funcio {
 	private Teatre teatre;
 	private ArrayList<Integer> butaquesOcupades;
 	private SimpleDateFormat sdf=null;
+	private Compra compra;
 	
 	public ArrayList<Integer> getButaquesOcupades() {
 		return butaquesOcupades;
@@ -92,6 +93,14 @@ public class Funcio {
 	}
 	public void setHoraFi(String horaFi) {
 		HoraFi = horaFi;
+	}
+
+	public Compra getCompra() {
+		return compra;
+	}
+
+	public void setCompra(Compra compra) {
+		this.compra = compra;
 	}
 	
 	

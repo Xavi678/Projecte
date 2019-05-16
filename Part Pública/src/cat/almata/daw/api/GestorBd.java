@@ -263,5 +263,23 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		
 		funcions.setButaquesOcupades(fc);
 	}
+
+	public void obtenirCompres(String clientID) throws SQLException {
+		// TODO Auto-generated method stub
+		String consulta="select * from compres as c, funcions as f, teatres as t,espectacles as e where f.ID=c.funcioID and f.teatreID=t.ID and f.espectacleID=e.EspectacleID;";
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		String sql="select * from compres as c, funcions as f where f.ID=c.funcioID and clientID=?";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setString(1, clientID);
+		
+		ResultSet rs=prs.executeQuery();
+		ArrayList<Funcio> llista= new ArrayList<Funcio>();
+		while(rs.next()) {
+			
+			llista.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),new Date(rs.getTimestamp("data").getTime()),rs.getString("horaInici")));
+			
+		}
+		
+	}
 	
 	}

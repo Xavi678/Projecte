@@ -172,6 +172,31 @@ public class Servei {
 		}
 	}
 	
+	@Path("/comprar")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response comprar(@QueryParam("clientID") String clientID ) {
+		try {
+
+			// System.out.println();
+			
+			//Boolean inserit= db.insert(client);
+
+			// Token t=new Token(token, new Date());
+
+			/*GenericEntity<Boolean> genericEntity = new GenericEntity<Boolean>(inserit) {
+			};*/
+			
+			db.obtenirCompres(clientID);
+			
+			return Response.ok( MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
+	
+	
 	
 	/*@Path("/A")
 	@GET
