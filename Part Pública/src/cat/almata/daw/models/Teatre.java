@@ -9,7 +9,14 @@ public class Teatre {
 	
 	
 	
+	public Teatre() {
+		
+	}
 	
+public Teatre(String nom) {
+		this.nom=nom;
+		
+	}
 	
 	public Teatre(int iD, String nom, int files, int columnes, int adrecaID) {
 		super();

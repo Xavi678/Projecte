@@ -295,7 +295,9 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		ArrayList<Compra> llista= new ArrayList<Compra>();
 		while(rs.next()) {
 			
-			llista.add(new Compra(rs.getInt(1), rs.getInt("funcioID"), rs.getString("clientID"), rs.getInt("fila"),rs.getInt("columna"), rs.getString("Nom"), rs.getString("titol"),new Date(rs.getTimestamp("data").getTime())));
+			//llista.add(new Compra(rs.getInt(1), rs.getInt("funcioID"), rs.getString("clientID"), rs.getInt("fila"),rs.getInt("columna"), rs.getString("Nom"), rs.getString("titol"),new Date(rs.getTimestamp("data").getTime())));
+			
+			llista.add(new Compra(rs.getInt(1), rs.getInt("funcioID"), rs.getString("clientID"), rs.getInt("fila"),rs.getInt("columna"), new Funcio(new Date(rs.getTimestamp("data").getTime()), new Teatre(rs.getString("Nom")), new Espectacle(rs.getString("titol")))));
 			
 			//llista.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),new Date(rs.getTimestamp("data").getTime()),rs.getString("horaInici")));
 			

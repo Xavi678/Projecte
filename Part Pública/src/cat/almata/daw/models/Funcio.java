@@ -14,6 +14,7 @@ public class Funcio {
 	private String HoraInici;
 	private String HoraFi;
 	private Teatre teatre;
+	private Espectacle espectacle;
 	private ArrayList<Integer> butaquesOcupades;
 	private SimpleDateFormat sdf=null;
 	private Compra compra;
@@ -30,6 +31,14 @@ public class Funcio {
 		sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 	}
 	
+	
+	public Funcio(Date data, Teatre teatre,Espectacle espectacle) {
+		this();
+		this.data=data;
+		this.teatre=teatre;
+		this.setEspectacle(espectacle);
+		
+	}
 	public Funcio(int iD, int espectacleID, int teatreID, Date data, String horaInici, String horaFi, Teatre teatre) {
 		this();
 		ID = iD;
@@ -102,6 +111,14 @@ public class Funcio {
 
 	public void setCompra(Compra compra) {
 		this.compra = compra;
+	}
+
+	public Espectacle getEspectacle() {
+		return espectacle;
+	}
+
+	public void setEspectacle(Espectacle espectacle) {
+		this.espectacle = espectacle;
 	}
 	
 	

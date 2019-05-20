@@ -13,9 +13,8 @@ public class Compra {
 	private String clientID;
 	private int fila;
 	private int columna;
-	private String nomTeatre;
-	private String titolEspectacle;
-	private Date dataFuncio;
+	private UsuariClient client;
+	private Funcio funcio;
 	private SimpleDateFormat sdf=null;
 	
 	public Compra() {
@@ -31,23 +30,23 @@ public class Compra {
 		this.clientID = clientID;
 		this.fila = fila;
 		this.columna = columna;
-		this.nomTeatre = nomTeatre;
-		this.titolEspectacle = titolEspectacle;
-	this.dataFuncio=data;
-	}
-	public String getNomTeatre() {
-		return nomTeatre;
-	}
-	public void setNomTeatre(String nomTeatre) {
-		this.nomTeatre = nomTeatre;
-	}
-	public String getTitolEspectacle() {
-		return titolEspectacle;
-	}
-	public void setTitolEspectacle(String titolEspectacle) {
-		this.titolEspectacle = titolEspectacle;
+		
 	}
 	
+	
+	
+	public Compra(int iD, int funcioID, String clientID, int fila, int columna, Funcio funcio) {
+		super();
+		ID = iD;
+		this.funcioID = funcioID;
+		this.clientID = clientID;
+		this.fila = fila;
+		this.columna = columna;
+		
+		this.funcio = funcio;
+	}
+
+
 	public Compra(int iD, int funcioID, String clientID, int fila, int columna) {
 		this();
 		ID = iD;
@@ -86,17 +85,27 @@ public class Compra {
 	public void setColumna(int columna) {
 		this.columna = columna;
 	}
-	@XmlElement(name="data")
-	public String getData() {
-		return sdf.format(this.dataFuncio);
+
+
+	public UsuariClient getClient() {
+		return client;
 	}
-	public void setData(String data) {
-		try{
-			this.dataFuncio = sdf.parse(data);
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+
+
+	public void setClient(UsuariClient client) {
+		this.client = client;
 	}
+
+
+	public Funcio getFuncio() {
+		return funcio;
+	}
+
+
+	public void setFuncio(Funcio funcio) {
+		this.funcio = funcio;
+	}
+	
 	
 	
 

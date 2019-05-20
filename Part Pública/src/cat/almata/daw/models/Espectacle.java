@@ -12,6 +12,21 @@ public class Espectacle {
 	private String nifDirector;
 	private String nifAutor;
 	
+	
+	
+	public Espectacle() {
+		super();
+	}
+
+
+
+	public Espectacle(String titol) {
+		super();
+		this.titol = titol;
+	}
+
+
+
 	public Espectacle(int espectacleID, String titol, String sinopsi, String durada, String cartell, String nifDirector,
 			String nifAutor) {
 		super();
