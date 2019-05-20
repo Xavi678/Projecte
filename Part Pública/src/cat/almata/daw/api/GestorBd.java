@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 import cat.almata.daw.models.UsuariClient;
+import cat.almata.daw.models.Adreca;
 import cat.almata.daw.models.Compra;
 import cat.almata.daw.models.Espectacle;
 import cat.almata.daw.models.Funcio;
@@ -297,7 +298,7 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 			
 			//llista.add(new Compra(rs.getInt(1), rs.getInt("funcioID"), rs.getString("clientID"), rs.getInt("fila"),rs.getInt("columna"), rs.getString("Nom"), rs.getString("titol"),new Date(rs.getTimestamp("data").getTime())));
 			
-			llista.add(new Compra(rs.getInt(1), rs.getInt("funcioID"), rs.getString("clientID"), rs.getInt("fila"),rs.getInt("columna"), new Funcio(new Date(rs.getTimestamp("data").getTime()), new Teatre(rs.getString("Nom")), new Espectacle(rs.getString("titol")))));
+			llista.add(new Compra(rs.getInt(1), rs.getInt("funcioID"), rs.getString("clientID"), rs.getInt("fila"),rs.getInt("columna"), new Funcio(rs.getInt("f.ID"),new Date(rs.getTimestamp("data").getTime()), new Teatre(rs.getString("Nom")), new Espectacle(rs.getString("titol")))));
 			
 			//llista.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),new Date(rs.getTimestamp("data").getTime()),rs.getString("horaInici")));
 			
@@ -338,6 +339,41 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		return rs.wasNull();
 		
 		
+	}
+
+	public ArrayList<Teatre> filtrarTeatres(String search) throws SQLException {
+		// TODO Auto-generated method stub
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		String sql="select * from teatres as t,adreces as a where t.AdreçaID=a.ID and nom=?";
+		
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setString(1, search);
+		ArrayList<Teatre> teatres= new ArrayList<Teatre>();
+		ResultSet rs=prs.executeQuery();
+		
+		while(rs.next()){
+			teatres.add(new Teatre(rs.getInt(1), rs.getString("Nom"), rs.getInt("Files"), rs.getInt("Columnes"), rs.getInt("AdreçaID"), new Adreca(rs.getInt("a.ID"), rs.getString("Comarca"), rs.getString("Localitat"), rs.getInt("Codipostal"))));
+		}
+		
+		return teatres;
+	}
+
+	public ArrayList<Espectacle> filtrarEspectacles(String search) throws SQLException {
+		// TODO Auto-generated method stub
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		String sql="select * from espectacles where titol=?";
+		
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setString(1, search);
+		ArrayList<Espectacle> espectacles= new ArrayList<Espectacle>();
+		ResultSet rs=prs.executeQuery();
+		
+		while(rs.next()){
+			//teatres.add(new Teatre(rs.getInt(1), rs.getString("Nom"), rs.getInt("Files"), rs.getInt("Columnes"), rs.getInt("AdreçaID")));
+			espectacles.add(new Espectacle(rs.getInt("EspectacleID"), rs.getString("titol"), rs.getString("sinopsi"), rs.getString("durada"), rs.getString("cartell"), rs.getString("nifDirector"), rs.getString("nifAutor")));
+		}
+		
+		return espectacles;
 	}
 	
 	}

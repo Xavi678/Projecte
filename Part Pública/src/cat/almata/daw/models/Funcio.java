@@ -32,8 +32,9 @@ public class Funcio {
 	}
 	
 	
-	public Funcio(Date data, Teatre teatre,Espectacle espectacle) {
+	public Funcio(int ID, Date data, Teatre teatre,Espectacle espectacle) {
 		this();
+		this.ID=ID;
 		this.data=data;
 		this.teatre=teatre;
 		this.setEspectacle(espectacle);

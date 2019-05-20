@@ -17,6 +17,7 @@ import cat.almata.daw.models.UsuariClient;
 import cat.almata.daw.models.Compra;
 import cat.almata.daw.models.Espectacle;
 import cat.almata.daw.models.Funcio;
+import cat.almata.daw.models.Teatre;
 
 
 
@@ -229,6 +230,65 @@ public class Servei {
 		}
 	}
 	
+	@Path("/searchEspectacles")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response searchEspectacles(@QueryParam("search") String search) {
+		try {
+
+			// System.out.println();
+			
+			//Boolean inserit= db.insert(client);
+
+			// Token t=new Token(token, new Date());
+
+			/*GenericEntity<Boolean> genericEntity = new GenericEntity<Boolean>(inserit) {
+			};*/
+			
+			//ArrayList<String> localitats= db.obtenirLocalitats();
+		ArrayList<Espectacle> espectacles=	db.filtrarEspectacles(search);
+			
+			GenericEntity<ArrayList<Espectacle>> genericEntity = new GenericEntity<ArrayList<Espectacle>>(espectacles) {
+			};
+			
+			return Response.ok( genericEntity,MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
+	
+	@Path("/searchTeatres")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response searchTeatres(@QueryParam("search") String search) {
+		try {
+
+			// System.out.println();
+			
+			//Boolean inserit= db.insert(client);
+
+			// Token t=new Token(token, new Date());
+
+			/*GenericEntity<Boolean> genericEntity = new GenericEntity<Boolean>(inserit) {
+			};*/
+			
+			/*ArrayList<String> localitats= db.obtenirLocalitats();
+			
+			GenericEntity<ArrayList<String>> genericEntity = new GenericEntity<ArrayList<String>>(localitats) {
+			};*/
+			
+			
+ArrayList<Teatre> teatres=	db.filtrarTeatres(search);
+			
+			GenericEntity<ArrayList<Teatre>> genericEntity = new GenericEntity<ArrayList<Teatre>>(teatres) {
+			};
+			return Response.ok( genericEntity,MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
 	
 	
 	/*@Path("/A")

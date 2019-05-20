@@ -6,7 +6,7 @@ public class Teatre {
 	private int files;
 	private int columnes;
 	private int AdrecaID;
-	
+	private Adreca adreca;
 	
 	
 	public Teatre() {
@@ -25,6 +25,16 @@ public Teatre(String nom) {
 		this.files = files;
 		this.columnes = columnes;
 		AdrecaID = adrecaID;
+	}
+	
+	public Teatre(int iD, String nom, int files, int columnes, int adrecaID,Adreca adr) {
+		super();
+		ID = iD;
+		this.nom = nom;
+		this.files = files;
+		this.columnes = columnes;
+		AdrecaID = adrecaID;
+		adreca=adr;
 	}
 	public int getID() {
 		return ID;
@@ -55,6 +65,14 @@ public Teatre(String nom) {
 	}
 	public void setAdrecaID(int adrecaID) {
 		AdrecaID = adrecaID;
+	}
+
+	public Adreca getAdreca() {
+		return adreca;
+	}
+
+	public void setAdreca(Adreca adreca) {
+		this.adreca = adreca;
 	}
 	
 	
