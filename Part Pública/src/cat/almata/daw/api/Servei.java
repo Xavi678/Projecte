@@ -93,6 +93,29 @@ public class Servei {
 		}
 	}
 	
+	@Path("/getFuncionsbyTeatre")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response obtenirFuncionsperTeatre(@QueryParam("id") String id ) {
+		try {
+
+			// System.out.println();
+			
+			List<Funcio> funcions = db.obtenirFuncionsperTeatre(Integer.parseInt(id));
+
+			// Token t=new Token(token, new Date());
+
+			GenericEntity<List<Funcio>> genericEntity = new GenericEntity<List<Funcio>>(funcions) {
+			};
+
+			
+			return Response.ok(genericEntity, MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
+	
+	
 	
 	@Path("/getFuncio")
 	@GET

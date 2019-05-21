@@ -166,6 +166,25 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		
 		return funcions;
 	}
+	
+	
+	public List<Funcio> obtenirFuncionsperTeatre(int id) throws SQLException {
+		// TODO Auto-generated method stub
+Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		
+		String sql="Select * from funcions as f,teatres as t where teatreID=?  and f.teatreID=t.ID;";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setInt(1,id);
+		ResultSet rs=prs.executeQuery();
+		
+		List<Funcio> funcions=new ArrayList<Funcio>();
+		
+		while(rs.next()){
+			funcions.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),new Date(rs.getTimestamp("data").getTime()),rs.getString("horaInici"),rs.getString("horaFi"), new Teatre(rs.getInt(7),rs.getString("Nom"),rs.getInt("Files"),rs.getInt("Columnes"),rs.getInt("AdreçaID"))));
+		}
+		
+		return funcions;
+	}
 
 	public Boolean insert(UsuariClient client) throws SQLException {
 		// TODO Auto-generated method stub
@@ -375,5 +394,6 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		
 		return espectacles;
 	}
+
 	
 	}
