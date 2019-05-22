@@ -4,12 +4,12 @@ $(document).ready(function () {
     if ($("#tipus").val() == 1|| $("#tipus").val() == 3) {
         $("#divemail").hide();
         $("#divpassword").hide();
-        $("#divcognoms").hide();
+        $("#divcognom").hide();
         $("#divdata").hide();
         $("#divtelefon").hide();
     } else if ($("#tipus").val() == 2) {
 
-        $("#divcognoms").hide();
+        $("#divcognom").hide();
     }
 
 

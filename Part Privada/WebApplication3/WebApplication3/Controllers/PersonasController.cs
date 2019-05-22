@@ -89,7 +89,7 @@ namespace WebApplication3.Controllers
                             if (ModelState.IsValid)
                             {
 
-                                Client client = new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password, persona.telefon, persona.dataNaixement, persona.Cognoms);
+                                Client client = new Client(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password, persona.telefon.GetValueOrDefault(), persona.dataNaixement.HasValue ? persona.dataNaixement.Value : DateTime.Now, persona.Cognoms);
                                 bd.afegirClient(client, e);
 
                                 return RedirectToAction("Index");
@@ -109,7 +109,7 @@ namespace WebApplication3.Controllers
 
                             //camps.Select(e => e);
                             if  (!String.IsNullOrEmpty( persona.NIF) && !String.IsNullOrEmpty(persona.nom) && persona.edat!=0 && !String.IsNullOrEmpty( persona.email) && String.IsNullOrEmpty(persona.password) && persona.telefon!=0 && persona.dataNaixement!= default(DateTime)) {
-                                Administrador admin = new Administrador(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password, persona.telefon, persona.dataNaixement);
+                                Administrador admin = new Administrador(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password, persona.telefon.GetValueOrDefault(), persona.dataNaixement.HasValue ? persona.dataNaixement.Value : DateTime.Now);
 
                                 bd.afegirAdministrador(admin, e);
 
@@ -153,7 +153,7 @@ namespace WebApplication3.Controllers
 
                 //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
                 ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
-                ModelState.AddModelError("", "Omple tots els camps");
+                //ModelState.AddModelError("", "Omple tots els camps");
                 return View();
             }catch(Exception e)
             {
@@ -246,8 +246,8 @@ namespace WebApplication3.Controllers
                     tmpp.nom = person.nom;
                     tmpp.email = person.email;
                     tmpp.password = person.password;
-                    tmpp.telefon = person.telefon;
-                    tmpp.dataNaixement = person.dataNaixement;
+                    tmpp.telefon = person.telefon.GetValueOrDefault();
+                    tmpp.dataNaixement = person.dataNaixement.HasValue ? person.dataNaixement.Value : DateTime.Now;
 
                     
                         bd.editar(tmpp, adreça);
@@ -270,8 +270,8 @@ namespace WebApplication3.Controllers
                     tmpp.nom = person.nom;
                     tmpp.email = person.email;
                     tmpp.password = person.password;
-                    tmpp.telefon = person.telefon;
-                    tmpp.dataNaixement = person.dataNaixement;
+                    tmpp.telefon = person.telefon.GetValueOrDefault();
+                    tmpp.dataNaixement = person.dataNaixement.HasValue? person.dataNaixement.Value : DateTime.Now;
                     tmpp.Cognoms = person.Cognoms;
 
                     
