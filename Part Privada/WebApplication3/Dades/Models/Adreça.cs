@@ -43,6 +43,11 @@ namespace Dades.Models
         [NotMapped]
         public string AdreçaCompleta => Comarca + " " + Localitat+ " " +Codipostal;
 
+
+        /// <summary>
+        /// Edita els camps d'adreça
+        /// </summary>
+        /// <param name="municipi">Municipi</param>
         public void editarAdreça( mpiscatalunya municipi)
         {
              //GestorBD bd = new GestorBD();

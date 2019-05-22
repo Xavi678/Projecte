@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Reflection;
@@ -11,6 +12,7 @@ using System.Web.Mvc;
 using Dades.Context;
 using Dades.Gestor;
 using Dades.Models;
+using MySql.Data.MySqlClient;
 using WebApplication3.Autenticacio;
 using WebApplication3.Models;
 using WebApplication3.Validador;
@@ -155,10 +157,12 @@ namespace WebApplication3.Controllers
                 ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
                 //ModelState.AddModelError("", "Omple tots els camps");
                 return View();
-            }catch(Exception e)
+            }catch(DbUpdateException e)
             {
+               
+                
                 ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
-                ModelState.AddModelError("", "Hi ha hagut un error");
+                ModelState.AddModelError("NIF", "Aquest NIF ja existeix");
                 return View();
             }
         }

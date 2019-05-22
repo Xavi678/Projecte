@@ -46,6 +46,7 @@ namespace WebApplication3.Controllers
         public ActionResult Create()
         {
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca");
+            ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
             return View();
         }
 
@@ -54,7 +55,7 @@ namespace WebApplication3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Nom,Files,Columnes,Comarca,Localitat,Codipostal")] TeatreVista teatre)
+        public ActionResult Create([Bind(Include = "ID,Nom,Files,Columnes,Localitat")] TeatreVista teatre)
         {
             mpiscatalunya municipi = bd.obtenirMunicipi(teatre.Localitat);
             Adreça e = new Adreça(municipi.Nomcomarca, teatre.Localitat, municipi.Codi);
@@ -85,6 +86,7 @@ namespace WebApplication3.Controllers
             }
             TeatreVista vista = new TeatreVista(teatre.ID,teatre.Nom, teatre.Files, teatre.Columnes, teatre.Adreça.Comarca, teatre.Adreça.Localitat,teatre.Adreça.Codipostal);
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", teatre.AdreçaID);
+            ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
             return View(vista);
         }
 
@@ -107,7 +109,7 @@ namespace WebApplication3.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Nom,Files,Columnes,Comarca,Localitat,Codipostal")] TeatreVista teatre)
+        public ActionResult Edit([Bind(Include = "ID,Nom,Files,Columnes,Localitat")] TeatreVista teatre)
         {
             //Adreça e = new Adreça(teatre.Comarca, teatre.Localitat, teatre.Codipostal);
             //Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);

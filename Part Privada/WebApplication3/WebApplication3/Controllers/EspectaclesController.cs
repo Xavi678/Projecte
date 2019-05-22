@@ -21,6 +21,10 @@ namespace WebApplication3.Controllers
         private GestorBD bd = new GestorBD();
 
         // GET: Espectacles
+        /// <summary>
+        /// Obté els espectacles de la base de dades i els passa a la vista
+        /// </summary>
+        /// <returns>retorna una vista amb un model d'espectacles</returns>
         public ActionResult Index()
         {
             //var espectacles = ;

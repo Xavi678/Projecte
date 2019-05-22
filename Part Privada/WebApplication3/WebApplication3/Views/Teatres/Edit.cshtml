@@ -49,30 +49,30 @@
             </div>
         </div>*@
 
-    <div class="form-group">
+   @* <div class="form-group">
         @Html.LabelFor(model => model.Comarca, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Comarca, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Comarca, "", new { @class = "text-danger" })
         </div>
-    </div>
+    </div>*@
 
     <div class="form-group">
         @Html.LabelFor(model => model.Localitat, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Localitat, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Localitat, (SelectList)ViewBag.Municipis, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Localitat, "", new { @class = "text-danger" })
         </div>
     </div>
 
-    <div class="form-group">
+   @* <div class="form-group">
         @Html.LabelFor(model => model.Codipostal, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Codipostal, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Codipostal, "", new { @class = "text-danger" })
         </div>
     </div>
-
+       *@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Save" class="btn btn-default" />

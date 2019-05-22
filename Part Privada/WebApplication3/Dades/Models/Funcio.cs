@@ -25,9 +25,11 @@ namespace Dades.Models
         }
 
         [ForeignKey("Espectacle")]
+        [Required]
         public int espectacleID { set; get; }
 
         [ForeignKey("Teatre")]
+        [Required]
         public int teatreID { set; get; }
 
         [Key]
@@ -35,12 +37,17 @@ namespace Dades.Models
         public int ID { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Required]
         public DateTime data { set; get; }
         [DataType(DataType.Time)]
+        [Required]
         public TimeSpan horaInici { set; get; }
         [DataType(DataType.Time)]
+        [Required]
         public TimeSpan horaFi { set; get; }
+        
         public virtual Espectacle Espectacle {set; get;}
+        
         public virtual Teatre Teatre { set; get; }
 
     }

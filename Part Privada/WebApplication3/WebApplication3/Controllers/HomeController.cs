@@ -16,7 +16,7 @@ namespace GestioTeatres.Controllers
         
         public ActionResult Index()
         {
-
+            bd.getListAutor();
            
             //db.Persones.Add(new Client(new Adreça("Urgell","Balaguer","25310"),"ggfhgf","xavi",5,"xavisp6@gmail.com","xavi"));
             //db.Teatres.Add(new Teatre(new Funcio(new DateTime(1999, 12, 12), new TimeSpan(4, 56, 34), new TimeSpan(4, 56, 34)), new Adreça("Urgell", "Balaguer", "25310"), "liceu", 6, 8));

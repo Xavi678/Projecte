@@ -18,18 +18,26 @@ namespace Dades.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EspectacleID { get; set; }
+        [Required]
         public string titol { get; set; }
         [DataType(DataType.MultilineText)]
+        [Required]
         public string sinopsi { get; set; }
         [DataType(DataType.Time)]
+        [Required]
         public TimeSpan durada { get; set; }
+        [Required]
         public string cartell { get; set; }
        [ForeignKey("Director")]
+       
         public string nifDirector { get; set; }
 
         [ForeignKey("Autor")]
+       
         public string nifAutor { get; set; }
+        
         public virtual Director Director { get; set; }
+       
         public virtual Autor Autor { get; set; }
 
         public Espectacle(string titol, string sinopsi, TimeSpan durada, string cartell, Director director, Autor autor)

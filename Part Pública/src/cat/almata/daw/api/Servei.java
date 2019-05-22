@@ -149,7 +149,7 @@ public class Servei {
 		try {
 
 			// System.out.println();
-			if(!db.existeixEmail(client.getEmail())) {
+			if(db.existeixEmail(client.getEmail())==true) {
 				return Response.status(Response.Status.BAD_REQUEST).build();
 			}
 			

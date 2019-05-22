@@ -79,7 +79,7 @@ namespace WebApplication3.Models
             Cognoms = cognoms;
         }
         [Required]
-       [RegularExpression("[0-9]{8}[A-Z]{1}",ErrorMessage ="Format invàlid")]   
+       [RegularExpression("^[0-9]{8}[A-Z]{1}$",ErrorMessage ="Format invàlid")]   
       
         public string NIF { get; set; }
         [Required]
@@ -116,6 +116,12 @@ namespace WebApplication3.Models
                     if(String.IsNullOrEmpty(email) || String.IsNullOrEmpty(password) || String.IsNullOrEmpty(Cognoms) || !telefon.HasValue || !dataNaixement.HasValue || !IsBetween(dataNaixement.Value) )
 
                     yield return new ValidationResult("Omple tots els camps correctament");
+                    break;
+                case TipusPersona.Administrador:
+
+                    if (String.IsNullOrEmpty(email) || String.IsNullOrEmpty(password) || !telefon.HasValue || !dataNaixement.HasValue || !IsBetween(dataNaixement.Value))
+
+                        yield return new ValidationResult("Omple tots els camps correctament");
                     break;
             }
         }
