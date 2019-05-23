@@ -23,7 +23,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    @if (Session["login"]==null) {
                     <li>@Html.ActionLink("Login", "Index", "Home")</li>
+                    }
+                    else
+                    {
+                    <li><a href="#">@Session["login"]  <span class="glyphicon glyphicon-user"></span></a> </li>
+                    <li>@Html.ActionLink("Sortir", "Logout", "Home")</li>
+                    }
+
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                 </ul>

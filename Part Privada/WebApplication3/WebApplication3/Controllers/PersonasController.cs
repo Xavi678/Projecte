@@ -65,13 +65,13 @@ namespace WebApplication3.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
     
-        public ActionResult Create([Bind(Include = "NIF,nom,edat,email,password,Localitat,dataNaixement,telefon,tipus,cognoms")] PersonaVista persona)
+        public ActionResult Create([Bind(Include = "NIF,nom,edat,email,password,Localitat,dataNaixement,telefon,tipus,cognoms,Codipostal")] PersonaVista persona)
         {
             try
             {
                 //Validation validation = new Validation();
                 mpiscatalunya municipi = bd.obtenirMunicipi(persona.Localitat);
-                Adreça e = new Adreça(municipi.Nomcomarca, persona.Localitat, municipi.Codi);
+                Adreça e = new Adreça(municipi.Nomcomarca, persona.Localitat, persona.Codipostal);
 
                 // t = new Persona();
                 //int i = (int)persona.tipus;
@@ -110,7 +110,7 @@ namespace WebApplication3.Controllers
 
 
                             //camps.Select(e => e);
-                            if  (!String.IsNullOrEmpty( persona.NIF) && !String.IsNullOrEmpty(persona.nom) && persona.edat!=0 && !String.IsNullOrEmpty( persona.email) && String.IsNullOrEmpty(persona.password) && persona.telefon!=0 && persona.dataNaixement!= default(DateTime)) {
+                            if  (ModelState.IsValid) {
                                 Administrador admin = new Administrador(e, persona.NIF, persona.nom, persona.edat, persona.email, persona.password, persona.telefon.GetValueOrDefault(), persona.dataNaixement.HasValue ? persona.dataNaixement.Value : DateTime.Now);
 
                                 bd.afegirAdministrador(admin, e);
@@ -123,7 +123,7 @@ namespace WebApplication3.Controllers
                     case TipusPersona.Director:
                         {
 
-                            if (!String.IsNullOrEmpty(persona.NIF) && !String.IsNullOrEmpty(persona.nom) && persona.edat != 0)
+                            if (ModelState.IsValid)
                             {
                                 Director director = new Director(e, persona.NIF, persona.nom, persona.edat);
                                 bd.afegirDirector(director, e);
@@ -134,7 +134,7 @@ namespace WebApplication3.Controllers
                         }
                     case TipusPersona.Autor:
                         {
-                            if (!String.IsNullOrEmpty(persona.NIF) && !String.IsNullOrEmpty(persona.nom) && persona.edat != 0)
+                            if (ModelState.IsValid)
                             {
                                 Autor autor = new Autor(e, persona.NIF, persona.nom, persona.edat);
                                 bd.afegirAutor(autor, e);
@@ -190,23 +190,23 @@ namespace WebApplication3.Controllers
                 if (u is Administrador)
                 {
 
-                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Administrador,u.telefon,u.dataNaixement));
+                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Codipostal,TipusPersona.Administrador,u.telefon,u.dataNaixement));
                 }
                 else
                 {
                     Client c = bd.obtenirClientperId(id);
-                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Localitat,TipusPersona.Client,c.telefon,c.dataNaixement,c.Cognoms));
+                    return View(new PersonaVista(u.NIF, u.nom, u.edat, u.email, u.password, u.Adreça.Comarca, u.Adreça.Localitat, u.Adreça.Codipostal,TipusPersona.Client,c.telefon,c.dataNaixement,c.Cognoms));
                 }
                 }
            
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
             if (persona is Autor)
             {
-                return View(new PersonaVista(persona.NIF, persona.nom, persona.edat, null, null, persona.Adreça.Comarca, persona.Adreça.Localitat, persona.Adreça.Localitat,TipusPersona.Autor));
+                return View(new PersonaVista(persona.NIF, persona.nom, persona.edat, null, null, persona.Adreça.Comarca, persona.Adreça.Localitat, persona.Adreça.Codipostal,TipusPersona.Autor));
             }
             else
             {
-                return View(new PersonaVista(persona.NIF, persona.nom, persona.edat, null, null, persona.Adreça.Comarca, persona.Adreça.Localitat, persona.Adreça.Localitat, TipusPersona.Director));
+                return View(new PersonaVista(persona.NIF, persona.nom, persona.edat, null, null, persona.Adreça.Comarca, persona.Adreça.Localitat, persona.Adreça.Codipostal, TipusPersona.Director));
             }
             }
 
@@ -229,7 +229,7 @@ namespace WebApplication3.Controllers
                     tmpp.edat = person.edat;
                     tmpp.nom = person.nom;
                     adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
-                    adreça.editarAdreça(municipi);
+                    adreça.editarAdreça(municipi,person.Codipostal);
 
                     bd.editar(tmpp, adreça);
 
@@ -245,7 +245,7 @@ namespace WebApplication3.Controllers
                     }
                     Administrador tmpp = bd.obtenirAdminperId(person.NIF);
                     adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
-                    adreça.editarAdreça(municipi);
+                    adreça.editarAdreça(municipi, person.Codipostal);
                     tmpp.edat = person.edat;
                     tmpp.nom = person.nom;
                     tmpp.email = person.email;
@@ -269,7 +269,7 @@ namespace WebApplication3.Controllers
                     }
                     Client tmpp = bd.obtenirClientperId(person.NIF);
                     adreça = bd.obtenirAdreçaperId(tmpp.AdreçaID);
-                    adreça.editarAdreça(municipi);
+                    adreça.editarAdreça(municipi, person.Codipostal);
                     tmpp.edat = person.edat;
                     tmpp.nom = person.nom;
                     tmpp.email = person.email;

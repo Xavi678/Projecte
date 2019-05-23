@@ -31,6 +31,7 @@ namespace Dades.Models
         [Required]
         public string Nom { get; set; }
         public int Files { get; set; }
+        
         public int Columnes { get; set; }
 
         //[Required

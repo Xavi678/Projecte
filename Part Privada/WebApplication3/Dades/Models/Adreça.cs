@@ -48,12 +48,12 @@ namespace Dades.Models
         /// Edita els camps d'adreça
         /// </summary>
         /// <param name="municipi">Municipi</param>
-        public void editarAdreça( mpiscatalunya municipi)
+        public void editarAdreça( mpiscatalunya municipi, int codipostal)
         {
              //GestorBD bd = new GestorBD();
          
             Comarca = municipi.Nomcomarca;
-            Codipostal = municipi.Codi;
+            Codipostal = codipostal;
             Localitat = municipi.Nom;
         }
 

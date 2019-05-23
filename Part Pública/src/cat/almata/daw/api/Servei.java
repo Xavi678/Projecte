@@ -1,5 +1,7 @@
 package cat.almata.daw.api;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +14,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.xml.bind.ParseConversionEvent;
 
 import cat.almata.daw.models.UsuariClient;
 import cat.almata.daw.models.Compra;
@@ -257,7 +260,7 @@ public class Servei {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response searchEspectacles(@QueryParam("search") String search) {
+	public Response searchEspectacles(@QueryParam("search") String search, @QueryParam("data") String data) {
 		try {
 
 			// System.out.println();
@@ -285,7 +288,7 @@ public class Servei {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response searchTeatres(@QueryParam("search") String search) {
+	public Response searchTeatres(@QueryParam("search") String search, @QueryParam("data") String data) {
 		try {
 
 			// System.out.println();
@@ -302,8 +305,18 @@ public class Servei {
 			GenericEntity<ArrayList<String>> genericEntity = new GenericEntity<ArrayList<String>>(localitats) {
 			};*/
 			
+			DateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+			ArrayList<Teatre> teatres= new ArrayList<Teatre>();
 			
-ArrayList<Teatre> teatres=	db.filtrarTeatres(search);
+			if(data==null || data.isEmpty() && !search.isEmpty() && search!=null) {
+			
+ teatres=	db.filtrarTeatres(search);
+			}else if(search==null || search.isEmpty()   && !data.isEmpty() && data!=null) {
+				
+				 teatres=	db.filtrarTeatres(format.parse(data));
+			}else if(search!=null && !search.isEmpty() && data !=null && !data.isEmpty()) {
+				teatres=db.filtrarTeatres(search,format.parse(data));
+			}
 			
 			GenericEntity<ArrayList<Teatre>> genericEntity = new GenericEntity<ArrayList<Teatre>>(teatres) {
 			};

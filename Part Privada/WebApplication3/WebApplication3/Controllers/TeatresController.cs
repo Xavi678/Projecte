@@ -55,10 +55,10 @@ namespace WebApplication3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Nom,Files,Columnes,Localitat")] TeatreVista teatre)
+        public ActionResult Create([Bind(Include = "ID,Nom,Files,Columnes,Localitat,Codipostal")] TeatreVista teatre)
         {
             mpiscatalunya municipi = bd.obtenirMunicipi(teatre.Localitat);
-            Adreça e = new Adreça(municipi.Nomcomarca, teatre.Localitat, municipi.Codi);
+            Adreça e = new Adreça(municipi.Nomcomarca, teatre.Localitat, teatre.Codipostal);
             Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace WebApplication3.Controllers
                
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", teatre.AdreçaID);
             return View(teatre);
         }
@@ -109,14 +109,14 @@ namespace WebApplication3.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Nom,Files,Columnes,Localitat")] TeatreVista teatre)
+        public ActionResult Edit([Bind(Include = "ID,Nom,Files,Columnes,Localitat,Codipostal")] TeatreVista teatre)
         {
             //Adreça e = new Adreça(teatre.Comarca, teatre.Localitat, teatre.Codipostal);
             //Teatre t = new Teatre(e, teatre.Nom, teatre.Files, teatre.Columnes);
             mpiscatalunya municipi = bd.obtenirMunicipi(teatre.Localitat);
             Teatre t=   bd.obtenirTeatreperId(teatre.ID);
             Adreça adreça = bd.obtenirAdreçaperId(t.AdreçaID);
-            adreça.editarAdreça(municipi);
+            adreça.editarAdreça(municipi,teatre.Codipostal);
             t.Files = teatre.Files;
             t.Columnes = teatre.Columnes;
             t.Nom = teatre.Nom;
@@ -133,7 +133,7 @@ namespace WebApplication3.Controllers
                 //db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", teatre.AdreçaID);
             return View(teatre);
         }

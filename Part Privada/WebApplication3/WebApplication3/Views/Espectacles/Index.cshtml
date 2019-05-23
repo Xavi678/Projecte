@@ -24,10 +24,10 @@
             @Html.DisplayNameFor(model => model.cartell)
         </th>
         <th>
-          Autor  @Html.DisplayNameFor(model => model.Autor.NIF)
+          Autor  
         </th>
         <th>
-           Director @Html.DisplayNameFor(model => model.Director.NIF)
+           Director 
         </th>
         <th></th>
     </tr>
@@ -47,10 +47,10 @@
             @Html.DisplayFor(modelItem => item.cartell)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Autor.NIF)
+            @Html.DisplayFor(modelItem => item.Autor.nom)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Director.NIF)
+            @Html.DisplayFor(modelItem => item.Director.nom)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.EspectacleID }) |

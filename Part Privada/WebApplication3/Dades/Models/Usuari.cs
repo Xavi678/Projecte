@@ -16,6 +16,7 @@ namespace Dades.Models
         
         public string password { get; set; }
         public int telefon { get; set; }
+        [Display(Name ="Data Naixement")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime dataNaixement { get; set; }

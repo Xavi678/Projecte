@@ -53,6 +53,12 @@ namespace GestioTeatres.Controllers
             
         }
         
+        public ActionResult Logout()
+        {
+            Session["login"] = null;
+
+            return View("Index");
+        }
 
         public ActionResult About()
         {

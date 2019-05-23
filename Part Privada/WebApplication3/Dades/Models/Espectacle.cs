@@ -29,11 +29,11 @@ namespace Dades.Models
         [Required]
         public string cartell { get; set; }
        [ForeignKey("Director")]
-       
+       [Display(Name ="Director")]
         public string nifDirector { get; set; }
 
         [ForeignKey("Autor")]
-       
+        [Display(Name = "Autor")]
         public string nifAutor { get; set; }
         
         public virtual Director Director { get; set; }

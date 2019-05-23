@@ -174,7 +174,6 @@
     <Compile Include="Autenticacio\Filtratge.cs" />
     <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Models\PersonaVista.cs" />
-    <Compile Include="Models\Sessio.cs" />
     <Compile Include="Models\TeatreVista.cs" />
     <Compile Include="Controllers\EspectaclesController.cs" />
     <Compile Include="Controllers\FuncionsController.cs" />

@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -393,6 +394,38 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		}
 		
 		return espectacles;
+	}
+
+	public ArrayList<Teatre> filtrarTeatres(Date parse) throws SQLException {
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		String sql="select * from teatres as t,adreces as a,funcions as f where t.AdreçaID=a.ID and f.teatreID=t.ID AND f.data=?;";
+		
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setTimestamp(1,new java.sql.Timestamp(parse.getTime()));
+		ArrayList<Teatre> teatres= new ArrayList<Teatre>();
+		ResultSet rs=prs.executeQuery();
+		
+		while(rs.next()){
+			teatres.add(new Teatre(rs.getInt(1), rs.getString("Nom"), rs.getInt("Files"), rs.getInt("Columnes"), rs.getInt("AdreçaID"), new Adreca(rs.getInt("a.ID"), rs.getString("Comarca"), rs.getString("Localitat"), rs.getInt("Codipostal"))));
+		}
+		
+		return teatres;
+	}
+
+	public ArrayList<Teatre> filtrarTeatres(String search, Date parse) {
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		String sql="select * from teatres as t,adreces as a,funcions as f where t.AdreçaID=a.ID and f.teatreID=t.ID AND f.data=?;";
+		
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setTimestamp(1,new java.sql.Timestamp(parse.getTime()));
+		ArrayList<Teatre> teatres= new ArrayList<Teatre>();
+		ResultSet rs=prs.executeQuery();
+		
+		while(rs.next()){
+			teatres.add(new Teatre(rs.getInt(1), rs.getString("Nom"), rs.getInt("Files"), rs.getInt("Columnes"), rs.getInt("AdreçaID"), new Adreca(rs.getInt("a.ID"), rs.getString("Comarca"), rs.getString("Localitat"), rs.getInt("Codipostal"))));
+		}
+		
+		return teatres;
 	}
 
 	

@@ -62,6 +62,12 @@ namespace Dades.Gestor
         {
             return db.Teatres.Find(id);
         }
+
+        public int getCP(string localitat)
+        {
+            return db.mpiscatalunya.Where(e => e.Nom.Equals(localitat)).Select(e => e.Codi).FirstOrDefault();
+        }
+
         /// <summary>
         /// Busca a la base de dades un objecte que tingui el mateix id que li he passat
         /// </summary>
