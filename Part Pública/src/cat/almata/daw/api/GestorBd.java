@@ -398,7 +398,7 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 
 	public ArrayList<Teatre> filtrarTeatres(Date parse) throws SQLException {
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
-		String sql="select * from teatres as t,adreces as a,funcions as f where t.AdreçaID=a.ID and f.teatreID=t.ID AND f.data=?;";
+		String sql="select distinct(t.ID),t.Nom,t.Files,t.Columnes,t.AdreçaID,a.ID,a.Comarca,a.Localitat,a.Codipostal from teatres as t,adreces as a,funcions as f where t.AdreçaID=a.ID and f.teatreID=t.ID  AND f.data=? ;";
 		
 		PreparedStatement prs=conn.prepareStatement(sql);
 		prs.setTimestamp(1,new java.sql.Timestamp(parse.getTime()));
@@ -412,12 +412,13 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		return teatres;
 	}
 
-	public ArrayList<Teatre> filtrarTeatres(String search, Date parse) {
+	public ArrayList<Teatre> filtrarTeatres(String search, Date parse) throws SQLException {
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
-		String sql="select * from teatres as t,adreces as a,funcions as f where t.AdreçaID=a.ID and f.teatreID=t.ID AND f.data=?;";
+		String sql="select distinct(t.ID),t.Nom,t.Files,t.Columnes,t.AdreçaID,a.ID,a.Comarca,a.Localitat,a.Codipostal from teatres as t,adreces as a,funcions as f where t.AdreçaID=a.ID and f.teatreID=t.ID and t.Nom=? AND f.data=?;";
 		
 		PreparedStatement prs=conn.prepareStatement(sql);
-		prs.setTimestamp(1,new java.sql.Timestamp(parse.getTime()));
+		prs.setString(1, search);
+		prs.setTimestamp(2,new java.sql.Timestamp(parse.getTime()));
 		ArrayList<Teatre> teatres= new ArrayList<Teatre>();
 		ResultSet rs=prs.executeQuery();
 		

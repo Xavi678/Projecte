@@ -305,7 +305,7 @@ public class Servei {
 			GenericEntity<ArrayList<String>> genericEntity = new GenericEntity<ArrayList<String>>(localitats) {
 			};*/
 			
-			DateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			ArrayList<Teatre> teatres= new ArrayList<Teatre>();
 			
 			if(data==null || data.isEmpty() && !search.isEmpty() && search!=null) {
