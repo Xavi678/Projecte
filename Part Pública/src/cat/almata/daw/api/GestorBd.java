@@ -325,6 +325,32 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		}
 		return llista;
 	}
+	
+	
+	public ArrayList<Compra> obtenirCompres(String clientID, Date search, String espectacle, String teatre) throws SQLException {
+		// TODO Auto-generated method stub
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		//String sql="select * from compres as c, funcions as f where f.ID=c.funcioID and clientID=?";
+		String sql="select * from compres as c, funcions as f, teatres as t,espectacles as e where f.ID=c.funcioID and f.teatreID=t.ID and f.espectacleID=e.EspectacleID and c.clientID=? and e.titol=? and t.nom=? and f.data=?;";
+		PreparedStatement prs=conn.prepareStatement(sql);
+		prs.setString(1, clientID);
+		prs.setString(2, espectacle);
+		prs.setString(3, teatre);
+		prs.setDate(4, new java.sql.Date(search.getTime()));
+		
+		ResultSet rs=prs.executeQuery();
+		ArrayList<Compra> llista= new ArrayList<Compra>();
+		while(rs.next()) {
+			
+			//llista.add(new Compra(rs.getInt(1), rs.getInt("funcioID"), rs.getString("clientID"), rs.getInt("fila"),rs.getInt("columna"), rs.getString("Nom"), rs.getString("titol"),new Date(rs.getTimestamp("data").getTime())));
+			
+			llista.add(new Compra(rs.getInt(1), rs.getInt("funcioID"), rs.getString("clientID"), rs.getInt("fila"),rs.getInt("columna"), new Funcio(rs.getInt("f.ID"),new Date(rs.getTimestamp("data").getTime()), new Teatre(rs.getString("Nom")), new Espectacle(rs.getString("titol")))));
+			
+			//llista.add(new Funcio(rs.getInt("ID"),rs.getInt("espectacleID"),rs.getInt("teatreID"),new Date(rs.getTimestamp("data").getTime()),rs.getString("horaInici")));
+			
+		}
+		return llista;
+	}
 
 	public ArrayList<String> obtenirLocalitats() throws SQLException {
 		// TODO Auto-generated method stub
@@ -396,12 +422,13 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		return espectacles;
 	}
 
-	public ArrayList<Teatre> filtrarTeatres(Date parse) throws SQLException {
+	public ArrayList<Teatre> filtrarTeatres(Date parse, Date date) throws SQLException {
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
-		String sql="select distinct(t.ID),t.Nom,t.Files,t.Columnes,t.AdreçaID,a.ID,a.Comarca,a.Localitat,a.Codipostal from teatres as t,adreces as a,funcions as f where t.AdreçaID=a.ID and f.teatreID=t.ID  AND f.data=? ;";
+		String sql="select distinct(t.ID),t.Nom,t.Files,t.Columnes,t.AdreçaID,a.ID,a.Comarca,a.Localitat,a.Codipostal from teatres as t,adreces as a,funcions as f where t.AdreçaID=a.ID and f.teatreID=t.ID  AND f.data BETWEEN ? and ?;";
 		
 		PreparedStatement prs=conn.prepareStatement(sql);
-		prs.setTimestamp(1,new java.sql.Timestamp(parse.getTime()));
+		prs.setDate(1, new java.sql.Date(parse.getTime()));
+		prs.setDate(2, new java.sql.Date(date.getTime()));
 		ArrayList<Teatre> teatres= new ArrayList<Teatre>();
 		ResultSet rs=prs.executeQuery();
 		
@@ -412,13 +439,14 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		return teatres;
 	}
 
-	public ArrayList<Teatre> filtrarTeatres(String search, Date parse) throws SQLException {
+	public ArrayList<Teatre> filtrarTeatres(String search, Date parse, Date date) throws SQLException {
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
-		String sql="select distinct(t.ID),t.Nom,t.Files,t.Columnes,t.AdreçaID,a.ID,a.Comarca,a.Localitat,a.Codipostal from teatres as t,adreces as a,funcions as f where t.AdreçaID=a.ID and f.teatreID=t.ID and t.Nom=? AND f.data=?;";
+		String sql="select distinct(t.ID),t.Nom,t.Files,t.Columnes,t.AdreçaID,a.ID,a.Comarca,a.Localitat,a.Codipostal from teatres as t,adreces as a,funcions as f where t.AdreçaID=a.ID and f.teatreID=t.ID and t.Nom=? and f.data BETWEEN ? and ?;";
 		
 		PreparedStatement prs=conn.prepareStatement(sql);
 		prs.setString(1, search);
-		prs.setTimestamp(2,new java.sql.Timestamp(parse.getTime()));
+		prs.setDate(2, new java.sql.Date(parse.getTime()));
+		prs.setDate(3, new java.sql.Date(date.getTime()));
 		ArrayList<Teatre> teatres= new ArrayList<Teatre>();
 		ResultSet rs=prs.executeQuery();
 		
@@ -428,6 +456,53 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		
 		return teatres;
 	}
+
+	public ArrayList<Espectacle> filtrarEspectacles(Date parse, Date date) throws SQLException {
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		String sql=" select distinct(t.espectacleID),t.titol,t.sinopsi,t.durada,t.cartell,t.nifDirector,t.nifAutor from espectacles as t,funcions as f where  f.espectacleID=t.espectacleID and f.data BETWEEN ? and ?";
+		
+		PreparedStatement prs=conn.prepareStatement(sql);
+		//java.sql.Timestamp tempsTemp = new java.sql.Timestamp(parse.getTime());
+		prs.setDate(1, new java.sql.Date(parse.getTime()));
+		prs.setDate(2, new java.sql.Date(date.getTime()));
+		ArrayList<Espectacle> espectacles= new ArrayList<Espectacle>();
+		ResultSet rs=prs.executeQuery();
+		
+		//ArrayList<Date> dates= new ArrayList<Date>();
+		
+		while(rs.next()){
+			//teatres.add(new Teatre(rs.getInt(1), rs.getString("Nom"), rs.getInt("Files"), rs.getInt("Columnes"), rs.getInt("AdreçaID")));
+			espectacles.add(new Espectacle(rs.getInt("EspectacleID"), rs.getString("titol"), rs.getString("sinopsi"), rs.getString("durada"), rs.getString("cartell"), rs.getString("nifDirector"), rs.getString("nifAutor")));
+			//dates.add(new Date(rs.getTimestamp("data").getTime()));
+			//java.sql.Timestamp tempsBD = rs.getTimestamp("data");
+			
+		
+		}
+		
+		return espectacles;
+	}
+
+	public ArrayList<Espectacle> filtrarEspectacles(String search, Date parse,Date date) throws SQLException {
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		String sql=" select distinct(t.espectacleID),t.titol,t.sinopsi,t.durada,t.cartell,t.nifDirector,t.nifAutor from espectacles as t,funcions as f where  f.espectacleID=t.espectacleID  AND f.data BETWEEN ? and ? AND t.titol=?;";
+		
+		PreparedStatement prs=conn.prepareStatement(sql);
+		//prs.setTimestamp(1, new java.sql.Timestamp(parse.getTime()));
+		prs.setDate(1, new java.sql.Date(parse.getTime()));
+		prs.setDate(2, new java.sql.Date(date.getTime()));
+		prs.setString(3, search);
+		ArrayList<Espectacle> espectacles= new ArrayList<Espectacle>();
+		ResultSet rs=prs.executeQuery();
+		
+		while(rs.next()){
+			//teatres.add(new Teatre(rs.getInt(1), rs.getString("Nom"), rs.getInt("Files"), rs.getInt("Columnes"), rs.getInt("AdreçaID")));
+			espectacles.add(new Espectacle(rs.getInt("EspectacleID"), rs.getString("titol"), rs.getString("sinopsi"), rs.getString("durada"), rs.getString("cartell"), rs.getString("nifDirector"), rs.getString("nifAutor")));
+		}
+		
+		return espectacles;
+	}
+
+
 
 	
 	}

@@ -228,6 +228,31 @@ public class Servei {
 		}
 	}
 	
+	@Path("/obtenirCompresFiltrades")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response obtenirCompresFiltrades(@QueryParam("clientID") String clientID, @QueryParam("search") String search, @QueryParam("espectacle") String espectacle, @QueryParam("teatre") String teatre   ) {
+		try {
+
+			// System.out.println();
+			
+			//Boolean inserit= db.insert(client);
+
+			// Token t=new Token(token, new Date());
+
+			/*GenericEntity<Boolean> genericEntity = new GenericEntity<Boolean>(inserit) {
+			};*/
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			ArrayList<Compra> compres=db.obtenirCompres(clientID,format.parse(search),espectacle,teatre);
+			GenericEntity<ArrayList<Compra>> genericEntity = new GenericEntity<ArrayList<Compra>>(compres) {
+			};
+			return Response.ok( genericEntity,MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
+	
 	
 	@Path("/obtenirLocalitats")
 	@GET
@@ -260,7 +285,7 @@ public class Servei {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response searchEspectacles(@QueryParam("search") String search, @QueryParam("data") String data) {
+	public Response searchEspectacles(@QueryParam("search") String search, @QueryParam("data") String data, @QueryParam("datafi") String datafi) {
 		try {
 
 			// System.out.println();
@@ -273,7 +298,22 @@ public class Servei {
 			};*/
 			
 			//ArrayList<String> localitats= db.obtenirLocalitats();
-		ArrayList<Espectacle> espectacles=	db.filtrarEspectacles(search);
+		
+		
+
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		ArrayList<Espectacle> espectacles= new ArrayList<Espectacle>();
+		
+		if(data==null || data.isEmpty() && datafi==null || datafi.isEmpty() && !search.isEmpty() && search!=null) {
+		
+espectacles=	db.filtrarEspectacles(search);
+		}else if(search==null || search.isEmpty()   && !data.isEmpty() && data!=null && !datafi.isEmpty() && datafi!=null) {
+			
+			 espectacles=	db.filtrarEspectacles(format.parse(data),format.parse(datafi));
+		}else if(search!=null && !search.isEmpty() && data !=null && !data.isEmpty() && !datafi.isEmpty() && datafi!=null) {
+			espectacles=db.filtrarEspectacles(search,format.parse(data),format.parse(datafi));
+		}
+		
 			
 			GenericEntity<ArrayList<Espectacle>> genericEntity = new GenericEntity<ArrayList<Espectacle>>(espectacles) {
 			};
@@ -288,7 +328,7 @@ public class Servei {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response searchTeatres(@QueryParam("search") String search, @QueryParam("data") String data) {
+	public Response searchTeatres(@QueryParam("search") String search, @QueryParam("data") String data,@QueryParam("datafi") String datafi) {
 		try {
 
 			// System.out.println();
@@ -308,14 +348,14 @@ public class Servei {
 			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			ArrayList<Teatre> teatres= new ArrayList<Teatre>();
 			
-			if(data==null || data.isEmpty() && !search.isEmpty() && search!=null) {
+			if(data==null || data.isEmpty() && datafi.isEmpty() || datafi==null && !search.isEmpty() && search!=null) {
 			
  teatres=	db.filtrarTeatres(search);
-			}else if(search==null || search.isEmpty()   && !data.isEmpty() && data!=null) {
+			}else if(search==null || search.isEmpty()   && !data.isEmpty() && data!=null && !datafi.isEmpty() && datafi!=null) {
 				
-				 teatres=	db.filtrarTeatres(format.parse(data));
-			}else if(search!=null && !search.isEmpty() && data !=null && !data.isEmpty()) {
-				teatres=db.filtrarTeatres(search,format.parse(data));
+				 teatres=	db.filtrarTeatres(format.parse(data),format.parse(datafi));
+			}else if(search!=null && !search.isEmpty() && data !=null && !data.isEmpty() && !datafi.isEmpty() && datafi!=null) {
+				teatres=db.filtrarTeatres(search,format.parse(data),format.parse(datafi));
 			}
 			
 			GenericEntity<ArrayList<Teatre>> genericEntity = new GenericEntity<ArrayList<Teatre>>(teatres) {

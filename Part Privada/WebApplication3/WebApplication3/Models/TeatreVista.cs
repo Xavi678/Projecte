@@ -35,13 +35,15 @@ namespace WebApplication3.Models
         }
         public int ID { get; set; }
         [Required]
-        [RegularExpression("^[A-Za-z]*$",ErrorMessage ="El nom del teatre només pot contenir lletres")]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage ="El nom del teatre només pot contenir lletres")]
         public string Nom { get; set; }
         [Required]
-        [RegularExpression("^[0-9]{2}$", ErrorMessage = "Només pot tenir 2 xifres")]
+        //[RegularExpression("^[0-9]{2}$", ErrorMessage = "Només pot tenir 2 xifres")]
+        [Range(1,9,ErrorMessage = "Només pot tenir 2 xifres")]
         public int Files { get; set; }
         [Required]
-        [RegularExpression("^[0-9]{2}$", ErrorMessage = "Només pot tenir 2 xifres")]
+        //[RegularExpression("^[0-9]{2}$", ErrorMessage = "Només pot tenir 2 xifres")]
+        [Range(1, 9, ErrorMessage = "Només pot tenir 2 xifres")]
         public int Columnes { get; set; }
         public string Comarca { set; get; }
         [Required]
