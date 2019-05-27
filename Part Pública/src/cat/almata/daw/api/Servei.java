@@ -232,7 +232,7 @@ public class Servei {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response obtenirCompresFiltrades(@QueryParam("clientID") String clientID, @QueryParam("search") String search, @QueryParam("espectacle") String espectacle, @QueryParam("teatre") String teatre   ) {
+	public Response obtenirCompresFiltrades(@QueryParam("clientID") String clientID, @QueryParam("data") String search, @QueryParam("espectacle") String espectacle, @QueryParam("teatre") String teatre   ) {
 		try {
 
 			// System.out.println();

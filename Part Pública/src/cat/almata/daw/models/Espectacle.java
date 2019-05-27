@@ -2,6 +2,13 @@ package cat.almata.daw.models;
 
 import java.sql.Time;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+
+
+
+
+@XmlRootElement
 public class Espectacle {
 
 	private int EspectacleID;

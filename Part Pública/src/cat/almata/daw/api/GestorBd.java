@@ -331,7 +331,7 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		// TODO Auto-generated method stub
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
 		//String sql="select * from compres as c, funcions as f where f.ID=c.funcioID and clientID=?";
-		String sql="select * from compres as c, funcions as f, teatres as t,espectacles as e where f.ID=c.funcioID and f.teatreID=t.ID and f.espectacleID=e.EspectacleID and c.clientID=? and e.titol=? and t.nom=? and f.data=?;";
+		String sql="select * from compres as c, funcions as f, teatres as t,espectacles as e where f.ID=c.funcioID and f.teatreID=t.ID and f.espectacleID=e.EspectacleID and  c.clientID=? and ( e.titol=? and t.nom=? and f.data=?);";
 		PreparedStatement prs=conn.prepareStatement(sql);
 		prs.setString(1, clientID);
 		prs.setString(2, espectacle);

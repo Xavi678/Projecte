@@ -27,14 +27,21 @@ namespace WebApplication3.Controllers
         private GestorBD bd = new GestorBD();
 
         // GET: Personas
-       
+       /// <summary>
+       /// Obté una llista de persones i redirecciona a la vista
+       /// </summary>
+       /// <returns>una vista amb una llista de persones</returns>
         public ActionResult Index()
         {
              
             var persones = bd.getPersones();
             return View(persones);
         }
-
+        /// <summary>
+        /// Obté un id, comprova que no sigui null, obté un objecte persona per l'id donat i comprova que l'objecte Persona no sigui null
+        /// </summary>
+        /// <param name="id">Enter que pot ser null</param>
+        /// <returns>retorna un error http o retorna la vista amb l'objecte Persona</returns>
         // GET: Personas/Details/5
         public ActionResult Details(string id)
         {
@@ -50,6 +57,10 @@ namespace WebApplication3.Controllers
             return View(persona);
         }
 
+        /// <summary>
+        /// Crea un selectlist d'una llista de municipis
+        /// </summary>
+        /// <returns>una vista</returns>
         // GET: Personas/Create
         public ActionResult Create()
         {
@@ -59,6 +70,11 @@ namespace WebApplication3.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Obté un objecte PersonaVista, per la localitat, obté un objecte municipi i instancia una adreça, depenent del tipus de persona que sigui, entra dins d'un switch en cada un d'ells comprova que els elemnts siguin vàlids, i en el cas del client o l'administrador anteriorment comprova que no existeixi l'email passat, si existeix reidreccciona a la vista i abans crea un missatge d'error, si tot és correcte afegeix la persona a la abse de dades i torna a l'index
+        /// </summary>
+        /// <param name="persona"></param>
+        /// <returns></returns>
         // POST: Personas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.

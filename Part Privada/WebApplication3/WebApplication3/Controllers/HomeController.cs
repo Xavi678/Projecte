@@ -14,9 +14,13 @@ namespace GestioTeatres.Controllers
     {
         GestorBD bd = new GestorBD();
         
+        /// <summary>
+        /// Va a la vista index
+        /// </summary>
+        /// <returns>retorna una vista</returns>
         public ActionResult Index()
         {
-            bd.getListAutor();
+            //bd.getListAutor();
            
             //db.Persones.Add(new Client(new Adreça("Urgell","Balaguer","25310"),"ggfhgf","xavi",5,"xavisp6@gmail.com","xavi"));
             //db.Teatres.Add(new Teatre(new Funcio(new DateTime(1999, 12, 12), new TimeSpan(4, 56, 34), new TimeSpan(4, 56, 34)), new Adreça("Urgell", "Balaguer", "25310"), "liceu", 6, 8));
@@ -26,12 +30,21 @@ namespace GestioTeatres.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Comprova si un usuari esta loggejat i va a la vista Main
+        /// </summary>
+        /// <returns>retorna una vista</returns>
         [Filtratge]
         public ActionResult Main()
         {
             return View();
         }
 
+        /// <summary>
+        /// Obté un objecte Administrador per mitjà d'un formulari, comrpova si és vàlid, si ho és el posa en sessió, i va a la vista Main, si no ho és crea un missatge d'error i torna al login
+        /// </summary>
+        /// <param name="administrador">Objecte Administrador</param>
+        /// <returns>una vista</returns>
         public ActionResult Login([Bind(Include = "email,password")] Administrador administrador)
         {
 
@@ -53,6 +66,10 @@ namespace GestioTeatres.Controllers
             
         }
         
+        /// <summary>
+        /// Posa a null l'objecte que hi havia en sessió
+        /// </summary>
+        /// <returns>una vista</returns>
         public ActionResult Logout()
         {
             Session["login"] = null;
