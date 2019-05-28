@@ -403,6 +403,23 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		
 		return teatres;
 	}
+	
+	public ArrayList<Teatre> obtenirTeatres() throws SQLException {
+		// TODO Auto-generated method stub
+		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
+		String sql="select * from teatres as t,adreces as a where t.AdreçaID=a.ID ";
+		
+		PreparedStatement prs=conn.prepareStatement(sql);
+		
+		ArrayList<Teatre> teatres= new ArrayList<Teatre>();
+		ResultSet rs=prs.executeQuery();
+		
+		while(rs.next()){
+			teatres.add(new Teatre(rs.getInt(1), rs.getString("Nom"), rs.getInt("Files"), rs.getInt("Columnes"), rs.getInt("AdreçaID"), new Adreca(rs.getInt("a.ID"), rs.getString("Comarca"), rs.getString("Localitat"), rs.getInt("Codipostal"))));
+		}
+		
+		return teatres;
+	}
 
 	public ArrayList<Espectacle> filtrarEspectacles(String search) throws SQLException {
 		// TODO Auto-generated method stub

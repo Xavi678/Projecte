@@ -367,6 +367,44 @@ espectacles=	db.filtrarEspectacles(search);
 	}
 	
 	
+	@Path("/getTeatres")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response searchTeatres() {
+		try {
+
+			// System.out.println();
+			
+			//Boolean inserit= db.insert(client);
+
+			// Token t=new Token(token, new Date());
+
+			/*GenericEntity<Boolean> genericEntity = new GenericEntity<Boolean>(inserit) {
+			};*/
+			
+			/*ArrayList<String> localitats= db.obtenirLocalitats();
+			
+			GenericEntity<ArrayList<String>> genericEntity = new GenericEntity<ArrayList<String>>(localitats) {
+			};*/
+			
+			
+			ArrayList<Teatre> teatres= new ArrayList<Teatre>();
+			ArrayList<Teatre> tmp= new ArrayList<Teatre>();
+			teatres = db.obtenirTeatres();
+			
+			for(int i=0;i<teatres.size() && i<=2 ;i++) {
+				tmp.add(teatres.get(i));
+			}
+			
+			GenericEntity<ArrayList<Teatre>> genericEntity = new GenericEntity<ArrayList<Teatre>>(tmp) {
+			};
+			return Response.ok( genericEntity,MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+	}
+	
 	/*@Path("/A")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
