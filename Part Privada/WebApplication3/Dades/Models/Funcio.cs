@@ -54,6 +54,13 @@ namespace Dades.Models
         [Display(Name = "Teatre")]
         public virtual Teatre Teatre { set; get; }
 
+        /// <summary>
+        /// Determina si el objeto especificado es válido.
+        /// </summary>
+        /// <param name="validationContext">El contexto de validación.</param>
+        /// <returns>
+        /// Una colección que contiene información de error de validación.
+        /// </returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //checkHores(horaInici,horaFi) ??  yield return new ValidationResult("l'hora d'inici ha de ser més petita que la de fi");
@@ -63,6 +70,12 @@ namespace Dades.Models
             }
         }
 
+        /// <summary>
+        /// Comprova si la data d'inici és més petita que la final
+        /// </summary>
+        /// <param name="horaInici">The hora inici.</param>
+        /// <param name="horaFi">The hora fi.</param>
+        /// <returns>Booleà</returns>
         private bool checkHores(TimeSpan horaInici, TimeSpan horaFi)
         {
             //throw new NotImplementedException();

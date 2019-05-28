@@ -111,7 +111,13 @@ namespace WebApplication3.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? dataNaixement { set; get; }
         public string Cognoms { set; get; }
-
+        /// <summary>
+        /// Determina si el objeto especificado es válido.
+        /// </summary>
+        /// <param name="validationContext">El contexto de validación.</param>
+        /// <returns>
+        /// Una colección que contiene información de error de validación.
+        /// </returns>
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (!cpisvalid(Codipostal))
@@ -144,11 +150,22 @@ namespace WebApplication3.Models
         {
             Client,Autor, Administrador,Director
         }
-        public  bool IsBetween( DateTime input )
+        /// <summary>
+        /// Determina si la data està entre 1970 i la data actual
+        /// </summary>
+        /// <param name="input">Datetime</param>
+        /// <returns>
+        ///   <c>true</c> if the specified input is between; otherwise, <c>false</c>.
+        /// </returns>
+        public bool IsBetween( DateTime input )
         {
             return (input >= new DateTime(1970,12,12) && input <= DateTime.Now);
         }
-
+        /// <summary>
+        /// Valida el codipostal
+        /// </summary>
+        /// <param name="codipostal">Enter</param>
+        /// <returns>booleà</returns>
         private bool cpisvalid(int codipostal)
         {
             GestorBD bd = new GestorBD();

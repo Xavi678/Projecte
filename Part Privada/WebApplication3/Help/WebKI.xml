@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title=" to Adre&#231;a conversion" Url="html/M-Dades.Models.Adreça.op_Implicit.htm" />
+  <HelpKINode Title="About method" Url="html/M-GestioTeatres.Controllers.HomeController.About.htm" />
+  <HelpKINode Title="Administrador class">
+    <HelpKINode Title="Administrador Class" Url="html/T-Dades.Models.Administrador.htm" />
+    <HelpKINode Title="Administrador Members" Url="html/AllMembers.T-Dades.Models.Administrador.htm" />
+    <HelpKINode Title="about Administrador class" Url="html/T-Dades.Models.Administrador.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Administrador.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-Dades.Models.Administrador.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Administrador.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Administrador.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Administrador enumeration member" Url="html/T-WebApplication3.Models.PersonaVista.TipusPersona.htm" />
+  <HelpKINode Title="Administrador field" Url="html/F-WebApplication3.Models.PersonaVista.TipusPersona.Administrador.htm" />
+  <HelpKINode Title="Administrador.Administrador constructor" Url="html/Overload-Dades.Models.Administrador.-ctor.htm" />
+  <HelpKINode Title="administradors property" Url="html/P-Dades.Context.PersonaContext.administradors.htm" />
+  <HelpKINode Title="Adreces property" Url="html/P-Dades.Context.PersonaContext.Adreces.htm" />
+  <HelpKINode Title="Adre&#231;a class">
+    <HelpKINode Title="Adre&#231;a Class" Url="html/T-Dades.Models.Adreça.htm" />
+    <HelpKINode Title="Adre&#231;a Members" Url="html/AllMembers.T-Dades.Models.Adreça.htm" />
+    <HelpKINode Title="about Adre&#231;a class" Url="html/T-Dades.Models.Adreça.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Adreça.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-Dades.Models.Adreça.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Adreça.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Adreça.htm" />
+    <HelpKINode Title="type conversions" Url="html/Operators.T-Dades.Models.Adreça.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Adre&#231;a property">
+    <HelpKINode Title="Adre&#231;a Property " Url="html/P-Dades.Models.Teatre.Adreça.htm" />
+    <HelpKINode Title="Adre&#231;a Property " Url="html/P-Dades.Models.Persona.Adreça.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Adre&#231;a.Adre&#231;a constructor" Url="html/Overload-Dades.Models.Adreça.-ctor.htm" />
+  <HelpKINode Title="Adre&#231;a.Adre&#231;aCompleta property" Url="html/P-Dades.Models.Adreça.AdreçaCompleta.htm" />
+  <HelpKINode Title="Adre&#231;a.Codipostal property" Url="html/P-Dades.Models.Adreça.Codipostal.htm" />
+  <HelpKINode Title="Adre&#231;a.Comarca property" Url="html/P-Dades.Models.Adreça.Comarca.htm" />
+  <HelpKINode Title="Adre&#231;a.editarAdre&#231;a method" Url="html/M-Dades.Models.Adreça.editarAdreça.htm" />
+  <HelpKINode Title="Adre&#231;a.ID property" Url="html/P-Dades.Models.Adreça.ID.htm" />
+  <HelpKINode Title="Adre&#231;a.Localitat property" Url="html/P-Dades.Models.Adreça.Localitat.htm" />
+  <HelpKINode Title="Adre&#231;aCompleta property" Url="html/P-Dades.Models.Adreça.AdreçaCompleta.htm" />
+  <HelpKINode Title="Adre&#231;aID property">
+    <HelpKINode Title="Adre&#231;aID Property " Url="html/P-Dades.Models.Persona.AdreçaID.htm" />
+    <HelpKINode Title="Adre&#231;aID Property " Url="html/P-Dades.Models.Teatre.AdreçaID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="afegirAdministrador method" Url="html/M-Dades.Gestor.GestorBD.afegirAdministrador.htm" />
+  <HelpKINode Title="afegirAutor method" Url="html/M-Dades.Gestor.GestorBD.afegirAutor.htm" />
+  <HelpKINode Title="afegirClient method" Url="html/M-Dades.Gestor.GestorBD.afegirClient.htm" />
+  <HelpKINode Title="afegirDirector method" Url="html/M-Dades.Gestor.GestorBD.afegirDirector.htm" />
+  <HelpKINode Title="afegirEspectacle method" Url="html/M-Dades.Gestor.GestorBD.afegirEspectacle.htm" />
+  <HelpKINode Title="afegirFuncio method" Url="html/M-Dades.Gestor.GestorBD.afegirFuncio.htm" />
+  <HelpKINode Title="afegirTeatre method" Url="html/M-Dades.Gestor.GestorBD.afegirTeatre.htm" />
+  <HelpKINode Title="Autor class">
+    <HelpKINode Title="Autor Class" Url="html/T-Dades.Models.Autor.htm" />
+    <HelpKINode Title="Autor Members" Url="html/AllMembers.T-Dades.Models.Autor.htm" />
+    <HelpKINode Title="about Autor class" Url="html/T-Dades.Models.Autor.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Autor.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-Dades.Models.Autor.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Autor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Autor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Autor enumeration member" Url="html/T-WebApplication3.Models.PersonaVista.TipusPersona.htm" />
+  <HelpKINode Title="Autor field" Url="html/F-WebApplication3.Models.PersonaVista.TipusPersona.Autor.htm" />
+  <HelpKINode Title="Autor property" Url="html/P-Dades.Models.Espectacle.Autor.htm" />
+  <HelpKINode Title="Autor.Autor constructor" Url="html/Overload-Dades.Models.Autor.-ctor.htm" />
+  <HelpKINode Title="BDIniciar class">
+    <HelpKINode Title="BDIniciar Class" Url="html/T-Dades.Context.BDIniciar.htm" />
+    <HelpKINode Title="BDIniciar Members" Url="html/AllMembers.T-Dades.Context.BDIniciar.htm" />
+    <HelpKINode Title="about BDIniciar class" Url="html/T-Dades.Context.BDIniciar.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Context.BDIniciar.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Context.BDIniciar.htm" />
+  </HelpKINode>
+  <HelpKINode Title="borrarEspectacle method" Url="html/M-Dades.Gestor.GestorBD.borrarEspectacle.htm" />
+  <HelpKINode Title="borrarFuncio method" Url="html/M-Dades.Gestor.GestorBD.borrarFuncio.htm" />
+  <HelpKINode Title="borrarPersona method" Url="html/M-Dades.Gestor.GestorBD.borrarPersona.htm" />
+  <HelpKINode Title="borrarTeatre method" Url="html/M-Dades.Gestor.GestorBD.borrarTeatre.htm" />
+  <HelpKINode Title="BundleConfig class">
+    <HelpKINode Title="BundleConfig Class" Url="html/T-WebApplication3.BundleConfig.htm" />
+    <HelpKINode Title="BundleConfig Members" Url="html/AllMembers.T-WebApplication3.BundleConfig.htm" />
+    <HelpKINode Title="about BundleConfig class" Url="html/T-WebApplication3.BundleConfig.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.BundleConfig.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.BundleConfig.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BundleConfig.RegisterBundles method" Url="html/M-WebApplication3.BundleConfig.RegisterBundles.htm" />
+  <HelpKINode Title="cartell property" Url="html/P-Dades.Models.Espectacle.cartell.htm" />
+  <HelpKINode Title="Client class">
+    <HelpKINode Title="Client Class" Url="html/T-Dades.Models.Client.htm" />
+    <HelpKINode Title="Client Members" Url="html/AllMembers.T-Dades.Models.Client.htm" />
+    <HelpKINode Title="about Client class" Url="html/T-Dades.Models.Client.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Client.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-Dades.Models.Client.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Client.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Client.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Client enumeration member" Url="html/T-WebApplication3.Models.PersonaVista.TipusPersona.htm" />
+  <HelpKINode Title="Client field" Url="html/F-WebApplication3.Models.PersonaVista.TipusPersona.Client.htm" />
+  <HelpKINode Title="Client property" Url="html/P-Dades.Models.Compra.Client.htm" />
+  <HelpKINode Title="Client.Client constructor" Url="html/Overload-Dades.Models.Client.-ctor.htm" />
+  <HelpKINode Title="Client.Cognoms property" Url="html/P-Dades.Models.Client.Cognoms.htm" />
+  <HelpKINode Title="clientID property" Url="html/P-Dades.Models.Compra.clientID.htm" />
+  <HelpKINode Title="Clients property" Url="html/P-Dades.Context.PersonaContext.Clients.htm" />
+  <HelpKINode Title="Codi property" Url="html/P-Dades.Models.mpiscatalunya.Codi.htm" />
+  <HelpKINode Title="Codicomarca property" Url="html/P-Dades.Models.mpiscatalunya.Codicomarca.htm" />
+  <HelpKINode Title="Codipostal property">
+    <HelpKINode Title="Codipostal Property " Url="html/P-WebApplication3.Models.TeatreVista.Codipostal.htm" />
+    <HelpKINode Title="Codipostal Property " Url="html/P-WebApplication3.Models.PersonaVista.Codipostal.htm" />
+    <HelpKINode Title="Codipostal Property " Url="html/P-Dades.Models.Adreça.Codipostal.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cognoms property">
+    <HelpKINode Title="Cognoms Property " Url="html/P-Dades.Models.Client.Cognoms.htm" />
+    <HelpKINode Title="Cognoms Property " Url="html/P-WebApplication3.Models.PersonaVista.Cognoms.htm" />
+  </HelpKINode>
+  <HelpKINode Title="columna property" Url="html/P-Dades.Models.Compra.columna.htm" />
+  <HelpKINode Title="Columnes property">
+    <HelpKINode Title="Columnes Property " Url="html/P-WebApplication3.Models.TeatreVista.Columnes.htm" />
+    <HelpKINode Title="Columnes Property " Url="html/P-Dades.Models.Teatre.Columnes.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Comarca property">
+    <HelpKINode Title="Comarca Property " Url="html/P-WebApplication3.Models.TeatreVista.Comarca.htm" />
+    <HelpKINode Title="Comarca Property " Url="html/P-WebApplication3.Models.PersonaVista.Comarca.htm" />
+    <HelpKINode Title="Comarca Property " Url="html/P-Dades.Models.Adreça.Comarca.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Compra class">
+    <HelpKINode Title="Compra Class" Url="html/T-Dades.Models.Compra.htm" />
+    <HelpKINode Title="Compra Members" Url="html/AllMembers.T-Dades.Models.Compra.htm" />
+    <HelpKINode Title="about Compra class" Url="html/T-Dades.Models.Compra.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Compra.htm" />
+    <HelpKINode Title="constructor" Url="html/M-Dades.Models.Compra.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Compra.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Compra.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Compra.Client property" Url="html/P-Dades.Models.Compra.Client.htm" />
+  <HelpKINode Title="Compra.clientID property" Url="html/P-Dades.Models.Compra.clientID.htm" />
+  <HelpKINode Title="Compra.columna property" Url="html/P-Dades.Models.Compra.columna.htm" />
+  <HelpKINode Title="Compra.Compra constructor" Url="html/M-Dades.Models.Compra.-ctor.htm" />
+  <HelpKINode Title="Compra.fila property" Url="html/P-Dades.Models.Compra.fila.htm" />
+  <HelpKINode Title="Compra.Funcio property" Url="html/P-Dades.Models.Compra.Funcio.htm" />
+  <HelpKINode Title="Compra.funcioID property" Url="html/P-Dades.Models.Compra.funcioID.htm" />
+  <HelpKINode Title="Compra.ID property" Url="html/P-Dades.Models.Compra.ID.htm" />
+  <HelpKINode Title="Compres property" Url="html/P-Dades.Context.PersonaContext.Compres.htm" />
+  <HelpKINode Title="Contact method" Url="html/M-GestioTeatres.Controllers.HomeController.Contact.htm" />
+  <HelpKINode Title="Create method">
+    <HelpKINode Title="Create Method " Url="html/Overload-WebApplication3.Controllers.TeatresController.Create.htm" />
+    <HelpKINode Title="Create Method " Url="html/Overload-WebApplication3.Controllers.PersonasController.Create.htm" />
+    <HelpKINode Title="Create Method " Url="html/Overload-WebApplication3.Controllers.FuncionsController.Create.htm" />
+    <HelpKINode Title="Create Method " Url="html/Overload-WebApplication3.Controllers.EspectaclesController.Create.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Context namespace" Url="html/N-Dades.Context.htm" />
+  <HelpKINode Title="Dades.Context.BDIniciar class">
+    <HelpKINode Title="BDIniciar Class" Url="html/T-Dades.Context.BDIniciar.htm" />
+    <HelpKINode Title="BDIniciar Members" Url="html/AllMembers.T-Dades.Context.BDIniciar.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Context.PersonaContext class">
+    <HelpKINode Title="PersonaContext Class" Url="html/T-Dades.Context.PersonaContext.htm" />
+    <HelpKINode Title="PersonaContext Members" Url="html/AllMembers.T-Dades.Context.PersonaContext.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Gestor namespace" Url="html/N-Dades.Gestor.htm" />
+  <HelpKINode Title="Dades.Gestor.GestorBD class">
+    <HelpKINode Title="GestorBD Class" Url="html/T-Dades.Gestor.GestorBD.htm" />
+    <HelpKINode Title="GestorBD Members" Url="html/AllMembers.T-Dades.Gestor.GestorBD.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models namespace" Url="html/N-Dades.Models.htm" />
+  <HelpKINode Title="Dades.Models.Administrador class">
+    <HelpKINode Title="Administrador Class" Url="html/T-Dades.Models.Administrador.htm" />
+    <HelpKINode Title="Administrador Members" Url="html/AllMembers.T-Dades.Models.Administrador.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.Adre&#231;a class">
+    <HelpKINode Title="Adre&#231;a Class" Url="html/T-Dades.Models.Adreça.htm" />
+    <HelpKINode Title="Adre&#231;a Members" Url="html/AllMembers.T-Dades.Models.Adreça.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.Autor class">
+    <HelpKINode Title="Autor Class" Url="html/T-Dades.Models.Autor.htm" />
+    <HelpKINode Title="Autor Members" Url="html/AllMembers.T-Dades.Models.Autor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.Client class">
+    <HelpKINode Title="Client Class" Url="html/T-Dades.Models.Client.htm" />
+    <HelpKINode Title="Client Members" Url="html/AllMembers.T-Dades.Models.Client.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.Compra class">
+    <HelpKINode Title="Compra Class" Url="html/T-Dades.Models.Compra.htm" />
+    <HelpKINode Title="Compra Members" Url="html/AllMembers.T-Dades.Models.Compra.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.Director class">
+    <HelpKINode Title="Director Class" Url="html/T-Dades.Models.Director.htm" />
+    <HelpKINode Title="Director Members" Url="html/AllMembers.T-Dades.Models.Director.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.Espectacle class">
+    <HelpKINode Title="Espectacle Class" Url="html/T-Dades.Models.Espectacle.htm" />
+    <HelpKINode Title="Espectacle Members" Url="html/AllMembers.T-Dades.Models.Espectacle.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.Funcio class">
+    <HelpKINode Title="Funcio Class" Url="html/T-Dades.Models.Funcio.htm" />
+    <HelpKINode Title="Funcio Members" Url="html/AllMembers.T-Dades.Models.Funcio.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.mpiscatalunya class">
+    <HelpKINode Title="mpiscatalunya Class" Url="html/T-Dades.Models.mpiscatalunya.htm" />
+    <HelpKINode Title="mpiscatalunya Members" Url="html/AllMembers.T-Dades.Models.mpiscatalunya.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.Persona class">
+    <HelpKINode Title="Persona Class" Url="html/T-Dades.Models.Persona.htm" />
+    <HelpKINode Title="Persona Members" Url="html/AllMembers.T-Dades.Models.Persona.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.Teatre class">
+    <HelpKINode Title="Teatre Class" Url="html/T-Dades.Models.Teatre.htm" />
+    <HelpKINode Title="Teatre Members" Url="html/AllMembers.T-Dades.Models.Teatre.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dades.Models.Usuari class">
+    <HelpKINode Title="Usuari Class" Url="html/T-Dades.Models.Usuari.htm" />
+    <HelpKINode Title="Usuari Members" Url="html/AllMembers.T-Dades.Models.Usuari.htm" />
+  </HelpKINode>
+  <HelpKINode Title="data property" Url="html/P-Dades.Models.Funcio.data.htm" />
+  <HelpKINode Title="dataNaixement property">
+    <HelpKINode Title="dataNaixement Property " Url="html/P-Dades.Models.Usuari.dataNaixement.htm" />
+    <HelpKINode Title="dataNaixement Property " Url="html/P-WebApplication3.Models.PersonaVista.dataNaixement.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Delete method">
+    <HelpKINode Title="Delete Method " Url="html/M-WebApplication3.Controllers.TeatresController.Delete.htm" />
+    <HelpKINode Title="Delete Method " Url="html/M-WebApplication3.Controllers.EspectaclesController.Delete.htm" />
+    <HelpKINode Title="Delete Method " Url="html/M-WebApplication3.Controllers.PersonasController.Delete.htm" />
+    <HelpKINode Title="Delete Method " Url="html/M-WebApplication3.Controllers.FuncionsController.Delete.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DeleteConfirmed method">
+    <HelpKINode Title="DeleteConfirmed Method " Url="html/M-WebApplication3.Controllers.TeatresController.DeleteConfirmed.htm" />
+    <HelpKINode Title="DeleteConfirmed Method " Url="html/M-WebApplication3.Controllers.FuncionsController.DeleteConfirmed.htm" />
+    <HelpKINode Title="DeleteConfirmed Method " Url="html/M-WebApplication3.Controllers.EspectaclesController.DeleteConfirmed.htm" />
+    <HelpKINode Title="DeleteConfirmed Method " Url="html/M-WebApplication3.Controllers.PersonasController.DeleteConfirmed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Details method">
+    <HelpKINode Title="Details Method " Url="html/M-WebApplication3.Controllers.FuncionsController.Details.htm" />
+    <HelpKINode Title="Details Method " Url="html/M-WebApplication3.Controllers.TeatresController.Details.htm" />
+    <HelpKINode Title="Details Method " Url="html/M-WebApplication3.Controllers.PersonasController.Details.htm" />
+    <HelpKINode Title="Details Method " Url="html/M-WebApplication3.Controllers.EspectaclesController.Details.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Director class">
+    <HelpKINode Title="Director Class" Url="html/T-Dades.Models.Director.htm" />
+    <HelpKINode Title="Director Members" Url="html/AllMembers.T-Dades.Models.Director.htm" />
+    <HelpKINode Title="about Director class" Url="html/T-Dades.Models.Director.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Director.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-Dades.Models.Director.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Director.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Director.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Director enumeration member" Url="html/T-WebApplication3.Models.PersonaVista.TipusPersona.htm" />
+  <HelpKINode Title="Director field" Url="html/F-WebApplication3.Models.PersonaVista.TipusPersona.Director.htm" />
+  <HelpKINode Title="Director property" Url="html/P-Dades.Models.Espectacle.Director.htm" />
+  <HelpKINode Title="Director.Director constructor" Url="html/Overload-Dades.Models.Director.-ctor.htm" />
+  <HelpKINode Title="durada property" Url="html/P-Dades.Models.Espectacle.durada.htm" />
+  <HelpKINode Title="edat property">
+    <HelpKINode Title="edat Property " Url="html/P-Dades.Models.Persona.edat.htm" />
+    <HelpKINode Title="edat Property " Url="html/P-WebApplication3.Models.PersonaVista.edat.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Edit method">
+    <HelpKINode Title="Edit Method " Url="html/Overload-WebApplication3.Controllers.PersonasController.Edit.htm" />
+    <HelpKINode Title="Edit Method " Url="html/Overload-WebApplication3.Controllers.TeatresController.Edit.htm" />
+    <HelpKINode Title="Edit Method " Url="html/Overload-WebApplication3.Controllers.FuncionsController.Edit.htm" />
+    <HelpKINode Title="Edit Method " Url="html/Overload-WebApplication3.Controllers.EspectaclesController.Edit.htm" />
+  </HelpKINode>
+  <HelpKINode Title="editar method" Url="html/Overload-Dades.Gestor.GestorBD.editar.htm" />
+  <HelpKINode Title="editarAdre&#231;a method" Url="html/M-Dades.Models.Adreça.editarAdreça.htm" />
+  <HelpKINode Title="email property">
+    <HelpKINode Title="email Property " Url="html/P-Dades.Models.Usuari.email.htm" />
+    <HelpKINode Title="email Property " Url="html/P-WebApplication3.Models.PersonaVista.email.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Espectacle class">
+    <HelpKINode Title="Espectacle Class" Url="html/T-Dades.Models.Espectacle.htm" />
+    <HelpKINode Title="Espectacle Members" Url="html/AllMembers.T-Dades.Models.Espectacle.htm" />
+    <HelpKINode Title="about Espectacle class" Url="html/T-Dades.Models.Espectacle.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Espectacle.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-Dades.Models.Espectacle.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Espectacle.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Espectacle.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Espectacle property" Url="html/P-Dades.Models.Funcio.Espectacle.htm" />
+  <HelpKINode Title="Espectacle.Autor property" Url="html/P-Dades.Models.Espectacle.Autor.htm" />
+  <HelpKINode Title="Espectacle.cartell property" Url="html/P-Dades.Models.Espectacle.cartell.htm" />
+  <HelpKINode Title="Espectacle.Director property" Url="html/P-Dades.Models.Espectacle.Director.htm" />
+  <HelpKINode Title="Espectacle.durada property" Url="html/P-Dades.Models.Espectacle.durada.htm" />
+  <HelpKINode Title="Espectacle.Espectacle constructor" Url="html/Overload-Dades.Models.Espectacle.-ctor.htm" />
+  <HelpKINode Title="Espectacle.EspectacleID property" Url="html/P-Dades.Models.Espectacle.EspectacleID.htm" />
+  <HelpKINode Title="Espectacle.nifAutor property" Url="html/P-Dades.Models.Espectacle.nifAutor.htm" />
+  <HelpKINode Title="Espectacle.nifDirector property" Url="html/P-Dades.Models.Espectacle.nifDirector.htm" />
+  <HelpKINode Title="Espectacle.sinopsi property" Url="html/P-Dades.Models.Espectacle.sinopsi.htm" />
+  <HelpKINode Title="Espectacle.titol property" Url="html/P-Dades.Models.Espectacle.titol.htm" />
+  <HelpKINode Title="espectacleID property" Url="html/P-Dades.Models.Funcio.espectacleID.htm" />
+  <HelpKINode Title="EspectacleID property" Url="html/P-Dades.Models.Espectacle.EspectacleID.htm" />
+  <HelpKINode Title="Espectacles property" Url="html/P-Dades.Context.PersonaContext.Espectacles.htm" />
+  <HelpKINode Title="EspectaclesController class">
+    <HelpKINode Title="EspectaclesController Class" Url="html/T-WebApplication3.Controllers.EspectaclesController.htm" />
+    <HelpKINode Title="EspectaclesController Members" Url="html/AllMembers.T-WebApplication3.Controllers.EspectaclesController.htm" />
+    <HelpKINode Title="about EspectaclesController class" Url="html/T-WebApplication3.Controllers.EspectaclesController.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.Controllers.EspectaclesController.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.Controllers.EspectaclesController.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-WebApplication3.Controllers.EspectaclesController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EspectaclesController.Create method" Url="html/Overload-WebApplication3.Controllers.EspectaclesController.Create.htm" />
+  <HelpKINode Title="EspectaclesController.Delete method" Url="html/M-WebApplication3.Controllers.EspectaclesController.Delete.htm" />
+  <HelpKINode Title="EspectaclesController.DeleteConfirmed method" Url="html/M-WebApplication3.Controllers.EspectaclesController.DeleteConfirmed.htm" />
+  <HelpKINode Title="EspectaclesController.Details method" Url="html/M-WebApplication3.Controllers.EspectaclesController.Details.htm" />
+  <HelpKINode Title="EspectaclesController.Edit method" Url="html/Overload-WebApplication3.Controllers.EspectaclesController.Edit.htm" />
+  <HelpKINode Title="EspectaclesController.Index method" Url="html/M-WebApplication3.Controllers.EspectaclesController.Index.htm" />
+  <HelpKINode Title="ExisteixEmail method" Url="html/Overload-Dades.Gestor.GestorBD.ExisteixEmail.htm" />
+  <HelpKINode Title="fila property" Url="html/P-Dades.Models.Compra.fila.htm" />
+  <HelpKINode Title="Files property">
+    <HelpKINode Title="Files Property " Url="html/P-WebApplication3.Models.TeatreVista.Files.htm" />
+    <HelpKINode Title="Files Property " Url="html/P-Dades.Models.Teatre.Files.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FilterConfig class">
+    <HelpKINode Title="FilterConfig Class" Url="html/T-WebApplication3.FilterConfig.htm" />
+    <HelpKINode Title="FilterConfig Members" Url="html/AllMembers.T-WebApplication3.FilterConfig.htm" />
+    <HelpKINode Title="about FilterConfig class" Url="html/T-WebApplication3.FilterConfig.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.FilterConfig.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.FilterConfig.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FilterConfig.RegisterGlobalFilters method" Url="html/M-WebApplication3.FilterConfig.RegisterGlobalFilters.htm" />
+  <HelpKINode Title="Filtratge class">
+    <HelpKINode Title="Filtratge Class" Url="html/T-WebApplication3.Autenticacio.Filtratge.htm" />
+    <HelpKINode Title="Filtratge Members" Url="html/AllMembers.T-WebApplication3.Autenticacio.Filtratge.htm" />
+    <HelpKINode Title="about Filtratge class" Url="html/T-WebApplication3.Autenticacio.Filtratge.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.Autenticacio.Filtratge.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.Autenticacio.Filtratge.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-WebApplication3.Autenticacio.Filtratge.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Filtratge.OnAuthorization method" Url="html/M-WebApplication3.Autenticacio.Filtratge.OnAuthorization.htm" />
+  <HelpKINode Title="Funcio class">
+    <HelpKINode Title="Funcio Class" Url="html/T-Dades.Models.Funcio.htm" />
+    <HelpKINode Title="Funcio Members" Url="html/AllMembers.T-Dades.Models.Funcio.htm" />
+    <HelpKINode Title="about Funcio class" Url="html/T-Dades.Models.Funcio.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Funcio.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-Dades.Models.Funcio.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Funcio.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Funcio.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Funcio property" Url="html/P-Dades.Models.Compra.Funcio.htm" />
+  <HelpKINode Title="Funcio.data property" Url="html/P-Dades.Models.Funcio.data.htm" />
+  <HelpKINode Title="Funcio.Espectacle property" Url="html/P-Dades.Models.Funcio.Espectacle.htm" />
+  <HelpKINode Title="Funcio.espectacleID property" Url="html/P-Dades.Models.Funcio.espectacleID.htm" />
+  <HelpKINode Title="Funcio.Funcio constructor" Url="html/Overload-Dades.Models.Funcio.-ctor.htm" />
+  <HelpKINode Title="Funcio.horaFi property" Url="html/P-Dades.Models.Funcio.horaFi.htm" />
+  <HelpKINode Title="Funcio.horaInici property" Url="html/P-Dades.Models.Funcio.horaInici.htm" />
+  <HelpKINode Title="Funcio.ID property" Url="html/P-Dades.Models.Funcio.ID.htm" />
+  <HelpKINode Title="Funcio.Teatre property" Url="html/P-Dades.Models.Funcio.Teatre.htm" />
+  <HelpKINode Title="Funcio.teatreID property" Url="html/P-Dades.Models.Funcio.teatreID.htm" />
+  <HelpKINode Title="funcioID property" Url="html/P-Dades.Models.Compra.funcioID.htm" />
+  <HelpKINode Title="Funcions property" Url="html/P-Dades.Context.PersonaContext.Funcions.htm" />
+  <HelpKINode Title="FuncionsController class">
+    <HelpKINode Title="FuncionsController Class" Url="html/T-WebApplication3.Controllers.FuncionsController.htm" />
+    <HelpKINode Title="FuncionsController Members" Url="html/AllMembers.T-WebApplication3.Controllers.FuncionsController.htm" />
+    <HelpKINode Title="about FuncionsController class" Url="html/T-WebApplication3.Controllers.FuncionsController.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.Controllers.FuncionsController.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.Controllers.FuncionsController.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-WebApplication3.Controllers.FuncionsController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FuncionsController.Create method" Url="html/Overload-WebApplication3.Controllers.FuncionsController.Create.htm" />
+  <HelpKINode Title="FuncionsController.Delete method" Url="html/M-WebApplication3.Controllers.FuncionsController.Delete.htm" />
+  <HelpKINode Title="FuncionsController.DeleteConfirmed method" Url="html/M-WebApplication3.Controllers.FuncionsController.DeleteConfirmed.htm" />
+  <HelpKINode Title="FuncionsController.Details method" Url="html/M-WebApplication3.Controllers.FuncionsController.Details.htm" />
+  <HelpKINode Title="FuncionsController.Edit method" Url="html/Overload-WebApplication3.Controllers.FuncionsController.Edit.htm" />
+  <HelpKINode Title="FuncionsController.Index method" Url="html/M-WebApplication3.Controllers.FuncionsController.Index.htm" />
+  <HelpKINode Title="GestioTeatres.Controllers namespace" Url="html/N-GestioTeatres.Controllers.htm" />
+  <HelpKINode Title="GestioTeatres.Controllers.HomeController class">
+    <HelpKINode Title="HomeController Class" Url="html/T-GestioTeatres.Controllers.HomeController.htm" />
+    <HelpKINode Title="HomeController Members" Url="html/AllMembers.T-GestioTeatres.Controllers.HomeController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GestorBD class">
+    <HelpKINode Title="GestorBD Class" Url="html/T-Dades.Gestor.GestorBD.htm" />
+    <HelpKINode Title="GestorBD Members" Url="html/AllMembers.T-Dades.Gestor.GestorBD.htm" />
+    <HelpKINode Title="about GestorBD class" Url="html/T-Dades.Gestor.GestorBD.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Gestor.GestorBD.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Gestor.GestorBD.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GestorBD.afegirAdministrador method" Url="html/M-Dades.Gestor.GestorBD.afegirAdministrador.htm" />
+  <HelpKINode Title="GestorBD.afegirAutor method" Url="html/M-Dades.Gestor.GestorBD.afegirAutor.htm" />
+  <HelpKINode Title="GestorBD.afegirClient method" Url="html/M-Dades.Gestor.GestorBD.afegirClient.htm" />
+  <HelpKINode Title="GestorBD.afegirDirector method" Url="html/M-Dades.Gestor.GestorBD.afegirDirector.htm" />
+  <HelpKINode Title="GestorBD.afegirEspectacle method" Url="html/M-Dades.Gestor.GestorBD.afegirEspectacle.htm" />
+  <HelpKINode Title="GestorBD.afegirFuncio method" Url="html/M-Dades.Gestor.GestorBD.afegirFuncio.htm" />
+  <HelpKINode Title="GestorBD.afegirTeatre method" Url="html/M-Dades.Gestor.GestorBD.afegirTeatre.htm" />
+  <HelpKINode Title="GestorBD.borrarEspectacle method" Url="html/M-Dades.Gestor.GestorBD.borrarEspectacle.htm" />
+  <HelpKINode Title="GestorBD.borrarFuncio method" Url="html/M-Dades.Gestor.GestorBD.borrarFuncio.htm" />
+  <HelpKINode Title="GestorBD.borrarPersona method" Url="html/M-Dades.Gestor.GestorBD.borrarPersona.htm" />
+  <HelpKINode Title="GestorBD.borrarTeatre method" Url="html/M-Dades.Gestor.GestorBD.borrarTeatre.htm" />
+  <HelpKINode Title="GestorBD.editar method" Url="html/Overload-Dades.Gestor.GestorBD.editar.htm" />
+  <HelpKINode Title="GestorBD.ExisteixEmail method" Url="html/Overload-Dades.Gestor.GestorBD.ExisteixEmail.htm" />
+  <HelpKINode Title="GestorBD.getCP method" Url="html/M-Dades.Gestor.GestorBD.getCP.htm" />
+  <HelpKINode Title="GestorBD.getEspectacles method" Url="html/M-Dades.Gestor.GestorBD.getEspectacles.htm" />
+  <HelpKINode Title="GestorBD.getEspectaclesInc method" Url="html/M-Dades.Gestor.GestorBD.getEspectaclesInc.htm" />
+  <HelpKINode Title="GestorBD.getFuncionsInc method" Url="html/M-Dades.Gestor.GestorBD.getFuncionsInc.htm" />
+  <HelpKINode Title="GestorBD.getListAdministrador method" Url="html/M-Dades.Gestor.GestorBD.getListAdministrador.htm" />
+  <HelpKINode Title="GestorBD.getListAutor method" Url="html/M-Dades.Gestor.GestorBD.getListAutor.htm" />
+  <HelpKINode Title="GestorBD.getListClient method" Url="html/M-Dades.Gestor.GestorBD.getListClient.htm" />
+  <HelpKINode Title="GestorBD.getListDirector method" Url="html/M-Dades.Gestor.GestorBD.getListDirector.htm" />
+  <HelpKINode Title="GestorBD.getPersones method" Url="html/M-Dades.Gestor.GestorBD.getPersones.htm" />
+  <HelpKINode Title="GestorBD.getTeatres method" Url="html/M-Dades.Gestor.GestorBD.getTeatres.htm" />
+  <HelpKINode Title="GestorBD.getTeatresInc method" Url="html/M-Dades.Gestor.GestorBD.getTeatresInc.htm" />
+  <HelpKINode Title="GestorBD.modificarEspectacle method" Url="html/M-Dades.Gestor.GestorBD.modificarEspectacle.htm" />
+  <HelpKINode Title="GestorBD.modificarFuncio method" Url="html/M-Dades.Gestor.GestorBD.modificarFuncio.htm" />
+  <HelpKINode Title="GestorBD.obtenirAdminperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirAdminperId.htm" />
+  <HelpKINode Title="GestorBD.obtenirAdre&#231;aperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirAdreçaperId.htm" />
+  <HelpKINode Title="GestorBD.obtenirClientperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirClientperId.htm" />
+  <HelpKINode Title="GestorBD.obtenirEspectacleperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirEspectacleperId.htm" />
+  <HelpKINode Title="GestorBD.obtenirFuncioperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirFuncioperId.htm" />
+  <HelpKINode Title="GestorBD.obtenirMunicipi method" Url="html/M-Dades.Gestor.GestorBD.obtenirMunicipi.htm" />
+  <HelpKINode Title="GestorBD.obtenirMunicipis method" Url="html/M-Dades.Gestor.GestorBD.obtenirMunicipis.htm" />
+  <HelpKINode Title="GestorBD.obtenirPersonaperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirPersonaperId.htm" />
+  <HelpKINode Title="GestorBD.obtenirPersonaperNIF method" Url="html/M-Dades.Gestor.GestorBD.obtenirPersonaperNIF.htm" />
+  <HelpKINode Title="GestorBD.obtenirTeatreperId method" Url="html/Overload-Dades.Gestor.GestorBD.obtenirTeatreperId.htm" />
+  <HelpKINode Title="GestorBD.obtenirUsuariperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirUsuariperId.htm" />
+  <HelpKINode Title="GestorBD.validar method" Url="html/M-Dades.Gestor.GestorBD.validar.htm" />
+  <HelpKINode Title="getCP method" Url="html/M-Dades.Gestor.GestorBD.getCP.htm" />
+  <HelpKINode Title="getEspectacles method" Url="html/M-Dades.Gestor.GestorBD.getEspectacles.htm" />
+  <HelpKINode Title="getEspectaclesInc method" Url="html/M-Dades.Gestor.GestorBD.getEspectaclesInc.htm" />
+  <HelpKINode Title="getFuncionsInc method" Url="html/M-Dades.Gestor.GestorBD.getFuncionsInc.htm" />
+  <HelpKINode Title="getListAdministrador method" Url="html/M-Dades.Gestor.GestorBD.getListAdministrador.htm" />
+  <HelpKINode Title="getListAutor method" Url="html/M-Dades.Gestor.GestorBD.getListAutor.htm" />
+  <HelpKINode Title="getListClient method" Url="html/M-Dades.Gestor.GestorBD.getListClient.htm" />
+  <HelpKINode Title="getListDirector method" Url="html/M-Dades.Gestor.GestorBD.getListDirector.htm" />
+  <HelpKINode Title="getPersones method" Url="html/M-Dades.Gestor.GestorBD.getPersones.htm" />
+  <HelpKINode Title="getTeatres method" Url="html/M-Dades.Gestor.GestorBD.getTeatres.htm" />
+  <HelpKINode Title="getTeatresInc method" Url="html/M-Dades.Gestor.GestorBD.getTeatresInc.htm" />
+  <HelpKINode Title="HomeController class">
+    <HelpKINode Title="HomeController Class" Url="html/T-GestioTeatres.Controllers.HomeController.htm" />
+    <HelpKINode Title="HomeController Members" Url="html/AllMembers.T-GestioTeatres.Controllers.HomeController.htm" />
+    <HelpKINode Title="about HomeController class" Url="html/T-GestioTeatres.Controllers.HomeController.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-GestioTeatres.Controllers.HomeController.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-GestioTeatres.Controllers.HomeController.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-GestioTeatres.Controllers.HomeController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HomeController.About method" Url="html/M-GestioTeatres.Controllers.HomeController.About.htm" />
+  <HelpKINode Title="HomeController.Contact method" Url="html/M-GestioTeatres.Controllers.HomeController.Contact.htm" />
+  <HelpKINode Title="HomeController.Index method" Url="html/M-GestioTeatres.Controllers.HomeController.Index.htm" />
+  <HelpKINode Title="HomeController.Login method" Url="html/M-GestioTeatres.Controllers.HomeController.Login.htm" />
+  <HelpKINode Title="HomeController.Logout method" Url="html/M-GestioTeatres.Controllers.HomeController.Logout.htm" />
+  <HelpKINode Title="HomeController.Main method" Url="html/M-GestioTeatres.Controllers.HomeController.Main.htm" />
+  <HelpKINode Title="horaFi property" Url="html/P-Dades.Models.Funcio.horaFi.htm" />
+  <HelpKINode Title="horaInici property" Url="html/P-Dades.Models.Funcio.horaInici.htm" />
+  <HelpKINode Title="ID property">
+    <HelpKINode Title="ID Property " Url="html/P-Dades.Models.Adreça.ID.htm" />
+    <HelpKINode Title="ID Property " Url="html/P-Dades.Models.Funcio.ID.htm" />
+    <HelpKINode Title="ID Property " Url="html/P-WebApplication3.Models.TeatreVista.ID.htm" />
+    <HelpKINode Title="ID Property " Url="html/P-Dades.Models.Teatre.ID.htm" />
+    <HelpKINode Title="ID Property " Url="html/P-Dades.Models.Compra.ID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Index method">
+    <HelpKINode Title="Index Method " Url="html/M-WebApplication3.Controllers.FuncionsController.Index.htm" />
+    <HelpKINode Title="Index Method " Url="html/M-WebApplication3.Controllers.TeatresController.Index.htm" />
+    <HelpKINode Title="Index Method " Url="html/M-WebApplication3.Controllers.EspectaclesController.Index.htm" />
+    <HelpKINode Title="Index Method " Url="html/M-GestioTeatres.Controllers.HomeController.Index.htm" />
+    <HelpKINode Title="Index Method " Url="html/M-WebApplication3.Controllers.PersonasController.Index.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsBetween method" Url="html/M-WebApplication3.Models.PersonaVista.IsBetween.htm" />
+  <HelpKINode Title="Localitat property">
+    <HelpKINode Title="Localitat Property " Url="html/P-Dades.Models.Adreça.Localitat.htm" />
+    <HelpKINode Title="Localitat Property " Url="html/P-WebApplication3.Models.PersonaVista.Localitat.htm" />
+    <HelpKINode Title="Localitat Property " Url="html/P-WebApplication3.Models.TeatreVista.Localitat.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Login method" Url="html/M-GestioTeatres.Controllers.HomeController.Login.htm" />
+  <HelpKINode Title="Logout method" Url="html/M-GestioTeatres.Controllers.HomeController.Logout.htm" />
+  <HelpKINode Title="Main method" Url="html/M-GestioTeatres.Controllers.HomeController.Main.htm" />
+  <HelpKINode Title="modificarEspectacle method" Url="html/M-Dades.Gestor.GestorBD.modificarEspectacle.htm" />
+  <HelpKINode Title="modificarFuncio method" Url="html/M-Dades.Gestor.GestorBD.modificarFuncio.htm" />
+  <HelpKINode Title="mpiscatalunya class">
+    <HelpKINode Title="mpiscatalunya Class" Url="html/T-Dades.Models.mpiscatalunya.htm" />
+    <HelpKINode Title="mpiscatalunya Members" Url="html/AllMembers.T-Dades.Models.mpiscatalunya.htm" />
+    <HelpKINode Title="about mpiscatalunya class" Url="html/T-Dades.Models.mpiscatalunya.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.mpiscatalunya.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.mpiscatalunya.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.mpiscatalunya.htm" />
+  </HelpKINode>
+  <HelpKINode Title="mpiscatalunya property" Url="html/P-Dades.Context.PersonaContext.mpiscatalunya.htm" />
+  <HelpKINode Title="mpiscatalunya.Codi property" Url="html/P-Dades.Models.mpiscatalunya.Codi.htm" />
+  <HelpKINode Title="mpiscatalunya.Codicomarca property" Url="html/P-Dades.Models.mpiscatalunya.Codicomarca.htm" />
+  <HelpKINode Title="mpiscatalunya.Nom property" Url="html/P-Dades.Models.mpiscatalunya.Nom.htm" />
+  <HelpKINode Title="mpiscatalunya.Nomcomarca property" Url="html/P-Dades.Models.mpiscatalunya.Nomcomarca.htm" />
+  <HelpKINode Title="MvcApplication class">
+    <HelpKINode Title="MvcApplication Class" Url="html/T-WebApplication3.MvcApplication.htm" />
+    <HelpKINode Title="MvcApplication Members" Url="html/AllMembers.T-WebApplication3.MvcApplication.htm" />
+    <HelpKINode Title="about MvcApplication class" Url="html/T-WebApplication3.MvcApplication.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.MvcApplication.htm" />
+    <HelpKINode Title="events" Url="html/Events.T-WebApplication3.MvcApplication.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.MvcApplication.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-WebApplication3.MvcApplication.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NIF property">
+    <HelpKINode Title="NIF Property " Url="html/P-WebApplication3.Models.PersonaVista.NIF.htm" />
+    <HelpKINode Title="NIF Property " Url="html/P-Dades.Models.Persona.NIF.htm" />
+  </HelpKINode>
+  <HelpKINode Title="nifAutor property" Url="html/P-Dades.Models.Espectacle.nifAutor.htm" />
+  <HelpKINode Title="nifDirector property" Url="html/P-Dades.Models.Espectacle.nifDirector.htm" />
+  <HelpKINode Title="nom property">
+    <HelpKINode Title="nom Property " Url="html/P-WebApplication3.Models.PersonaVista.nom.htm" />
+    <HelpKINode Title="nom Property " Url="html/P-Dades.Models.Persona.nom.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Nom property">
+    <HelpKINode Title="Nom Property " Url="html/P-Dades.Models.mpiscatalunya.Nom.htm" />
+    <HelpKINode Title="Nom Property " Url="html/P-WebApplication3.Models.TeatreVista.Nom.htm" />
+    <HelpKINode Title="Nom Property " Url="html/P-Dades.Models.Teatre.Nom.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Nomcomarca property" Url="html/P-Dades.Models.mpiscatalunya.Nomcomarca.htm" />
+  <HelpKINode Title="obtenirAdminperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirAdminperId.htm" />
+  <HelpKINode Title="obtenirAdre&#231;aperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirAdreçaperId.htm" />
+  <HelpKINode Title="obtenirClientperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirClientperId.htm" />
+  <HelpKINode Title="obtenirEspectacleperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirEspectacleperId.htm" />
+  <HelpKINode Title="obtenirFuncioperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirFuncioperId.htm" />
+  <HelpKINode Title="obtenirMunicipi method" Url="html/M-Dades.Gestor.GestorBD.obtenirMunicipi.htm" />
+  <HelpKINode Title="obtenirMunicipis method" Url="html/M-Dades.Gestor.GestorBD.obtenirMunicipis.htm" />
+  <HelpKINode Title="obtenirPersonaperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirPersonaperId.htm" />
+  <HelpKINode Title="obtenirPersonaperNIF method" Url="html/M-Dades.Gestor.GestorBD.obtenirPersonaperNIF.htm" />
+  <HelpKINode Title="obtenirTeatreperId method" Url="html/Overload-Dades.Gestor.GestorBD.obtenirTeatreperId.htm" />
+  <HelpKINode Title="obtenirUsuariperId method" Url="html/M-Dades.Gestor.GestorBD.obtenirUsuariperId.htm" />
+  <HelpKINode Title="OnAuthorization method" Url="html/M-WebApplication3.Autenticacio.Filtratge.OnAuthorization.htm" />
+  <HelpKINode Title="password property">
+    <HelpKINode Title="password Property " Url="html/P-WebApplication3.Models.PersonaVista.password.htm" />
+    <HelpKINode Title="password Property " Url="html/P-Dades.Models.Usuari.password.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Persona class">
+    <HelpKINode Title="Persona Class" Url="html/T-Dades.Models.Persona.htm" />
+    <HelpKINode Title="Persona Members" Url="html/AllMembers.T-Dades.Models.Persona.htm" />
+    <HelpKINode Title="about Persona class" Url="html/T-Dades.Models.Persona.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Persona.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-Dades.Models.Persona.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Persona.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Persona.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Persona.Adre&#231;a property" Url="html/P-Dades.Models.Persona.Adreça.htm" />
+  <HelpKINode Title="Persona.Adre&#231;aID property" Url="html/P-Dades.Models.Persona.AdreçaID.htm" />
+  <HelpKINode Title="Persona.edat property" Url="html/P-Dades.Models.Persona.edat.htm" />
+  <HelpKINode Title="Persona.NIF property" Url="html/P-Dades.Models.Persona.NIF.htm" />
+  <HelpKINode Title="Persona.nom property" Url="html/P-Dades.Models.Persona.nom.htm" />
+  <HelpKINode Title="Persona.Persona constructor" Url="html/Overload-Dades.Models.Persona.-ctor.htm" />
+  <HelpKINode Title="PersonaContext class">
+    <HelpKINode Title="PersonaContext Class" Url="html/T-Dades.Context.PersonaContext.htm" />
+    <HelpKINode Title="PersonaContext Members" Url="html/AllMembers.T-Dades.Context.PersonaContext.htm" />
+    <HelpKINode Title="about PersonaContext class" Url="html/T-Dades.Context.PersonaContext.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Context.PersonaContext.htm" />
+    <HelpKINode Title="constructor" Url="html/M-Dades.Context.PersonaContext.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Context.PersonaContext.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Context.PersonaContext.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PersonaContext.administradors property" Url="html/P-Dades.Context.PersonaContext.administradors.htm" />
+  <HelpKINode Title="PersonaContext.Adreces property" Url="html/P-Dades.Context.PersonaContext.Adreces.htm" />
+  <HelpKINode Title="PersonaContext.Clients property" Url="html/P-Dades.Context.PersonaContext.Clients.htm" />
+  <HelpKINode Title="PersonaContext.Compres property" Url="html/P-Dades.Context.PersonaContext.Compres.htm" />
+  <HelpKINode Title="PersonaContext.Espectacles property" Url="html/P-Dades.Context.PersonaContext.Espectacles.htm" />
+  <HelpKINode Title="PersonaContext.Funcions property" Url="html/P-Dades.Context.PersonaContext.Funcions.htm" />
+  <HelpKINode Title="PersonaContext.mpiscatalunya property" Url="html/P-Dades.Context.PersonaContext.mpiscatalunya.htm" />
+  <HelpKINode Title="PersonaContext.PersonaContext constructor" Url="html/M-Dades.Context.PersonaContext.-ctor.htm" />
+  <HelpKINode Title="PersonaContext.Persones property" Url="html/P-Dades.Context.PersonaContext.Persones.htm" />
+  <HelpKINode Title="PersonaContext.Teatres property" Url="html/P-Dades.Context.PersonaContext.Teatres.htm" />
+  <HelpKINode Title="PersonaContext.Usuaris property" Url="html/P-Dades.Context.PersonaContext.Usuaris.htm" />
+  <HelpKINode Title="PersonasController class">
+    <HelpKINode Title="PersonasController Class" Url="html/T-WebApplication3.Controllers.PersonasController.htm" />
+    <HelpKINode Title="PersonasController Members" Url="html/AllMembers.T-WebApplication3.Controllers.PersonasController.htm" />
+    <HelpKINode Title="about PersonasController class" Url="html/T-WebApplication3.Controllers.PersonasController.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.Controllers.PersonasController.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.Controllers.PersonasController.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-WebApplication3.Controllers.PersonasController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PersonasController.Create method" Url="html/Overload-WebApplication3.Controllers.PersonasController.Create.htm" />
+  <HelpKINode Title="PersonasController.Delete method" Url="html/M-WebApplication3.Controllers.PersonasController.Delete.htm" />
+  <HelpKINode Title="PersonasController.DeleteConfirmed method" Url="html/M-WebApplication3.Controllers.PersonasController.DeleteConfirmed.htm" />
+  <HelpKINode Title="PersonasController.Details method" Url="html/M-WebApplication3.Controllers.PersonasController.Details.htm" />
+  <HelpKINode Title="PersonasController.Edit method" Url="html/Overload-WebApplication3.Controllers.PersonasController.Edit.htm" />
+  <HelpKINode Title="PersonasController.Index method" Url="html/M-WebApplication3.Controllers.PersonasController.Index.htm" />
+  <HelpKINode Title="PersonaVista class">
+    <HelpKINode Title="PersonaVista Class" Url="html/T-WebApplication3.Models.PersonaVista.htm" />
+    <HelpKINode Title="PersonaVista Members" Url="html/AllMembers.T-WebApplication3.Models.PersonaVista.htm" />
+    <HelpKINode Title="about PersonaVista class" Url="html/T-WebApplication3.Models.PersonaVista.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.Models.PersonaVista.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-WebApplication3.Models.PersonaVista.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.Models.PersonaVista.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-WebApplication3.Models.PersonaVista.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PersonaVista.Codipostal property" Url="html/P-WebApplication3.Models.PersonaVista.Codipostal.htm" />
+  <HelpKINode Title="PersonaVista.Cognoms property" Url="html/P-WebApplication3.Models.PersonaVista.Cognoms.htm" />
+  <HelpKINode Title="PersonaVista.Comarca property" Url="html/P-WebApplication3.Models.PersonaVista.Comarca.htm" />
+  <HelpKINode Title="PersonaVista.dataNaixement property" Url="html/P-WebApplication3.Models.PersonaVista.dataNaixement.htm" />
+  <HelpKINode Title="PersonaVista.edat property" Url="html/P-WebApplication3.Models.PersonaVista.edat.htm" />
+  <HelpKINode Title="PersonaVista.email property" Url="html/P-WebApplication3.Models.PersonaVista.email.htm" />
+  <HelpKINode Title="PersonaVista.IsBetween method" Url="html/M-WebApplication3.Models.PersonaVista.IsBetween.htm" />
+  <HelpKINode Title="PersonaVista.Localitat property" Url="html/P-WebApplication3.Models.PersonaVista.Localitat.htm" />
+  <HelpKINode Title="PersonaVista.NIF property" Url="html/P-WebApplication3.Models.PersonaVista.NIF.htm" />
+  <HelpKINode Title="PersonaVista.nom property" Url="html/P-WebApplication3.Models.PersonaVista.nom.htm" />
+  <HelpKINode Title="PersonaVista.password property" Url="html/P-WebApplication3.Models.PersonaVista.password.htm" />
+  <HelpKINode Title="PersonaVista.PersonaVista constructor" Url="html/Overload-WebApplication3.Models.PersonaVista.-ctor.htm" />
+  <HelpKINode Title="PersonaVista.telefon property" Url="html/P-WebApplication3.Models.PersonaVista.telefon.htm" />
+  <HelpKINode Title="PersonaVista.tipus property" Url="html/P-WebApplication3.Models.PersonaVista.tipus.htm" />
+  <HelpKINode Title="PersonaVista.TipusPersona enumeration" Url="html/T-WebApplication3.Models.PersonaVista.TipusPersona.htm" />
+  <HelpKINode Title="PersonaVista.Validate method" Url="html/M-WebApplication3.Models.PersonaVista.Validate.htm" />
+  <HelpKINode Title="Persones property" Url="html/P-Dades.Context.PersonaContext.Persones.htm" />
+  <HelpKINode Title="RegisterBundles method" Url="html/M-WebApplication3.BundleConfig.RegisterBundles.htm" />
+  <HelpKINode Title="RegisterGlobalFilters method" Url="html/M-WebApplication3.FilterConfig.RegisterGlobalFilters.htm" />
+  <HelpKINode Title="RegisterRoutes method" Url="html/M-WebApplication3.RouteConfig.RegisterRoutes.htm" />
+  <HelpKINode Title="RouteConfig class">
+    <HelpKINode Title="RouteConfig Class" Url="html/T-WebApplication3.RouteConfig.htm" />
+    <HelpKINode Title="RouteConfig Members" Url="html/AllMembers.T-WebApplication3.RouteConfig.htm" />
+    <HelpKINode Title="about RouteConfig class" Url="html/T-WebApplication3.RouteConfig.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.RouteConfig.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.RouteConfig.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RouteConfig.RegisterRoutes method" Url="html/M-WebApplication3.RouteConfig.RegisterRoutes.htm" />
+  <HelpKINode Title="sinopsi property" Url="html/P-Dades.Models.Espectacle.sinopsi.htm" />
+  <HelpKINode Title="Teatre class">
+    <HelpKINode Title="Teatre Class" Url="html/T-Dades.Models.Teatre.htm" />
+    <HelpKINode Title="Teatre Members" Url="html/AllMembers.T-Dades.Models.Teatre.htm" />
+    <HelpKINode Title="about Teatre class" Url="html/T-Dades.Models.Teatre.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Teatre.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-Dades.Models.Teatre.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Teatre.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Teatre.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Teatre property" Url="html/P-Dades.Models.Funcio.Teatre.htm" />
+  <HelpKINode Title="Teatre.Adre&#231;a property" Url="html/P-Dades.Models.Teatre.Adreça.htm" />
+  <HelpKINode Title="Teatre.Adre&#231;aID property" Url="html/P-Dades.Models.Teatre.AdreçaID.htm" />
+  <HelpKINode Title="Teatre.Columnes property" Url="html/P-Dades.Models.Teatre.Columnes.htm" />
+  <HelpKINode Title="Teatre.Files property" Url="html/P-Dades.Models.Teatre.Files.htm" />
+  <HelpKINode Title="Teatre.ID property" Url="html/P-Dades.Models.Teatre.ID.htm" />
+  <HelpKINode Title="Teatre.Nom property" Url="html/P-Dades.Models.Teatre.Nom.htm" />
+  <HelpKINode Title="Teatre.Teatre constructor" Url="html/Overload-Dades.Models.Teatre.-ctor.htm" />
+  <HelpKINode Title="teatreID property" Url="html/P-Dades.Models.Funcio.teatreID.htm" />
+  <HelpKINode Title="Teatres property" Url="html/P-Dades.Context.PersonaContext.Teatres.htm" />
+  <HelpKINode Title="TeatresController class">
+    <HelpKINode Title="TeatresController Class" Url="html/T-WebApplication3.Controllers.TeatresController.htm" />
+    <HelpKINode Title="TeatresController Members" Url="html/AllMembers.T-WebApplication3.Controllers.TeatresController.htm" />
+    <HelpKINode Title="about TeatresController class" Url="html/T-WebApplication3.Controllers.TeatresController.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.Controllers.TeatresController.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.Controllers.TeatresController.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-WebApplication3.Controllers.TeatresController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TeatresController.Create method" Url="html/Overload-WebApplication3.Controllers.TeatresController.Create.htm" />
+  <HelpKINode Title="TeatresController.Delete method" Url="html/M-WebApplication3.Controllers.TeatresController.Delete.htm" />
+  <HelpKINode Title="TeatresController.DeleteConfirmed method" Url="html/M-WebApplication3.Controllers.TeatresController.DeleteConfirmed.htm" />
+  <HelpKINode Title="TeatresController.Details method" Url="html/M-WebApplication3.Controllers.TeatresController.Details.htm" />
+  <HelpKINode Title="TeatresController.Edit method" Url="html/Overload-WebApplication3.Controllers.TeatresController.Edit.htm" />
+  <HelpKINode Title="TeatresController.Index method" Url="html/M-WebApplication3.Controllers.TeatresController.Index.htm" />
+  <HelpKINode Title="TeatreVista class">
+    <HelpKINode Title="TeatreVista Class" Url="html/T-WebApplication3.Models.TeatreVista.htm" />
+    <HelpKINode Title="TeatreVista Members" Url="html/AllMembers.T-WebApplication3.Models.TeatreVista.htm" />
+    <HelpKINode Title="about TeatreVista class" Url="html/T-WebApplication3.Models.TeatreVista.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.Models.TeatreVista.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-WebApplication3.Models.TeatreVista.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.Models.TeatreVista.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-WebApplication3.Models.TeatreVista.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TeatreVista.Codipostal property" Url="html/P-WebApplication3.Models.TeatreVista.Codipostal.htm" />
+  <HelpKINode Title="TeatreVista.Columnes property" Url="html/P-WebApplication3.Models.TeatreVista.Columnes.htm" />
+  <HelpKINode Title="TeatreVista.Comarca property" Url="html/P-WebApplication3.Models.TeatreVista.Comarca.htm" />
+  <HelpKINode Title="TeatreVista.Files property" Url="html/P-WebApplication3.Models.TeatreVista.Files.htm" />
+  <HelpKINode Title="TeatreVista.ID property" Url="html/P-WebApplication3.Models.TeatreVista.ID.htm" />
+  <HelpKINode Title="TeatreVista.Localitat property" Url="html/P-WebApplication3.Models.TeatreVista.Localitat.htm" />
+  <HelpKINode Title="TeatreVista.Nom property" Url="html/P-WebApplication3.Models.TeatreVista.Nom.htm" />
+  <HelpKINode Title="TeatreVista.TeatreVista constructor" Url="html/Overload-WebApplication3.Models.TeatreVista.-ctor.htm" />
+  <HelpKINode Title="telefon property">
+    <HelpKINode Title="telefon Property " Url="html/P-Dades.Models.Usuari.telefon.htm" />
+    <HelpKINode Title="telefon Property " Url="html/P-WebApplication3.Models.PersonaVista.telefon.htm" />
+  </HelpKINode>
+  <HelpKINode Title="tipus property" Url="html/P-WebApplication3.Models.PersonaVista.tipus.htm" />
+  <HelpKINode Title="TipusPersona.Administrador field" Url="html/F-WebApplication3.Models.PersonaVista.TipusPersona.Administrador.htm" />
+  <HelpKINode Title="TipusPersona.Autor field" Url="html/F-WebApplication3.Models.PersonaVista.TipusPersona.Autor.htm" />
+  <HelpKINode Title="TipusPersona.Client field" Url="html/F-WebApplication3.Models.PersonaVista.TipusPersona.Client.htm" />
+  <HelpKINode Title="TipusPersona.Director field" Url="html/F-WebApplication3.Models.PersonaVista.TipusPersona.Director.htm" />
+  <HelpKINode Title="titol property" Url="html/P-Dades.Models.Espectacle.titol.htm" />
+  <HelpKINode Title="Usuari class">
+    <HelpKINode Title="Usuari Class" Url="html/T-Dades.Models.Usuari.htm" />
+    <HelpKINode Title="Usuari Members" Url="html/AllMembers.T-Dades.Models.Usuari.htm" />
+    <HelpKINode Title="about Usuari class" Url="html/T-Dades.Models.Usuari.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-Dades.Models.Usuari.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-Dades.Models.Usuari.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-Dades.Models.Usuari.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-Dades.Models.Usuari.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Usuari.dataNaixement property" Url="html/P-Dades.Models.Usuari.dataNaixement.htm" />
+  <HelpKINode Title="Usuari.email property" Url="html/P-Dades.Models.Usuari.email.htm" />
+  <HelpKINode Title="Usuari.password property" Url="html/P-Dades.Models.Usuari.password.htm" />
+  <HelpKINode Title="Usuari.telefon property" Url="html/P-Dades.Models.Usuari.telefon.htm" />
+  <HelpKINode Title="Usuari.Usuari constructor" Url="html/Overload-Dades.Models.Usuari.-ctor.htm" />
+  <HelpKINode Title="Usuaris property" Url="html/P-Dades.Context.PersonaContext.Usuaris.htm" />
+  <HelpKINode Title="validar method" Url="html/M-Dades.Gestor.GestorBD.validar.htm" />
+  <HelpKINode Title="Validate method" Url="html/M-WebApplication3.Models.PersonaVista.Validate.htm" />
+  <HelpKINode Title="Validation class">
+    <HelpKINode Title="Validation Class" Url="html/T-WebApplication3.Validador.Validation.htm" />
+    <HelpKINode Title="Validation Members" Url="html/AllMembers.T-WebApplication3.Validador.Validation.htm" />
+    <HelpKINode Title="about Validation class" Url="html/T-WebApplication3.Validador.Validation.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-WebApplication3.Validador.Validation.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-WebApplication3.Validador.Validation.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3 namespace" Url="html/N-WebApplication3.htm" />
+  <HelpKINode Title="WebApplication3.Autenticacio namespace" Url="html/N-WebApplication3.Autenticacio.htm" />
+  <HelpKINode Title="WebApplication3.Autenticacio.Filtratge class">
+    <HelpKINode Title="Filtratge Class" Url="html/T-WebApplication3.Autenticacio.Filtratge.htm" />
+    <HelpKINode Title="Filtratge Members" Url="html/AllMembers.T-WebApplication3.Autenticacio.Filtratge.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.BundleConfig class">
+    <HelpKINode Title="BundleConfig Class" Url="html/T-WebApplication3.BundleConfig.htm" />
+    <HelpKINode Title="BundleConfig Members" Url="html/AllMembers.T-WebApplication3.BundleConfig.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.Controllers namespace" Url="html/N-WebApplication3.Controllers.htm" />
+  <HelpKINode Title="WebApplication3.Controllers.EspectaclesController class">
+    <HelpKINode Title="EspectaclesController Class" Url="html/T-WebApplication3.Controllers.EspectaclesController.htm" />
+    <HelpKINode Title="EspectaclesController Members" Url="html/AllMembers.T-WebApplication3.Controllers.EspectaclesController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.Controllers.FuncionsController class">
+    <HelpKINode Title="FuncionsController Class" Url="html/T-WebApplication3.Controllers.FuncionsController.htm" />
+    <HelpKINode Title="FuncionsController Members" Url="html/AllMembers.T-WebApplication3.Controllers.FuncionsController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.Controllers.PersonasController class">
+    <HelpKINode Title="PersonasController Class" Url="html/T-WebApplication3.Controllers.PersonasController.htm" />
+    <HelpKINode Title="PersonasController Members" Url="html/AllMembers.T-WebApplication3.Controllers.PersonasController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.Controllers.TeatresController class">
+    <HelpKINode Title="TeatresController Class" Url="html/T-WebApplication3.Controllers.TeatresController.htm" />
+    <HelpKINode Title="TeatresController Members" Url="html/AllMembers.T-WebApplication3.Controllers.TeatresController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.FilterConfig class">
+    <HelpKINode Title="FilterConfig Class" Url="html/T-WebApplication3.FilterConfig.htm" />
+    <HelpKINode Title="FilterConfig Members" Url="html/AllMembers.T-WebApplication3.FilterConfig.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.Models namespace" Url="html/N-WebApplication3.Models.htm" />
+  <HelpKINode Title="WebApplication3.Models.PersonaVista class">
+    <HelpKINode Title="PersonaVista Class" Url="html/T-WebApplication3.Models.PersonaVista.htm" />
+    <HelpKINode Title="PersonaVista Members" Url="html/AllMembers.T-WebApplication3.Models.PersonaVista.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.Models.PersonaVista.TipusPersona enumeration" Url="html/T-WebApplication3.Models.PersonaVista.TipusPersona.htm" />
+  <HelpKINode Title="WebApplication3.Models.TeatreVista class">
+    <HelpKINode Title="TeatreVista Class" Url="html/T-WebApplication3.Models.TeatreVista.htm" />
+    <HelpKINode Title="TeatreVista Members" Url="html/AllMembers.T-WebApplication3.Models.TeatreVista.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.MvcApplication class">
+    <HelpKINode Title="MvcApplication Class" Url="html/T-WebApplication3.MvcApplication.htm" />
+    <HelpKINode Title="MvcApplication Members" Url="html/AllMembers.T-WebApplication3.MvcApplication.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.RouteConfig class">
+    <HelpKINode Title="RouteConfig Class" Url="html/T-WebApplication3.RouteConfig.htm" />
+    <HelpKINode Title="RouteConfig Members" Url="html/AllMembers.T-WebApplication3.RouteConfig.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebApplication3.Validador namespace" Url="html/N-WebApplication3.Validador.htm" />
+  <HelpKINode Title="WebApplication3.Validador.Validation class">
+    <HelpKINode Title="Validation Class" Url="html/T-WebApplication3.Validador.Validation.htm" />
+    <HelpKINode Title="Validation Members" Url="html/AllMembers.T-WebApplication3.Validador.Validation.htm" />
+  </HelpKINode>
+</HelpKI>

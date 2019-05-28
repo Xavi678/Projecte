@@ -71,9 +71,9 @@ namespace WebApplication3.Controllers
         }
 
         /// <summary>
-        /// Obté un objecte PersonaVista, per la localitat, obté un objecte municipi i instancia una adreça, depenent del tipus de persona que sigui, entra dins d'un switch en cada un d'ells comprova que els elemnts siguin vàlids, i en el cas del client o l'administrador anteriorment comprova que no existeixi l'email passat, si existeix reidreccciona a la vista i abans crea un missatge d'error, si tot és correcte afegeix la persona a la abse de dades i torna a l'index
+        /// Obté un objecte PersonaVista, per la localitat, obté un objecte municipi i instancia una adreça, depenent del tipus de persona que sigui, entra dins d'un switch en cada un d'ells comprova que els elemnts siguin vàlids, i en el cas del client o l'administrador anteriorment comprova que no existeixi l'email passat, si existeix reidreccciona a la vista i abans crea un missatge d'error, si tot és correcte afegeix la persona a la base de dades i torna a l'index, si surt del case retorna a la vista creant una altra llista, el mateix que si surt algfun error controlat pel try catch, sortirà un missatge d'error a més
         /// </summary>
-        /// <param name="persona"></param>
+        /// <param name="persona">Objecte Persona</param>
         /// <returns></returns>
         // POST: Personas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -183,8 +183,13 @@ namespace WebApplication3.Controllers
             }
         }
 
+        /// <summary>
+        /// Obté un id, comprova que no sigui null, obté un objecte persona per l'id donat i comprova que l'objecte Persona no sigui null, depenent del tipus de Persona que sigui instanciarà uns atributs o uns altres
+        /// </summary>
+        /// <param name="id">String</param>
+        /// <returns>retorna un error http o retorna la vista amb l'objecte PersonaVista</returns>
         // GET: Personas/Edit/5
-       public ActionResult Edit(string id)
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
@@ -226,6 +231,11 @@ namespace WebApplication3.Controllers
             }
             }
 
+        /// <summary>
+        /// Obté un objecte PersonaVista d'un formulari, obté el municipi depenent de la localitat, i depenent del tipus de persona que sigui editarà els seus valors a la base de dades, si el formulari no és valid tornarà a la vista creant un selectlist dels municipis
+        /// </summary>
+        /// <param name="person">Objecte Persona</param>
+        /// <returns>una vista o redireccionarà a l'index</returns>
         // POST: Personas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -306,7 +316,11 @@ namespace WebApplication3.Controllers
             ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
             return View();
         }
-        
+        /// <summary>
+        /// Obté un id, comprova que no sigui null, obté un objecte persona per l'id donat i comprova que l'objecte Persona no sigui null
+        /// </summary>
+        /// <param name="id">String</param>
+        /// <returns>retorna un error http o retorna la vista amb l'objecte Persona</returns>
         // GET: Personas/Delete/5
         public ActionResult Delete(string id)
         {
@@ -321,7 +335,11 @@ namespace WebApplication3.Controllers
             }
             return View(persona);
         }
-
+        /// <summary>
+        /// Obté un id i per aquest busca la persona dins la base de dades per després borrar-la de la base de dades i tornar a l'index
+        /// </summary>
+        /// <param name="id">String</param>
+        /// <returns>redirecció a l'Index</returns>
         // POST: Personas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

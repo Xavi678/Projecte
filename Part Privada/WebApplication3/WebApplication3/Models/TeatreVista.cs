@@ -51,7 +51,13 @@ namespace WebApplication3.Models
       [RegularExpression("^[0-9]{6}$",ErrorMessage ="Ha de tenir 6 dígits")]
         [Required]
         public int Codipostal { set; get; }
-
+        /// <summary>
+        /// Determina si el objeto especificado es válido.
+        /// </summary>
+        /// <param name="validationContext">El contexto de validación.</param>
+        /// <returns>
+        /// Una colección que contiene información de error de validación.
+        /// </returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             if (!cpisvalid(Codipostal))
@@ -60,6 +66,11 @@ namespace WebApplication3.Models
             }
         }
 
+        /// <summary>
+        /// Valida el codipostal
+        /// </summary>
+        /// <param name="codipostal">Enter</param>
+        /// <returns>booleà</returns>
         private bool cpisvalid(int codipostal)
         {
             GestorBD bd = new GestorBD();

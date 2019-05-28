@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="4fb300d3-5e66-43be-a312-344c3b4cf3e8" Title="Dades.Context Namespace" Url="html/N-Dades.Context.htm">
+    <HelpTOCNode Id="94119168-6842-4ce0-a04e-c0be76fb2dc1" Title="BDIniciar Class" Url="html/T-Dades.Context.BDIniciar.htm">
+      <HelpTOCNode Title="BDIniciar Members" Url="html/AllMembers.T-Dades.Context.BDIniciar.htm" />
+      <HelpTOCNode Title="BDIniciar Methods" Url="html/Methods.T-Dades.Context.BDIniciar.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="8310f9bf-a3a1-41b1-a347-9dc845aba2eb" Title="PersonaContext Class" Url="html/T-Dades.Context.PersonaContext.htm">
+      <HelpTOCNode Title="PersonaContext Members" Url="html/AllMembers.T-Dades.Context.PersonaContext.htm" />
+      <HelpTOCNode Title="PersonaContext Constructor " Url="html/M-Dades.Context.PersonaContext.-ctor.htm" />
+      <HelpTOCNode Title="PersonaContext Methods" Url="html/Methods.T-Dades.Context.PersonaContext.htm" />
+      <HelpTOCNode Id="65cb6469-b77b-466c-beea-422c2f6374ff" Title="PersonaContext Properties" Url="html/Properties.T-Dades.Context.PersonaContext.htm">
+        <HelpTOCNode Title="administradors Property " Url="html/P-Dades.Context.PersonaContext.administradors.htm" />
+        <HelpTOCNode Title="Adreces Property " Url="html/P-Dades.Context.PersonaContext.Adreces.htm" />
+        <HelpTOCNode Title="Clients Property " Url="html/P-Dades.Context.PersonaContext.Clients.htm" />
+        <HelpTOCNode Title="Compres Property " Url="html/P-Dades.Context.PersonaContext.Compres.htm" />
+        <HelpTOCNode Title="Espectacles Property " Url="html/P-Dades.Context.PersonaContext.Espectacles.htm" />
+        <HelpTOCNode Title="Funcions Property " Url="html/P-Dades.Context.PersonaContext.Funcions.htm" />
+        <HelpTOCNode Title="mpiscatalunya Property " Url="html/P-Dades.Context.PersonaContext.mpiscatalunya.htm" />
+        <HelpTOCNode Title="Persones Property " Url="html/P-Dades.Context.PersonaContext.Persones.htm" />
+        <HelpTOCNode Title="Teatres Property " Url="html/P-Dades.Context.PersonaContext.Teatres.htm" />
+        <HelpTOCNode Title="Usuaris Property " Url="html/P-Dades.Context.PersonaContext.Usuaris.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="1adb53c5-d0eb-4098-98b9-d006e1575ca2" Title="Dades.Gestor Namespace" Url="html/N-Dades.Gestor.htm">
+    <HelpTOCNode Id="71317528-8cb0-4347-803d-f6809818ccf0" Title="GestorBD Class" Url="html/T-Dades.Gestor.GestorBD.htm">
+      <HelpTOCNode Title="GestorBD Members" Url="html/AllMembers.T-Dades.Gestor.GestorBD.htm" />
+      <HelpTOCNode Id="55cdf0ea-b0e6-409d-aab9-c16560574418" Title="GestorBD Methods" Url="html/Methods.T-Dades.Gestor.GestorBD.htm">
+        <HelpTOCNode Title="afegirAdministrador Method " Url="html/M-Dades.Gestor.GestorBD.afegirAdministrador.htm" />
+        <HelpTOCNode Title="afegirAutor Method " Url="html/M-Dades.Gestor.GestorBD.afegirAutor.htm" />
+        <HelpTOCNode Title="afegirClient Method " Url="html/M-Dades.Gestor.GestorBD.afegirClient.htm" />
+        <HelpTOCNode Title="afegirDirector Method " Url="html/M-Dades.Gestor.GestorBD.afegirDirector.htm" />
+        <HelpTOCNode Title="afegirEspectacle Method " Url="html/M-Dades.Gestor.GestorBD.afegirEspectacle.htm" />
+        <HelpTOCNode Title="afegirFuncio Method " Url="html/M-Dades.Gestor.GestorBD.afegirFuncio.htm" />
+        <HelpTOCNode Title="afegirTeatre Method " Url="html/M-Dades.Gestor.GestorBD.afegirTeatre.htm" />
+        <HelpTOCNode Title="borrarEspectacle Method " Url="html/M-Dades.Gestor.GestorBD.borrarEspectacle.htm" />
+        <HelpTOCNode Title="borrarFuncio Method " Url="html/M-Dades.Gestor.GestorBD.borrarFuncio.htm" />
+        <HelpTOCNode Title="borrarPersona Method " Url="html/M-Dades.Gestor.GestorBD.borrarPersona.htm" />
+        <HelpTOCNode Title="borrarTeatre Method " Url="html/M-Dades.Gestor.GestorBD.borrarTeatre.htm" />
+        <HelpTOCNode Id="5e4d9806-8ffe-4977-b5ea-96cbd6654b09" Title="editar Method " Url="html/Overload-Dades.Gestor.GestorBD.editar.htm">
+          <HelpTOCNode Title="editar Method (Teatre, Adre&#231;a)" Url="html/M-Dades.Gestor.GestorBD.editar.htm" />
+          <HelpTOCNode Title="editar Method (Persona, Adre&#231;a)" Url="html/M-Dades.Gestor.GestorBD.editar_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="10e65205-8f37-42eb-8d23-ea37e6620c59" Title="ExisteixEmail Method " Url="html/Overload-Dades.Gestor.GestorBD.ExisteixEmail.htm">
+          <HelpTOCNode Title="ExisteixEmail Method (String)" Url="html/M-Dades.Gestor.GestorBD.ExisteixEmail.htm" />
+          <HelpTOCNode Title="ExisteixEmail Method (String, String)" Url="html/M-Dades.Gestor.GestorBD.ExisteixEmail_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="getCP Method " Url="html/M-Dades.Gestor.GestorBD.getCP.htm" />
+        <HelpTOCNode Title="getEspectacles Method " Url="html/M-Dades.Gestor.GestorBD.getEspectacles.htm" />
+        <HelpTOCNode Title="getEspectaclesInc Method " Url="html/M-Dades.Gestor.GestorBD.getEspectaclesInc.htm" />
+        <HelpTOCNode Title="getFuncionsInc Method " Url="html/M-Dades.Gestor.GestorBD.getFuncionsInc.htm" />
+        <HelpTOCNode Title="getListAdministrador Method " Url="html/M-Dades.Gestor.GestorBD.getListAdministrador.htm" />
+        <HelpTOCNode Title="getListAutor Method " Url="html/M-Dades.Gestor.GestorBD.getListAutor.htm" />
+        <HelpTOCNode Title="getListClient Method " Url="html/M-Dades.Gestor.GestorBD.getListClient.htm" />
+        <HelpTOCNode Title="getListDirector Method " Url="html/M-Dades.Gestor.GestorBD.getListDirector.htm" />
+        <HelpTOCNode Title="getPersones Method " Url="html/M-Dades.Gestor.GestorBD.getPersones.htm" />
+        <HelpTOCNode Title="getTeatres Method " Url="html/M-Dades.Gestor.GestorBD.getTeatres.htm" />
+        <HelpTOCNode Title="getTeatresInc Method " Url="html/M-Dades.Gestor.GestorBD.getTeatresInc.htm" />
+        <HelpTOCNode Title="modificarEspectacle Method " Url="html/M-Dades.Gestor.GestorBD.modificarEspectacle.htm" />
+        <HelpTOCNode Title="modificarFuncio Method " Url="html/M-Dades.Gestor.GestorBD.modificarFuncio.htm" />
+        <HelpTOCNode Title="obtenirAdminperId Method " Url="html/M-Dades.Gestor.GestorBD.obtenirAdminperId.htm" />
+        <HelpTOCNode Title="obtenirAdre&#231;aperId Method " Url="html/M-Dades.Gestor.GestorBD.obtenirAdreçaperId.htm" />
+        <HelpTOCNode Title="obtenirClientperId Method " Url="html/M-Dades.Gestor.GestorBD.obtenirClientperId.htm" />
+        <HelpTOCNode Title="obtenirEspectacleperId Method " Url="html/M-Dades.Gestor.GestorBD.obtenirEspectacleperId.htm" />
+        <HelpTOCNode Title="obtenirFuncioperId Method " Url="html/M-Dades.Gestor.GestorBD.obtenirFuncioperId.htm" />
+        <HelpTOCNode Title="obtenirMunicipi Method " Url="html/M-Dades.Gestor.GestorBD.obtenirMunicipi.htm" />
+        <HelpTOCNode Title="obtenirMunicipis Method " Url="html/M-Dades.Gestor.GestorBD.obtenirMunicipis.htm" />
+        <HelpTOCNode Title="obtenirPersonaperId Method " Url="html/M-Dades.Gestor.GestorBD.obtenirPersonaperId.htm" />
+        <HelpTOCNode Title="obtenirPersonaperNIF Method " Url="html/M-Dades.Gestor.GestorBD.obtenirPersonaperNIF.htm" />
+        <HelpTOCNode Id="bd41fc9f-747f-48d2-9c7a-a2a970035d1b" Title="obtenirTeatreperId Method " Url="html/Overload-Dades.Gestor.GestorBD.obtenirTeatreperId.htm">
+          <HelpTOCNode Title="obtenirTeatreperId Method (Nullable(Int32))" Url="html/M-Dades.Gestor.GestorBD.obtenirTeatreperId.htm" />
+          <HelpTOCNode Title="obtenirTeatreperId Method (Int32)" Url="html/M-Dades.Gestor.GestorBD.obtenirTeatreperId_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="obtenirUsuariperId Method " Url="html/M-Dades.Gestor.GestorBD.obtenirUsuariperId.htm" />
+        <HelpTOCNode Title="validar Method " Url="html/M-Dades.Gestor.GestorBD.validar.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="7ec675d0-dfaa-457c-ab8c-ca8a861fa2f1" Title="Dades.Models Namespace" Url="html/N-Dades.Models.htm">
+    <HelpTOCNode Id="3e4770fa-b790-4e03-91cd-186f9797ccf8" Title="Administrador Class" Url="html/T-Dades.Models.Administrador.htm">
+      <HelpTOCNode Title="Administrador Members" Url="html/AllMembers.T-Dades.Models.Administrador.htm" />
+      <HelpTOCNode Id="9e5a05a9-5aab-4142-a9a3-0b325b950b0b" Title="Administrador Constructor " Url="html/Overload-Dades.Models.Administrador.-ctor.htm">
+        <HelpTOCNode Title="Administrador Constructor " Url="html/M-Dades.Models.Administrador.-ctor.htm" />
+        <HelpTOCNode Title="Administrador Constructor (Adre&#231;a, String, String, Int32, String, String, Int32, DateTime)" Url="html/M-Dades.Models.Administrador.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Administrador Methods" Url="html/Methods.T-Dades.Models.Administrador.htm" />
+      <HelpTOCNode Title="Administrador Properties" Url="html/Properties.T-Dades.Models.Administrador.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="7f9a4781-fc97-4057-a0ee-999e8f5a04e5" Title="Adre&#231;a Class" Url="html/T-Dades.Models.Adreça.htm">
+      <HelpTOCNode Title="Adre&#231;a Members" Url="html/AllMembers.T-Dades.Models.Adreça.htm" />
+      <HelpTOCNode Id="13e9a418-b1c0-4359-8fed-392e9ddb9260" Title="Adre&#231;a Constructor " Url="html/Overload-Dades.Models.Adreça.-ctor.htm">
+        <HelpTOCNode Title="Adre&#231;a Constructor (String, String, Int32)" Url="html/M-Dades.Models.Adreça.-ctor.htm" />
+        <HelpTOCNode Title="Adre&#231;a Constructor " Url="html/M-Dades.Models.Adreça.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="52bb0830-c084-4d4f-bf33-2286e2766bd6" Title="Adre&#231;a Methods" Url="html/Methods.T-Dades.Models.Adreça.htm">
+        <HelpTOCNode Title="editarAdre&#231;a Method " Url="html/M-Dades.Models.Adreça.editarAdreça.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="2275d148-5739-4ef3-8f04-f1adf8ef097b" Title="Adre&#231;a Type Conversions" Url="html/Operators.T-Dades.Models.Adreça.htm">
+        <HelpTOCNode Title="Implicit Conversion (Boolean to Adre&#231;a)" Url="html/M-Dades.Models.Adreça.op_Implicit.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e188248c-1763-4e4f-a528-5b5948b0f4a4" Title="Adre&#231;a Properties" Url="html/Properties.T-Dades.Models.Adreça.htm">
+        <HelpTOCNode Title="Adre&#231;aCompleta Property " Url="html/P-Dades.Models.Adreça.AdreçaCompleta.htm" />
+        <HelpTOCNode Title="Codipostal Property " Url="html/P-Dades.Models.Adreça.Codipostal.htm" />
+        <HelpTOCNode Title="Comarca Property " Url="html/P-Dades.Models.Adreça.Comarca.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P-Dades.Models.Adreça.ID.htm" />
+        <HelpTOCNode Title="Localitat Property " Url="html/P-Dades.Models.Adreça.Localitat.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1f5c8546-e4c1-4b60-bfeb-86be60a4a65c" Title="Autor Class" Url="html/T-Dades.Models.Autor.htm">
+      <HelpTOCNode Title="Autor Members" Url="html/AllMembers.T-Dades.Models.Autor.htm" />
+      <HelpTOCNode Id="e23db715-513b-43b5-a312-86f6ee6685d8" Title="Autor Constructor " Url="html/Overload-Dades.Models.Autor.-ctor.htm">
+        <HelpTOCNode Title="Autor Constructor " Url="html/M-Dades.Models.Autor.-ctor.htm" />
+        <HelpTOCNode Title="Autor Constructor (Adre&#231;a, String, String, Int32)" Url="html/M-Dades.Models.Autor.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Autor Methods" Url="html/Methods.T-Dades.Models.Autor.htm" />
+      <HelpTOCNode Title="Autor Properties" Url="html/Properties.T-Dades.Models.Autor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="bcc7892a-de46-4fbc-9b80-99002f3b4a6e" Title="Client Class" Url="html/T-Dades.Models.Client.htm">
+      <HelpTOCNode Title="Client Members" Url="html/AllMembers.T-Dades.Models.Client.htm" />
+      <HelpTOCNode Id="de24c7ff-1804-48b5-a067-dec3f6f25130" Title="Client Constructor " Url="html/Overload-Dades.Models.Client.-ctor.htm">
+        <HelpTOCNode Title="Client Constructor " Url="html/M-Dades.Models.Client.-ctor.htm" />
+        <HelpTOCNode Title="Client Constructor (Adre&#231;a, String, String, Int32, String, String, Int32, DateTime, String)" Url="html/M-Dades.Models.Client.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Client Methods" Url="html/Methods.T-Dades.Models.Client.htm" />
+      <HelpTOCNode Id="19227226-c5e8-4bfd-86ec-46598226986a" Title="Client Properties" Url="html/Properties.T-Dades.Models.Client.htm">
+        <HelpTOCNode Title="Cognoms Property " Url="html/P-Dades.Models.Client.Cognoms.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3dd5d236-cba4-4a8b-9094-a270f9297548" Title="Compra Class" Url="html/T-Dades.Models.Compra.htm">
+      <HelpTOCNode Title="Compra Members" Url="html/AllMembers.T-Dades.Models.Compra.htm" />
+      <HelpTOCNode Title="Compra Constructor " Url="html/M-Dades.Models.Compra.-ctor.htm" />
+      <HelpTOCNode Title="Compra Methods" Url="html/Methods.T-Dades.Models.Compra.htm" />
+      <HelpTOCNode Id="490b013a-5649-47fc-a743-24e8f550de59" Title="Compra Properties" Url="html/Properties.T-Dades.Models.Compra.htm">
+        <HelpTOCNode Title="Client Property " Url="html/P-Dades.Models.Compra.Client.htm" />
+        <HelpTOCNode Title="clientID Property " Url="html/P-Dades.Models.Compra.clientID.htm" />
+        <HelpTOCNode Title="columna Property " Url="html/P-Dades.Models.Compra.columna.htm" />
+        <HelpTOCNode Title="fila Property " Url="html/P-Dades.Models.Compra.fila.htm" />
+        <HelpTOCNode Title="Funcio Property " Url="html/P-Dades.Models.Compra.Funcio.htm" />
+        <HelpTOCNode Title="funcioID Property " Url="html/P-Dades.Models.Compra.funcioID.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P-Dades.Models.Compra.ID.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3f74b650-979d-439b-bbec-6fab3205463b" Title="Director Class" Url="html/T-Dades.Models.Director.htm">
+      <HelpTOCNode Title="Director Members" Url="html/AllMembers.T-Dades.Models.Director.htm" />
+      <HelpTOCNode Id="374eca92-edf0-4a4b-81af-b635c2c36cd9" Title="Director Constructor " Url="html/Overload-Dades.Models.Director.-ctor.htm">
+        <HelpTOCNode Title="Director Constructor " Url="html/M-Dades.Models.Director.-ctor.htm" />
+        <HelpTOCNode Title="Director Constructor (Adre&#231;a, String, String, Int32)" Url="html/M-Dades.Models.Director.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Director Methods" Url="html/Methods.T-Dades.Models.Director.htm" />
+      <HelpTOCNode Title="Director Properties" Url="html/Properties.T-Dades.Models.Director.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="92254cbf-0124-4afc-96e2-95d4c8006611" Title="Espectacle Class" Url="html/T-Dades.Models.Espectacle.htm">
+      <HelpTOCNode Title="Espectacle Members" Url="html/AllMembers.T-Dades.Models.Espectacle.htm" />
+      <HelpTOCNode Id="49d82426-9ae4-4ff0-926d-39e903320dbc" Title="Espectacle Constructor " Url="html/Overload-Dades.Models.Espectacle.-ctor.htm">
+        <HelpTOCNode Title="Espectacle Constructor " Url="html/M-Dades.Models.Espectacle.-ctor.htm" />
+        <HelpTOCNode Title="Espectacle Constructor (String, String, TimeSpan, String, Director, Autor)" Url="html/M-Dades.Models.Espectacle.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Espectacle Methods" Url="html/Methods.T-Dades.Models.Espectacle.htm" />
+      <HelpTOCNode Id="d0b3c3e2-d4e8-4b92-835d-754451e7df41" Title="Espectacle Properties" Url="html/Properties.T-Dades.Models.Espectacle.htm">
+        <HelpTOCNode Title="Autor Property " Url="html/P-Dades.Models.Espectacle.Autor.htm" />
+        <HelpTOCNode Title="cartell Property " Url="html/P-Dades.Models.Espectacle.cartell.htm" />
+        <HelpTOCNode Title="Director Property " Url="html/P-Dades.Models.Espectacle.Director.htm" />
+        <HelpTOCNode Title="durada Property " Url="html/P-Dades.Models.Espectacle.durada.htm" />
+        <HelpTOCNode Title="EspectacleID Property " Url="html/P-Dades.Models.Espectacle.EspectacleID.htm" />
+        <HelpTOCNode Title="nifAutor Property " Url="html/P-Dades.Models.Espectacle.nifAutor.htm" />
+        <HelpTOCNode Title="nifDirector Property " Url="html/P-Dades.Models.Espectacle.nifDirector.htm" />
+        <HelpTOCNode Title="sinopsi Property " Url="html/P-Dades.Models.Espectacle.sinopsi.htm" />
+        <HelpTOCNode Title="titol Property " Url="html/P-Dades.Models.Espectacle.titol.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1ea75b79-44fa-4ff6-897d-7571709677d6" Title="Funcio Class" Url="html/T-Dades.Models.Funcio.htm">
+      <HelpTOCNode Title="Funcio Members" Url="html/AllMembers.T-Dades.Models.Funcio.htm" />
+      <HelpTOCNode Id="cd549fe6-d388-40b7-bf8f-2d4577c6c7fa" Title="Funcio Constructor " Url="html/Overload-Dades.Models.Funcio.-ctor.htm">
+        <HelpTOCNode Title="Funcio Constructor (Espectacle, Teatre, DateTime, TimeSpan, TimeSpan)" Url="html/M-Dades.Models.Funcio.-ctor.htm" />
+        <HelpTOCNode Title="Funcio Constructor " Url="html/M-Dades.Models.Funcio.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Funcio Methods" Url="html/Methods.T-Dades.Models.Funcio.htm" />
+      <HelpTOCNode Id="a03f1dcb-fd83-495f-bc95-3914d52cf589" Title="Funcio Properties" Url="html/Properties.T-Dades.Models.Funcio.htm">
+        <HelpTOCNode Title="data Property " Url="html/P-Dades.Models.Funcio.data.htm" />
+        <HelpTOCNode Title="Espectacle Property " Url="html/P-Dades.Models.Funcio.Espectacle.htm" />
+        <HelpTOCNode Title="espectacleID Property " Url="html/P-Dades.Models.Funcio.espectacleID.htm" />
+        <HelpTOCNode Title="horaFi Property " Url="html/P-Dades.Models.Funcio.horaFi.htm" />
+        <HelpTOCNode Title="horaInici Property " Url="html/P-Dades.Models.Funcio.horaInici.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P-Dades.Models.Funcio.ID.htm" />
+        <HelpTOCNode Title="Teatre Property " Url="html/P-Dades.Models.Funcio.Teatre.htm" />
+        <HelpTOCNode Title="teatreID Property " Url="html/P-Dades.Models.Funcio.teatreID.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9fb652d8-0646-46d2-8f93-980a1cce2aed" Title="mpiscatalunya Class" Url="html/T-Dades.Models.mpiscatalunya.htm">
+      <HelpTOCNode Title="mpiscatalunya Members" Url="html/AllMembers.T-Dades.Models.mpiscatalunya.htm" />
+      <HelpTOCNode Title="mpiscatalunya Methods" Url="html/Methods.T-Dades.Models.mpiscatalunya.htm" />
+      <HelpTOCNode Id="a23904d9-5b64-47b0-9942-b873f106cebb" Title="mpiscatalunya Properties" Url="html/Properties.T-Dades.Models.mpiscatalunya.htm">
+        <HelpTOCNode Title="Codi Property " Url="html/P-Dades.Models.mpiscatalunya.Codi.htm" />
+        <HelpTOCNode Title="Codicomarca Property " Url="html/P-Dades.Models.mpiscatalunya.Codicomarca.htm" />
+        <HelpTOCNode Title="Nom Property " Url="html/P-Dades.Models.mpiscatalunya.Nom.htm" />
+        <HelpTOCNode Title="Nomcomarca Property " Url="html/P-Dades.Models.mpiscatalunya.Nomcomarca.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b239198b-99b0-489c-99d6-5f5f1d1c84f2" Title="Persona Class" Url="html/T-Dades.Models.Persona.htm">
+      <HelpTOCNode Title="Persona Members" Url="html/AllMembers.T-Dades.Models.Persona.htm" />
+      <HelpTOCNode Id="9fb6f95e-b7f4-46c1-ab97-52f31105e8bc" Title="Persona Constructor " Url="html/Overload-Dades.Models.Persona.-ctor.htm">
+        <HelpTOCNode Title="Persona Constructor " Url="html/M-Dades.Models.Persona.-ctor.htm" />
+        <HelpTOCNode Title="Persona Constructor (Adre&#231;a, String, String, Int32)" Url="html/M-Dades.Models.Persona.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Persona Methods" Url="html/Methods.T-Dades.Models.Persona.htm" />
+      <HelpTOCNode Id="c3878f91-28fa-4055-b4b6-a8bcb2afb89e" Title="Persona Properties" Url="html/Properties.T-Dades.Models.Persona.htm">
+        <HelpTOCNode Title="Adre&#231;a Property " Url="html/P-Dades.Models.Persona.Adreça.htm" />
+        <HelpTOCNode Title="Adre&#231;aID Property " Url="html/P-Dades.Models.Persona.AdreçaID.htm" />
+        <HelpTOCNode Title="edat Property " Url="html/P-Dades.Models.Persona.edat.htm" />
+        <HelpTOCNode Title="NIF Property " Url="html/P-Dades.Models.Persona.NIF.htm" />
+        <HelpTOCNode Title="nom Property " Url="html/P-Dades.Models.Persona.nom.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="514e593c-33b1-4219-b738-752c7654fed3" Title="Teatre Class" Url="html/T-Dades.Models.Teatre.htm">
+      <HelpTOCNode Title="Teatre Members" Url="html/AllMembers.T-Dades.Models.Teatre.htm" />
+      <HelpTOCNode Id="9d07d293-01b0-4e23-b5ad-5a27b13ab559" Title="Teatre Constructor " Url="html/Overload-Dades.Models.Teatre.-ctor.htm">
+        <HelpTOCNode Title="Teatre Constructor (Adre&#231;a, String, Int32, Int32)" Url="html/M-Dades.Models.Teatre.-ctor.htm" />
+        <HelpTOCNode Title="Teatre Constructor " Url="html/M-Dades.Models.Teatre.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Teatre Methods" Url="html/Methods.T-Dades.Models.Teatre.htm" />
+      <HelpTOCNode Id="0a339675-2bc9-4236-99e5-d538d7a9f623" Title="Teatre Properties" Url="html/Properties.T-Dades.Models.Teatre.htm">
+        <HelpTOCNode Title="Adre&#231;a Property " Url="html/P-Dades.Models.Teatre.Adreça.htm" />
+        <HelpTOCNode Title="Adre&#231;aID Property " Url="html/P-Dades.Models.Teatre.AdreçaID.htm" />
+        <HelpTOCNode Title="Columnes Property " Url="html/P-Dades.Models.Teatre.Columnes.htm" />
+        <HelpTOCNode Title="Files Property " Url="html/P-Dades.Models.Teatre.Files.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P-Dades.Models.Teatre.ID.htm" />
+        <HelpTOCNode Title="Nom Property " Url="html/P-Dades.Models.Teatre.Nom.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e2fd9bdd-7483-472a-bc48-34662c233792" Title="Usuari Class" Url="html/T-Dades.Models.Usuari.htm">
+      <HelpTOCNode Title="Usuari Members" Url="html/AllMembers.T-Dades.Models.Usuari.htm" />
+      <HelpTOCNode Id="0ee201a5-fd0a-4c29-aed6-9caecd9d9e0e" Title="Usuari Constructor " Url="html/Overload-Dades.Models.Usuari.-ctor.htm">
+        <HelpTOCNode Title="Usuari Constructor " Url="html/M-Dades.Models.Usuari.-ctor.htm" />
+        <HelpTOCNode Title="Usuari Constructor (Adre&#231;a, String, String, Int32, String, String, Int32, DateTime)" Url="html/M-Dades.Models.Usuari.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Usuari Methods" Url="html/Methods.T-Dades.Models.Usuari.htm" />
+      <HelpTOCNode Id="0fe1c5db-18d7-4ca6-a384-50e899a8765c" Title="Usuari Properties" Url="html/Properties.T-Dades.Models.Usuari.htm">
+        <HelpTOCNode Title="dataNaixement Property " Url="html/P-Dades.Models.Usuari.dataNaixement.htm" />
+        <HelpTOCNode Title="email Property " Url="html/P-Dades.Models.Usuari.email.htm" />
+        <HelpTOCNode Title="password Property " Url="html/P-Dades.Models.Usuari.password.htm" />
+        <HelpTOCNode Title="telefon Property " Url="html/P-Dades.Models.Usuari.telefon.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="d172289c-c899-47a6-b635-daa37e3e4964" Title="GestioTeatres.Controllers Namespace" Url="html/N-GestioTeatres.Controllers.htm">
+    <HelpTOCNode Id="49df22f6-ff10-4222-9afc-2bcfc64b056b" Title="HomeController Class" Url="html/T-GestioTeatres.Controllers.HomeController.htm">
+      <HelpTOCNode Title="HomeController Members" Url="html/AllMembers.T-GestioTeatres.Controllers.HomeController.htm" />
+      <HelpTOCNode Id="7c5a3480-1d53-465f-9f0a-3dc9be780e8e" Title="HomeController Methods" Url="html/Methods.T-GestioTeatres.Controllers.HomeController.htm">
+        <HelpTOCNode Title="About Method " Url="html/M-GestioTeatres.Controllers.HomeController.About.htm" />
+        <HelpTOCNode Title="Contact Method " Url="html/M-GestioTeatres.Controllers.HomeController.Contact.htm" />
+        <HelpTOCNode Title="Index Method " Url="html/M-GestioTeatres.Controllers.HomeController.Index.htm" />
+        <HelpTOCNode Title="Login Method " Url="html/M-GestioTeatres.Controllers.HomeController.Login.htm" />
+        <HelpTOCNode Title="Logout Method " Url="html/M-GestioTeatres.Controllers.HomeController.Logout.htm" />
+        <HelpTOCNode Title="Main Method " Url="html/M-GestioTeatres.Controllers.HomeController.Main.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="HomeController Properties" Url="html/Properties.T-GestioTeatres.Controllers.HomeController.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="7f93dc22-8a0e-4b81-87f1-bcaea0f039b9" Title="WebApplication3 Namespace" Url="html/N-WebApplication3.htm">
+    <HelpTOCNode Id="5222536b-0694-49ea-9366-4ac0b9d42c6f" Title="BundleConfig Class" Url="html/T-WebApplication3.BundleConfig.htm">
+      <HelpTOCNode Title="BundleConfig Members" Url="html/AllMembers.T-WebApplication3.BundleConfig.htm" />
+      <HelpTOCNode Id="c84f7b94-b05b-4990-a0ed-227a08ec2482" Title="BundleConfig Methods" Url="html/Methods.T-WebApplication3.BundleConfig.htm">
+        <HelpTOCNode Title="RegisterBundles Method " Url="html/M-WebApplication3.BundleConfig.RegisterBundles.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d615db68-893c-4be7-ae98-643dc90d2b57" Title="FilterConfig Class" Url="html/T-WebApplication3.FilterConfig.htm">
+      <HelpTOCNode Title="FilterConfig Members" Url="html/AllMembers.T-WebApplication3.FilterConfig.htm" />
+      <HelpTOCNode Id="9f26346b-af7b-49d2-ab58-99369d9cb7db" Title="FilterConfig Methods" Url="html/Methods.T-WebApplication3.FilterConfig.htm">
+        <HelpTOCNode Title="RegisterGlobalFilters Method " Url="html/M-WebApplication3.FilterConfig.RegisterGlobalFilters.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9d7fc1f7-20f5-4bce-b7ef-c3f5004b86ac" Title="MvcApplication Class" Url="html/T-WebApplication3.MvcApplication.htm">
+      <HelpTOCNode Title="MvcApplication Members" Url="html/AllMembers.T-WebApplication3.MvcApplication.htm" />
+      <HelpTOCNode Title="MvcApplication Methods" Url="html/Methods.T-WebApplication3.MvcApplication.htm" />
+      <HelpTOCNode Title="MvcApplication Properties" Url="html/Properties.T-WebApplication3.MvcApplication.htm" />
+      <HelpTOCNode Title="MvcApplication Events" Url="html/Events.T-WebApplication3.MvcApplication.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="cd3f47a6-72cc-4050-a1f1-14eb64e374f6" Title="RouteConfig Class" Url="html/T-WebApplication3.RouteConfig.htm">
+      <HelpTOCNode Title="RouteConfig Members" Url="html/AllMembers.T-WebApplication3.RouteConfig.htm" />
+      <HelpTOCNode Id="f82b3e4c-df0a-4e48-9258-e7ee82a15918" Title="RouteConfig Methods" Url="html/Methods.T-WebApplication3.RouteConfig.htm">
+        <HelpTOCNode Title="RegisterRoutes Method " Url="html/M-WebApplication3.RouteConfig.RegisterRoutes.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="af0194a0-73f2-41d9-b761-2700ff719cb6" Title="WebApplication3.Autenticacio Namespace" Url="html/N-WebApplication3.Autenticacio.htm">
+    <HelpTOCNode Id="6590c9fb-55c3-4396-87cb-3877106c4dd3" Title="Filtratge Class" Url="html/T-WebApplication3.Autenticacio.Filtratge.htm">
+      <HelpTOCNode Title="Filtratge Members" Url="html/AllMembers.T-WebApplication3.Autenticacio.Filtratge.htm" />
+      <HelpTOCNode Id="ff8fd946-9df8-40ae-9f4a-aef844659297" Title="Filtratge Methods" Url="html/Methods.T-WebApplication3.Autenticacio.Filtratge.htm">
+        <HelpTOCNode Title="OnAuthorization Method " Url="html/M-WebApplication3.Autenticacio.Filtratge.OnAuthorization.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Filtratge Properties" Url="html/Properties.T-WebApplication3.Autenticacio.Filtratge.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="8f713726-6821-4e79-96e1-e02eb9e8f665" Title="WebApplication3.Controllers Namespace" Url="html/N-WebApplication3.Controllers.htm">
+    <HelpTOCNode Id="183df3ed-59c8-40e9-8d15-d9faa12849b4" Title="EspectaclesController Class" Url="html/T-WebApplication3.Controllers.EspectaclesController.htm">
+      <HelpTOCNode Title="EspectaclesController Members" Url="html/AllMembers.T-WebApplication3.Controllers.EspectaclesController.htm" />
+      <HelpTOCNode Id="b348ed8c-4b93-4f83-bff5-809df260bf24" Title="EspectaclesController Methods" Url="html/Methods.T-WebApplication3.Controllers.EspectaclesController.htm">
+        <HelpTOCNode Id="cbdc2a4d-81e3-4f53-9651-4cd865fb5854" Title="Create Method " Url="html/Overload-WebApplication3.Controllers.EspectaclesController.Create.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M-WebApplication3.Controllers.EspectaclesController.Create.htm" />
+          <HelpTOCNode Title="Create Method (Espectacle)" Url="html/M-WebApplication3.Controllers.EspectaclesController.Create_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Delete Method " Url="html/M-WebApplication3.Controllers.EspectaclesController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-WebApplication3.Controllers.EspectaclesController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-WebApplication3.Controllers.EspectaclesController.Details.htm" />
+        <HelpTOCNode Id="1b3dbf8a-33b7-4604-8249-02672d73600a" Title="Edit Method " Url="html/Overload-WebApplication3.Controllers.EspectaclesController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-WebApplication3.Controllers.EspectaclesController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (Espectacle)" Url="html/M-WebApplication3.Controllers.EspectaclesController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Index Method " Url="html/M-WebApplication3.Controllers.EspectaclesController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="EspectaclesController Properties" Url="html/Properties.T-WebApplication3.Controllers.EspectaclesController.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="ec9ce1de-a18e-4982-8ee4-14be4f732de3" Title="FuncionsController Class" Url="html/T-WebApplication3.Controllers.FuncionsController.htm">
+      <HelpTOCNode Title="FuncionsController Members" Url="html/AllMembers.T-WebApplication3.Controllers.FuncionsController.htm" />
+      <HelpTOCNode Id="57798c02-9a19-415a-9ed2-e7a92de2b300" Title="FuncionsController Methods" Url="html/Methods.T-WebApplication3.Controllers.FuncionsController.htm">
+        <HelpTOCNode Id="e17a1629-8e06-4598-a0ea-d5118ec3783c" Title="Create Method " Url="html/Overload-WebApplication3.Controllers.FuncionsController.Create.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M-WebApplication3.Controllers.FuncionsController.Create.htm" />
+          <HelpTOCNode Title="Create Method (Funcio)" Url="html/M-WebApplication3.Controllers.FuncionsController.Create_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Delete Method " Url="html/M-WebApplication3.Controllers.FuncionsController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-WebApplication3.Controllers.FuncionsController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-WebApplication3.Controllers.FuncionsController.Details.htm" />
+        <HelpTOCNode Id="966f32a1-f0ad-4a12-8f24-0b9fb0b0508b" Title="Edit Method " Url="html/Overload-WebApplication3.Controllers.FuncionsController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-WebApplication3.Controllers.FuncionsController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (Funcio)" Url="html/M-WebApplication3.Controllers.FuncionsController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Index Method " Url="html/M-WebApplication3.Controllers.FuncionsController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="FuncionsController Properties" Url="html/Properties.T-WebApplication3.Controllers.FuncionsController.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="32a4419d-c559-4185-9fd4-d77b559976a9" Title="PersonasController Class" Url="html/T-WebApplication3.Controllers.PersonasController.htm">
+      <HelpTOCNode Title="PersonasController Members" Url="html/AllMembers.T-WebApplication3.Controllers.PersonasController.htm" />
+      <HelpTOCNode Id="e76ea888-acaa-4220-ad84-d361c62d7d14" Title="PersonasController Methods" Url="html/Methods.T-WebApplication3.Controllers.PersonasController.htm">
+        <HelpTOCNode Id="a2fee6e8-b0c5-4089-bd4f-0824a5a91f1d" Title="Create Method " Url="html/Overload-WebApplication3.Controllers.PersonasController.Create.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M-WebApplication3.Controllers.PersonasController.Create.htm" />
+          <HelpTOCNode Title="Create Method (PersonaVista)" Url="html/M-WebApplication3.Controllers.PersonasController.Create_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Delete Method " Url="html/M-WebApplication3.Controllers.PersonasController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-WebApplication3.Controllers.PersonasController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-WebApplication3.Controllers.PersonasController.Details.htm" />
+        <HelpTOCNode Id="37c52154-ff62-410f-a6d5-9ad7e2f9b42b" Title="Edit Method " Url="html/Overload-WebApplication3.Controllers.PersonasController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (String)" Url="html/M-WebApplication3.Controllers.PersonasController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (PersonaVista)" Url="html/M-WebApplication3.Controllers.PersonasController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Index Method " Url="html/M-WebApplication3.Controllers.PersonasController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PersonasController Properties" Url="html/Properties.T-WebApplication3.Controllers.PersonasController.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="ac824dbd-58b5-4a29-9e9a-cc55508a50ba" Title="TeatresController Class" Url="html/T-WebApplication3.Controllers.TeatresController.htm">
+      <HelpTOCNode Title="TeatresController Members" Url="html/AllMembers.T-WebApplication3.Controllers.TeatresController.htm" />
+      <HelpTOCNode Id="99ecc26d-9432-4fe7-8a6f-a65bfffcc1aa" Title="TeatresController Methods" Url="html/Methods.T-WebApplication3.Controllers.TeatresController.htm">
+        <HelpTOCNode Id="9632b549-6880-4b1b-be47-aba73d282972" Title="Create Method " Url="html/Overload-WebApplication3.Controllers.TeatresController.Create.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M-WebApplication3.Controllers.TeatresController.Create.htm" />
+          <HelpTOCNode Title="Create Method (TeatreVista)" Url="html/M-WebApplication3.Controllers.TeatresController.Create_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Delete Method " Url="html/M-WebApplication3.Controllers.TeatresController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-WebApplication3.Controllers.TeatresController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-WebApplication3.Controllers.TeatresController.Details.htm" />
+        <HelpTOCNode Id="36958e2d-845f-4d48-b4bc-5462acd863d4" Title="Edit Method " Url="html/Overload-WebApplication3.Controllers.TeatresController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-WebApplication3.Controllers.TeatresController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (TeatreVista)" Url="html/M-WebApplication3.Controllers.TeatresController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Index Method " Url="html/M-WebApplication3.Controllers.TeatresController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="TeatresController Properties" Url="html/Properties.T-WebApplication3.Controllers.TeatresController.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="7218608b-782e-45b1-89c9-e4813ddb0f9c" Title="WebApplication3.Models Namespace" Url="html/N-WebApplication3.Models.htm">
+    <HelpTOCNode Id="b9b67b2f-9e83-4583-bbd2-335aba8db930" Title="PersonaVista Class" Url="html/T-WebApplication3.Models.PersonaVista.htm">
+      <HelpTOCNode Title="PersonaVista Members" Url="html/AllMembers.T-WebApplication3.Models.PersonaVista.htm" />
+      <HelpTOCNode Id="105cb377-ad99-49c2-8061-60026c8b2fd6" Title="PersonaVista Constructor " Url="html/Overload-WebApplication3.Models.PersonaVista.-ctor.htm">
+        <HelpTOCNode Title="PersonaVista Constructor " Url="html/M-WebApplication3.Models.PersonaVista.-ctor.htm" />
+        <HelpTOCNode Title="PersonaVista Constructor (String, String, Int32)" Url="html/M-WebApplication3.Models.PersonaVista.-ctor_1.htm" />
+        <HelpTOCNode Title="PersonaVista Constructor (String, String, Int32, String, String)" Url="html/M-WebApplication3.Models.PersonaVista.-ctor_2.htm" />
+        <HelpTOCNode Title="PersonaVista Constructor (String, String, Int32, String, String, String, String, Int32)" Url="html/M-WebApplication3.Models.PersonaVista.-ctor_3.htm" />
+        <HelpTOCNode Title="PersonaVista Constructor (String, String, Int32, String, String, String, String, Int32, TipusPersona)" Url="html/M-WebApplication3.Models.PersonaVista.-ctor_4.htm" />
+        <HelpTOCNode Title="PersonaVista Constructor (String, String, Int32, String, String, String, String, Int32, TipusPersona, String)" Url="html/M-WebApplication3.Models.PersonaVista.-ctor_5.htm" />
+        <HelpTOCNode Title="PersonaVista Constructor (String, String, Int32, String, String, String, String, Int32, TipusPersona, Int32, DateTime)" Url="html/M-WebApplication3.Models.PersonaVista.-ctor_6.htm" />
+        <HelpTOCNode Title="PersonaVista Constructor (String, String, Int32, String, String, String, String, Int32, TipusPersona, Int32, DateTime, String)" Url="html/M-WebApplication3.Models.PersonaVista.-ctor_7.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0644b8ce-71d1-4bc2-80df-6ef73dd8a4c4" Title="PersonaVista Methods" Url="html/Methods.T-WebApplication3.Models.PersonaVista.htm">
+        <HelpTOCNode Title="IsBetween Method " Url="html/M-WebApplication3.Models.PersonaVista.IsBetween.htm" />
+        <HelpTOCNode Title="Validate Method " Url="html/M-WebApplication3.Models.PersonaVista.Validate.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7dd729f4-c1bd-4c27-aee6-dc2697a7fb13" Title="PersonaVista Properties" Url="html/Properties.T-WebApplication3.Models.PersonaVista.htm">
+        <HelpTOCNode Title="Codipostal Property " Url="html/P-WebApplication3.Models.PersonaVista.Codipostal.htm" />
+        <HelpTOCNode Title="Cognoms Property " Url="html/P-WebApplication3.Models.PersonaVista.Cognoms.htm" />
+        <HelpTOCNode Title="Comarca Property " Url="html/P-WebApplication3.Models.PersonaVista.Comarca.htm" />
+        <HelpTOCNode Title="dataNaixement Property " Url="html/P-WebApplication3.Models.PersonaVista.dataNaixement.htm" />
+        <HelpTOCNode Title="edat Property " Url="html/P-WebApplication3.Models.PersonaVista.edat.htm" />
+        <HelpTOCNode Title="email Property " Url="html/P-WebApplication3.Models.PersonaVista.email.htm" />
+        <HelpTOCNode Title="Localitat Property " Url="html/P-WebApplication3.Models.PersonaVista.Localitat.htm" />
+        <HelpTOCNode Title="NIF Property " Url="html/P-WebApplication3.Models.PersonaVista.NIF.htm" />
+        <HelpTOCNode Title="nom Property " Url="html/P-WebApplication3.Models.PersonaVista.nom.htm" />
+        <HelpTOCNode Title="password Property " Url="html/P-WebApplication3.Models.PersonaVista.password.htm" />
+        <HelpTOCNode Title="telefon Property " Url="html/P-WebApplication3.Models.PersonaVista.telefon.htm" />
+        <HelpTOCNode Title="tipus Property " Url="html/P-WebApplication3.Models.PersonaVista.tipus.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="PersonaVista.TipusPersona Enumeration" Url="html/T-WebApplication3.Models.PersonaVista.TipusPersona.htm" />
+    <HelpTOCNode Id="d3bb4287-cb48-4d54-9ee2-d60eda6e89de" Title="TeatreVista Class" Url="html/T-WebApplication3.Models.TeatreVista.htm">
+      <HelpTOCNode Title="TeatreVista Members" Url="html/AllMembers.T-WebApplication3.Models.TeatreVista.htm" />
+      <HelpTOCNode Id="5ee95036-5e55-4886-bb09-14b2ff81b50f" Title="TeatreVista Constructor " Url="html/Overload-WebApplication3.Models.TeatreVista.-ctor.htm">
+        <HelpTOCNode Title="TeatreVista Constructor " Url="html/M-WebApplication3.Models.TeatreVista.-ctor.htm" />
+        <HelpTOCNode Title="TeatreVista Constructor (String, Int32, Int32, String, String, Int32)" Url="html/M-WebApplication3.Models.TeatreVista.-ctor_1.htm" />
+        <HelpTOCNode Title="TeatreVista Constructor (Int32, String, Int32, Int32, String, String, Int32)" Url="html/M-WebApplication3.Models.TeatreVista.-ctor_2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="TeatreVista Methods" Url="html/Methods.T-WebApplication3.Models.TeatreVista.htm" />
+      <HelpTOCNode Id="87e5fe65-a76f-4193-8716-2cf0ef94f34e" Title="TeatreVista Properties" Url="html/Properties.T-WebApplication3.Models.TeatreVista.htm">
+        <HelpTOCNode Title="Codipostal Property " Url="html/P-WebApplication3.Models.TeatreVista.Codipostal.htm" />
+        <HelpTOCNode Title="Columnes Property " Url="html/P-WebApplication3.Models.TeatreVista.Columnes.htm" />
+        <HelpTOCNode Title="Comarca Property " Url="html/P-WebApplication3.Models.TeatreVista.Comarca.htm" />
+        <HelpTOCNode Title="Files Property " Url="html/P-WebApplication3.Models.TeatreVista.Files.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P-WebApplication3.Models.TeatreVista.ID.htm" />
+        <HelpTOCNode Title="Localitat Property " Url="html/P-WebApplication3.Models.TeatreVista.Localitat.htm" />
+        <HelpTOCNode Title="Nom Property " Url="html/P-WebApplication3.Models.TeatreVista.Nom.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="4a0bdd12-910c-4eca-8342-ed54d029bf1d" Title="WebApplication3.Validador Namespace" Url="html/N-WebApplication3.Validador.htm">
+    <HelpTOCNode Id="3dccfbde-4254-4fd0-b20b-e163adafc8a8" Title="Validation Class" Url="html/T-WebApplication3.Validador.Validation.htm">
+      <HelpTOCNode Title="Validation Methods" Url="html/Methods.T-WebApplication3.Validador.Validation.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
