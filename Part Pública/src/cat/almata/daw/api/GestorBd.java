@@ -372,6 +372,7 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		// TODO Auto-generated method stub
 		
 		// TODO Auto-generated method stub
+		Boolean trobat=false;
 		Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+this.database+this.temps,this.userLogin,this.userPasswd);
 		String sql="select email from persones where email=?";
 		PreparedStatement prs=conn.prepareStatement(sql);
@@ -379,11 +380,15 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://"+this.hostname+"/"+
 		ResultSet rs= prs.executeQuery();
 		/*ArrayList<String> localitats= new ArrayList<String>();
 		while(rs.next()) {
-			localitats.add(rs.getString("Nom"));
+			localitats.add(rs.goietString("Nom"));
 		}*/
 		
-		return rs.wasNull();
+		while (rs.next()) {
+			trobat=true;
+			
+		}		
 		
+		return trobat;
 		
 	}
 
