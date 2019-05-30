@@ -44,6 +44,7 @@ namespace Dades.Models
         [DataType(DataType.Time)]
         [Required]
         [Display(Name = "Hora Inici")]
+        
         public TimeSpan horaInici { set; get; }
         [DataType(DataType.Time)]
         [Required]

@@ -67,6 +67,7 @@ namespace WebApplication3.Controllers
             //ViewBag.Tipus = new SelectList(db.Adreces, "ID", "Comarca");
 
             ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
+            ViewBag.Actual = DateTime.Now.ToString("yyyy-MM-dd");
             return View();
         }
 
@@ -171,12 +172,13 @@ namespace WebApplication3.Controllers
 
                 //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
                 ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
+                ViewBag.Actual = DateTime.Now.ToString("yyyy-MM-dd");
                 //ModelState.AddModelError("", "Omple tots els camps");
                 return View();
             }catch(DbUpdateException e)
             {
-               
-                
+
+                ViewBag.Actual = DateTime.Now.ToString("yyyy-MM-dd");
                 ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
                 ModelState.AddModelError("NIF", "Aquest NIF ja existeix");
                 return View();
@@ -201,6 +203,7 @@ namespace WebApplication3.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Actual = DateTime.Now.ToString("yyyy-MM-dd");
 
             ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
             if (persona is Usuari)
@@ -314,6 +317,7 @@ namespace WebApplication3.Controllers
             }
             //ViewBag.AdreçaID = new SelectList(db.Adreces, "ID", "Comarca", persona.AdreçaID);
             ViewBag.Municipis = new SelectList(bd.obtenirMunicipis());
+            ViewBag.Actual = DateTime.Now.ToString("yyyy-MM-dd");
             return View();
         }
         /// <summary>

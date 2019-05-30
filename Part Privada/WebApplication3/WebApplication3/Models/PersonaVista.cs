@@ -109,6 +109,7 @@ namespace WebApplication3.Models
         [Display(Name ="Data Naixement")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        
         public DateTime? dataNaixement { set; get; }
         public string Cognoms { set; get; }
         /// <summary>

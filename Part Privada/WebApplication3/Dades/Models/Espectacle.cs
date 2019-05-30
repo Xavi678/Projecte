@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace Dades.Models
 
         [ForeignKey("Autor")]
         [Display(Name = "Autor")]
+        
         public string nifAutor { get; set; }
         
         public virtual Director Director { get; set; }
