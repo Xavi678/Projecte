@@ -101,6 +101,8 @@ namespace WebApplication3.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.nifDirector = new SelectList(bd.getListDirector(), "NIF", "nom");
+            ViewBag.nifAutor = new SelectList(bd.getListAutor(), "NIF", "nom");
             return View(espectacle);
         }
 
